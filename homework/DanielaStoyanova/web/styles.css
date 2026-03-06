@@ -1,8 +1,8 @@
 body {
-  font-family: system-ui, Arial, sans-serif;
+  font-family: system-ui, "Baguet Script", sans-serif;
   margin: 0;
   line-height: 1.5;
-  color: #111;
+  color: #1b7e04;
 }
 
 header,
@@ -17,33 +17,34 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #e8f8ae;
 }
 
 h1 {
   margin: 0;
   font-size: 18px;
-  color: #4835f1;
 }
 h2 {
   margin: 0 0 8px;
+}
+h3 {
+  margin: 24px 0 8px;
 }
 
 nav a {
   margin-left: 12px;
   text-decoration: none;
-  color: #4835f1;
+  color: #111;
 }
 
 nav a:hover {
   text-decoration: underline;
-  color: darkgreen;
 }
 
 .hero {
   padding: 20px;
   margin-top: 16px;
-  background: #f6f6f6;
+  background: #f7dfdf;
   border-radius: 12px;
 }
 
@@ -52,7 +53,7 @@ nav a:hover {
   margin-top: 10px;
   padding: 10px 12px;
   background: #111;
-  color: #510e46;
+  color: #fff;
   border-radius: 10px;
   text-decoration: none;
 }
@@ -63,7 +64,6 @@ nav a:hover {
 
 ul {
   padding-left: 18px;
-  color: rgb(230, 109, 23);
 }
 
 footer {
