@@ -1,0 +1,15 @@
+main {
+    background-color: bisque;
+}
+
+#projects {
+    color: blue;
+}
+
+main .hero, main #projects, main #contact {
+    font-style: italic;
+}
+
+main .hero button {
+    cursor: pointer;
+}
