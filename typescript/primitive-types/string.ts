@@ -27,12 +27,12 @@ console.log('userWelcomeMessage', userWelcomeMessage);
 
 // string methods
 // string.charAt
-const firstLetter: string = firstName.charAt(0); // Maria -> P
-console.log('firstLetter', firstLetter); // Maria -> P
+const firstLetter: string = firstName.charAt(0); // Maria -> M
+console.log('firstLetter', firstLetter); // Maria -> M
 
 // string.substring
-const firstNameSubstring: string = firstName.substring(0, 2); // Maria -> Pe
-console.log('firstNameSubstring', firstNameSubstring); // Maria -> Pe
+const firstNameSubstring: string = firstName.substring(0, 2); // Maria -> Ma
+console.log('firstNameSubstring', firstNameSubstring); // Maria -> Ma
 
 // string.length
 const welcomeMessageLength: number = welcomeMessage.length;
