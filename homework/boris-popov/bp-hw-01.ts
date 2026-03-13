@@ -171,11 +171,24 @@ for (let i = 0; i < numbersArray.length; i++) {
 console.log(updatedNumbersArray);
 
 // Exercise 18: Find the difference between two arrays
-// Step 1: Create an array arr1 with values [1, 2, 3, 4].
-// Step 2: Create another array arr2 with values [3, 4, 5].
-// Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
-// Step 4: Store the result in a variable called difference.
-// Step 5: Log the result which should be [1, 2, 5].
+console.log('--- Exercise 18: Find the difference between two arrays ---');
+let firstArray: number[] = [1, 2, 3, 4];
+let secondArray: number[] = [3, 4, 5];
+let difference: number[] = [];
+
+for (let i = 0; i < firstArray.length; i++) {
+  if (!secondArray.includes(firstArray[i])) {
+    difference.push(firstArray[i]);
+  }
+}
+
+for (let i = 0; i < secondArray.length; i++) {
+  if (!firstArray.includes(secondArray[i])) {
+    difference.push(secondArray[i]);
+  }
+}
+
+console.log(difference);
 
 // Exercise 19: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
