@@ -87,9 +87,11 @@ console.log(`My favorite programming language is ${favoriteLanguage}`);
 // Part 4 — BigInt (bigint)
 
 // Exercise 11: BigInt addition
-// Step 1: Create two bigint numbers.
-// Step 2: Add the two bigint numbers together.
-// Step 3: Log the result.
+console.log('--- Exercise 11: BigInt addition ---');
+let bigInt1: bigint = 1234567890123456789012345678901234567890n;
+let bigInt2: bigint = 9876543210987654321098765432109876543210n;
+let bigIntSum: bigint = bigInt1 + bigInt2;
+console.log('The sum of the two BigInts is:', bigIntSum);
 
 // Part 5 — Array (array)
 
