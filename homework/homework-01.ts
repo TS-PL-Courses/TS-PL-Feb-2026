@@ -9,13 +9,13 @@
 
 // Exercise 2: Check if a number is even or odd
 // Step 1: Declare a variable and assign any number to it.
-// Step 2: Declare a boolean variable and use a logical expression to check if first variable is even.
-// Step 3: Log the result
+// Step 2: Declare a boolean variable and use a logical expression to check if the first variable is even.
+// Step 3: Log the result.
 
 // Exercise 3: Verify if a number is positive
 // Step 1: Declare a variable and assign any number to it.
-// Step 2: Declare a boolean variable and check if first variable is greater than 0.
-// Step 3: Log the result
+// Step 2: Declare a boolean variable and check if the first variable is greater than 0.
+// Step 3: Log the result.
 
 // Exercise 4: Total cost calculation
 // Step 1: Create a variable called price with the value 19.99.
@@ -37,22 +37,22 @@
 // Step 3: If isLoggedIn is false, log "Please log in".
 
 // Exercise 7: Entry permission
-// Step 1: Create a boolean variable hasTicket with value true.
-// Step 2: Create a boolean variable isAdult with value false.
+// Step 1: Create a boolean variable hasTicket with the value true.
+// Step 2: Create a boolean variable isAdult with the value false.
 // Step 3: Create a variable called canEnter that is true only if both variables are true.
 // Step 4: Log the result of canEnter.
 
 // Part 3 — Strings (string)
 
-// Exercise 8: Check if a string is empty (empty string is "")
+// Exercise 8: Check if a string is empty (an empty string is "")
 // Step 1: Declare a variable and assign any string to it.
-// Step 2: Declare a boolean variable and check if first variable is an empty string.
-// Step 3: Log the result
+// Step 2: Declare a boolean variable and check if the first variable is an empty string.
+// Step 3: Log the result.
 
 // Exercise 9: Determine if a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
-// Step 2: Declare a boolean variable and check if first variable starts with 'A'.
-// Step 3: Log the result
+// Step 2: Declare a boolean variable and check if the first variable starts with 'A'.
+// Step 3: Log the result.
 
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
@@ -86,15 +86,15 @@
 
 // Part 6 — Functions (function)
 
-// Exercise 14: Function with union type
+// Exercise 14: Function with a union type
 // Step 1: Create a function called printId.
-// Step 2: The parameter id should accept string or number (string | number).
+// Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
 
-// Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
-// Step 1: Declare a variables: QA name (string), number of functionalities (whole number), lets accpet time needed to test one functionality is 2 hours.
+// Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
+// Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
-// Step 3: Log the QA name, number of functionalities and the total time needed to test all functionalities using string interpolation like:
+// Step 3: Log the QA name, number of functionalities, and the total time needed using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
 
 // Exercise 16: Union in objects
@@ -110,14 +110,14 @@
 // Step 1: Create an array with the numbers [10, 20, 10, 30, 40].
 // Step 2: Remove the duplicate numbers from the array.
 // Step 3: Store the result in a new array.
-// Step 4: Log the new array which should look like [10, 20, 30, 40].
+// Step 4: Log the new array, which should look like [10, 20, 30, 40].
 
 // Exercise 18: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
 // Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
 // Step 4: Store the result in a variable called difference.
-// Step 5: Log the result which should be [1, 2, 5].
+// Step 5: Log the result, which should be [1, 2, 5].
 
 // Exercise 19: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
@@ -125,4 +125,4 @@
 // Step 3: Combine both arrays into one.
 // Step 4: Remove duplicate values.
 // Step 5: Store the result in a variable called union.
-// Step 6: Log the result which should be [1, 2, 3, 4, 5].
+// Step 6: Log the result, which should be [1, 2, 3, 4, 5].
