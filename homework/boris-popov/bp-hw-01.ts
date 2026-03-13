@@ -33,10 +33,10 @@ const totalCost: number = price * quantity;
 console.log('The total cost is:', totalCost);
 
 // Exercise 5: Celsius to Fahrenheit converter
-// Step 1: Create a variable for the temperature in Celsius.
-// Step 2: Use the formula F = C * 9/5 + 32 to convert it to Fahrenheit.
-// Step 3: Store the result in a variable.
-// Step 4: Log the temperature in Fahrenheit.
+console.log('--- Exercise 5: Celsius to Fahrenheit converter ---');
+const celsius: number = 32;
+const fahrenheit: number = (celsius * 9) / 5 + 32;
+console.log(celsius, 'C =', fahrenheit, 'F');
 
 // Part 2 — Booleans (boolean)
 
