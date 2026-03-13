@@ -78,7 +78,7 @@ type QAInfo = {
 const QA: QAInfo = {
   qaName: "Ralitsa Kaneva",
   numberOfFunctionalities: 8,
-  timePerFunctionality: 4,
+  timePerFunctionality: 2,
 };
 
 function calculateTotalTimeForTesting({
