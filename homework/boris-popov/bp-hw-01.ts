@@ -41,9 +41,13 @@ console.log(celsius, 'C =', fahrenheit, 'F');
 // Part 2 — Booleans (boolean)
 
 // Exercise 6: Login check
-// Step 1: Create a boolean variable called isLoggedIn.
-// Step 2: If isLoggedIn is true, log "Welcome!".
-// Step 3: If isLoggedIn is false, log "Please log in".
+console.log('--- Exercise 6: Login check ---');
+let isLoggedIn: boolean = false;
+if (isLoggedIn) {
+  console.log('Welcome!');
+} else {
+  console.log('Please log in');
+}
 
 // Exercise 7: Entry permission
 // Step 1: Create a boolean variable hasTicket with value true.
