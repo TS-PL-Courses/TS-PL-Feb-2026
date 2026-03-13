@@ -138,11 +138,23 @@ console.log(
 );
 
 // Exercise 16: Union in objects
-// Step 1: Create a type for a user object.
-// Step 2: The object should have two properties: id and name.
-// Step 3: The id property should accept either a number or a string (number | string).
-// Step 4: Create one user object with a numeric id.
-// Step 5: Create another user object with a string id.
+console.log('--- Exercise 16: Union in objects ---');
+type User = {
+  id: number | string;
+  name: string;
+};
+
+let user1: User = {
+  id: 35859,
+  name: 'John',
+};
+
+let user2: User = {
+  id: 'UID786841232A',
+  name: 'Jane',
+};
+
+console.log(user1, user2);
 
 // Optional Exercises
 
