@@ -1,4 +1,4 @@
-// npx ts-node homework/ivan-panayotov/Typescript/homework.ts
+// npx ts-node homework/Ivan-panayotov/Typescript/homework.ts
 
 // Step 1: Declare 2 variables with numbers
 let a: number = 5;
@@ -56,10 +56,10 @@ console.log('Is empty:', isEmpty);
 let text: string = 'Apple';
 
 // Step 2: Check if the string starts with "A"
-let startsWithA: boolean = text1[0] === 'A';
+let startsWithA: boolean = text[0] === 'A';
 
 // Step 3: Log the result
-console.log('Text:', text1);
+console.log('Text:', text);
 console.log('Starts with A:', startsWithA);
 
 // Step 1: Declare variables
