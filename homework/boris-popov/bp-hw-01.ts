@@ -154,7 +154,7 @@ let user2: User = {
   name: 'Jane',
 };
 
-console.log(user1, user2);
+console.log(user1,'\n', user2);
 
 // Optional Exercises
 
@@ -191,9 +191,16 @@ for (let i = 0; i < secondArray.length; i++) {
 console.log(difference);
 
 // Exercise 19: Find the union of two arrays
-// Step 1: Create an array arr1 with values [1, 2, 3, 4].
-// Step 2: Create another array arr2 with values [3, 4, 5].
-// Step 3: Combine both arrays into one.
-// Step 4: Remove duplicate values.
-// Step 5: Store the result in a variable called union.
-// Step 6: Log the result which should be [1, 2, 3, 4, 5].
+console.log('--- Exercise 19: Find the union of two arrays ---');
+let arrayOne: number[] = [1, 2, 3, 4];
+let arrayTwo: number[] = [3, 4, 5];
+let combined: number[] = arrayOne.concat(arrayTwo);
+let union: number[] = [];
+
+for (let i = 0; i < combined.length; i++) {
+  if (!union.includes(combined[i])) {
+    union.push(combined[i]);
+  }
+}
+
+console.log(union);
