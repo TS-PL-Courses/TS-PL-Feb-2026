@@ -50,10 +50,16 @@ if (isLoggedIn) {
 }
 
 // Exercise 7: Entry permission
-// Step 1: Create a boolean variable hasTicket with value true.
-// Step 2: Create a boolean variable isAdult with value false.
-// Step 3: Create a variable called canEnter that is true only if both variables are true.
-// Step 4: Log the result of canEnter.
+console.log('--- Exercise 7: Entry permission ---');
+let hasTicket: boolean = true;
+let isAdult: boolean = false;
+let canEnter: boolean = hasTicket && isAdult;
+
+if (canEnter) {
+  console.log('You can enter.');
+} else {
+  console.log("You can't enter.");
+}
 
 // Part 3 — Strings (string)
 
