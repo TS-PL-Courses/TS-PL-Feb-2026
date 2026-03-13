@@ -119,9 +119,13 @@ for (let i = 0; i < students.length; i++) {
 // Part 6 — Functions (function)
 
 // Exercise 14: Function with union type
-// Step 1: Create a function called printId.
-// Step 2: The parameter id should accept string or number (string | number).
-// Step 3: Inside the function, log the id value.
+console.log('--- Exercise 14: Function with union type ---');
+function printId(id: string | number): void {
+  console.log('ID:', id);
+}
+
+printId(569365);
+printId('MF56A45G');
 
 // Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
 // Step 1: Declare a variables: QA name (string), number of functionalities (whole number), lets accpet time needed to test one functionality is 2 hours.
