@@ -70,9 +70,10 @@ let isEmpty: boolean = myString === '';
 console.log('String is empty:', isEmpty);
 
 // Exercise 9: Determine if a string starts with the letter 'A'
-// Step 1: Declare a variable and assign any string to it.
-// Step 2: Declare a boolean variable and check if first variable starts with 'A'.
-// Step 3: Log the result
+console.log('--- Exercise 9: Determine if a string starts with the letter A ---');
+let myString2: string = 'Argentina';
+let startsWithA: boolean = myString2.startsWith('A');
+console.log("The string starts with the letter 'A':", startsWithA);
 
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
