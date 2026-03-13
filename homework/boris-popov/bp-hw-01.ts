@@ -3,6 +3,7 @@
 // Part 1 — Numbers (number)
 
 // Exercise 1: Variable swapping
+console.log('--- Exercise 1: Variable swapping ---');
 let a: number = 3;
 let b: number = 7;
 console.log('Initial vlues: a =', a, 'b =', b);
@@ -13,14 +14,19 @@ b = temp;
 console.log('Values after swap: a =', a, 'b =', b);
 
 // Exercise 2: Check if a number is even or odd
-// Step 1: Declare a variable and assign any number to it.
-// Step 2: Declare a boolean variable and use a logical expression to check if first variable is even.
-// Step 3: Log the result
+console.log('--- Exercise 2: Check if a number is even or odd ---');
+let myNum1: number = 23;
+let isEven: boolean = myNum1 % 2 === 0;
+console.log('The number', myNum1, 'is even:', isEven);
 
 // Exercise 3: Verify if a number is positive
 // Step 1: Declare a variable and assign any number to it.
 // Step 2: Declare a boolean variable and check if first variable is greater than 0.
 // Step 3: Log the result
+console.log('--- Exercise 3: Verify if a number is positive ---');
+let myNum2: number = -23;
+let isPositive: boolean = myNum2 > 0;
+console.log('The number', myNum2, 'is positive:', isPositive);
 
 // Exercise 4: Total cost calculation
 // Step 1: Create a variable called price with the value 19.99.
