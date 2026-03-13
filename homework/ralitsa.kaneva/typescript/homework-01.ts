@@ -95,4 +95,4 @@ console.log("Exercise 6: Calculate the time needed for testing.");
 console.log(
   `The QA ${QA.qaName} will need ${totalTimeForTesting} hours to complete ${QA.numberOfFunctionalities} project/s.`,
 );
-a;
+
