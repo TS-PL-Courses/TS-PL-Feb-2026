@@ -38,7 +38,7 @@ console.log("Exercise 3: Verify if a number is positive.");
 if (isPositive) {
   console.log(`The number ${b} is positive.\n`);
 } else {
-  console.log(`The number ${b} is negative.\n`);
+  console.log(`The number ${b} is negative.`);
 }
 
 // Exercise 4: Check if a string is empty (empty string is "")
@@ -78,7 +78,7 @@ type QAInfo = {
 const QA: QAInfo = {
   qaName: "Ralitsa Kaneva",
   numberOfFunctionalities: 8,
-  timePerFunctionality: 4,
+  timePerFunctionality: 2,
 };
 
 function calculateTotalTimeForTesting({
@@ -95,3 +95,4 @@ console.log("Exercise 6: Calculate the time needed for testing.");
 console.log(
   `The QA ${QA.qaName} will need ${totalTimeForTesting} hours to complete ${QA.numberOfFunctionalities} project/s.`,
 );
+
