@@ -6,7 +6,7 @@
 console.log('--- Exercise 1: Variable swapping ---');
 let a: number = 3;
 let b: number = 7;
-console.log('Initial vlues: a =', a, 'b =', b);
+console.log('Initial values: a =', a, 'b =', b);
 
 let temp: number = a;
 a = b;
@@ -129,7 +129,7 @@ printId('MF56A45G');
 
 // Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
 console.log('--- Exercise 15: Time calculation for QA testing ---');
-let qaName: string = 'Serius Black';
+let qaName: string = 'Sirius Black';
 let numberOfFunctionalities: number = 8;
 let timePerFunctionality: number = 2;
 let totalTime: number = numberOfFunctionalities * timePerFunctionality;
