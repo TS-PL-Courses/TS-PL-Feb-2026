@@ -76,12 +76,13 @@ let startsWithA: boolean = myString2.startsWith('A');
 console.log("The string starts with the letter 'A':", startsWithA);
 
 // Exercise 10: String operations
-// Step 1: Create a string variable message with the value "TypeScript is fun".
-// Step 2: Log the length of the string.
-// Step 3: Log the string in uppercase.
-// Step 4: Log the string in lowercase.
-// Step 5: Create a variable called favoriteLanguage.
-// Step 6: Log the sentence using a template string: "My favorite programming language is ___".
+console.log('--- Exercise 10: String operations ---');
+let message: string = 'TypeScript is fun';
+console.log('The length of the string is:', message.length);
+console.log('Uppercase:', message.toUpperCase());
+console.log('Lowercase:', message.toLowerCase());
+let favoriteLanguage: string = 'TypeScript';
+console.log(`My favorite programming language is ${favoriteLanguage}`);
 
 // Part 4 — BigInt (bigint)
 
