@@ -159,10 +159,16 @@ console.log(user1, user2);
 // Optional Exercises
 
 // Exercise 17: Remove duplicate numbers from an array
-// Step 1: Create an array with the numbers [10, 20, 10, 30, 40].
-// Step 2: Remove the duplicate numbers from the array.
-// Step 3: Store the result in a new array.
-// Step 4: Log the new array which should look like [10, 20, 30, 40].
+console.log('--- Exercise 17: Remove duplicate numbers from an array ---');
+let numbersArray: number[] = [10, 20, 10, 30, 40];
+let updatedNumbersArray: number[] = [];
+
+for (let i = 0; i < numbersArray.length; i++) {
+  if (!updatedNumbersArray.includes(numbersArray[i])) {
+    updatedNumbersArray.push(numbersArray[i]);
+  }
+}
+console.log(updatedNumbersArray);
 
 // Exercise 18: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
