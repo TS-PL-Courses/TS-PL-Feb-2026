@@ -96,10 +96,13 @@ console.log('The sum of the two BigInts is:', bigIntSum);
 // Part 5 — Array (array)
 
 // Exercise 12: Product of an array
-// Step 1: Create an array with the numbers [10, 20, 30, 40].
-// Step 2: Create a variable to store the total product.
-// Step 3: Use a loop to multiply all numbers in the array.
-// Step 4: Log the final product.
+console.log('--- Exercise 12: Product of an array ---');
+let numbers: number[] = [10, 20, 30, 40];
+let totalProduct: number = 1;
+for (let i = 0; i < numbers.length; i++) {
+  totalProduct = totalProduct * numbers[i];
+}
+console.log('The total product is:', totalProduct);
 
 // Exercise 13: Array of student objects
 // Step 1: Create an array called students.
