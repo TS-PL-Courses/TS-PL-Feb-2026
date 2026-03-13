@@ -8,7 +8,7 @@ console.log(
   `Exercise 1: Variable swapping\nOriginal values: number1 = ${number1}, number2 = ${number2}`,
 );
 // Step 2: Swap their values.
-let helper: number = number1;
+const helper: number = number1;
 number1 = number2;
 number2 = helper;
 console.log(`Swapped values: number1 = ${number1}, number2 = ${number2}\n`);
@@ -17,9 +17,9 @@ console.log(`Swapped values: number1 = ${number1}, number2 = ${number2}\n`);
 
 // Exercise 2: Check if a number is even or odd
 // Step 1: Declare a variable and assign any number to it.
-let a: number = 15;
+const a: number = 15;
 // Step 2: Declare a boolean variable and use a logical expression to check if first variable is even.
-let isEven: boolean = a % 2 === 0;
+const isEven: boolean = a % 2 === 0;
 // Step 3: Log the result
 console.log("Exercise 2: Check if a number is even or odd.");
 if (isEven) {
@@ -30,9 +30,9 @@ if (isEven) {
 
 // Exercise 3: Verify if a number is positive
 // Step 1: Declare a variable and assign any number to it.
-let b: number = 8;
+const b: number = 8;
 // Step 2: Declare a boolean variable and check if first variable is greater than 0.
-let isPositive: boolean = b > 0;
+const isPositive: boolean = b > 0;
 // Step 3: Log the result
 console.log("Exercise 3: Verify if a number is positive.");
 if (isPositive) {
@@ -43,9 +43,9 @@ if (isPositive) {
 
 // Exercise 4: Check if a string is empty (empty string is "")
 // Step 1: Declare a variable and assign any string to it.
-let str1: string = "";
+const str1: string = "";
 // Step 2: Declare a boolean variable and check if first variable is an empty string.
-let isEmpty: boolean = str1 === "";
+const isEmpty: boolean = str1 === "";
 // Step 3: Log the result
 console.log("Exercise 4: Check if a string is empty.");
 if (isEmpty) {
@@ -56,9 +56,9 @@ if (isEmpty) {
 
 // Exercise 5: Determine if a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
-let str2: string = "Apple";
+const str2: string = "Apple";
 // Step 2: Declare a boolean variable and check if first variable starts with 'A'.
-let isFirstLetterA: boolean = str2.startsWith("A");
+const isFirstLetterA: boolean = str2.startsWith("A");
 // Step 3: Log the result
 console.log("Exercise 5: Determine if a string starts with the letter 'A'.");
 if (isFirstLetterA) {
