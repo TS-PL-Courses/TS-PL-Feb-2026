@@ -64,9 +64,10 @@ if (canEnter) {
 // Part 3 — Strings (string)
 
 // Exercise 8: Check if a string is empty (empty string is "")
-// Step 1: Declare a variable and assign any string to it.
-// Step 2: Declare a boolean variable and check if first variable is an empty string.
-// Step 3: Log the result
+console.log('--- Exercise 8: Check if a string is empty ---');
+let myString: string = 'Test string blah-blah';
+let isEmpty: boolean = myString === '';
+console.log('String is empty:', isEmpty);
 
 // Exercise 9: Determine if a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
