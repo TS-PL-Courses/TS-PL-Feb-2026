@@ -1,5 +1,5 @@
-const message: string = "Typescript is fun";
-const favoriteLanguage: string = "Typescript"
+const message: string = "TypeScript is fun";
+const favoriteLanguage: string = "TypeScript"
 
 console.log(message.length);
 console.log(message.toUpperCase());

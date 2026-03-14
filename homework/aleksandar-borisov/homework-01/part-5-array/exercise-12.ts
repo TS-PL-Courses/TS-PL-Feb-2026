@@ -1,8 +1,8 @@
 const numbers: number[] = [10, 20 , 30, 40];
-let products: number = 1;
+let product: number = 1;
 
 for (let index = 0; index < numbers.length; index++) {
-    products = numbers[index] * products;
+    product = numbers[index] * product;
 }
 
-console.log(products);
+console.log(product);
