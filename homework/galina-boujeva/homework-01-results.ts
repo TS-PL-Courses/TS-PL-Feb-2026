@@ -10,6 +10,7 @@
 
 let number1 = 5;
 let number2: number = 10;
+let number3;
 
 console.log('Number 1 original value is: ', number1);
 console.log('Number 2 original value is: ', number2);
@@ -150,7 +151,6 @@ console.log('Can user enter:', canEnter);
 // Step 4: Create one user object with a numeric id.
 // Step 5: Create another user object with a string id.
 
-
 // Exercise 17: Remove duplicate numbers from an array
 // Step 1: Create an array with the numbers [10, 20, 10, 30, 40].
 // Step 2: Remove the duplicate numbers from the array.
@@ -170,4 +170,4 @@ console.log('Can user enter:', canEnter);
 // Step 3: Combine both arrays into one.
 // Step 4: Remove duplicate values.
 // Step 5: Store the result in a variable called union.
-// Step 6: Log the result which should be [1, 2, 3, 4, 5].
+// Step 6: Log the result which should be [1, 2, 3, 4, 5]
