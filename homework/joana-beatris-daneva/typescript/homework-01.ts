@@ -142,7 +142,6 @@ const startWithA: boolean = myName.startsWith('A');
 
 console.log(startWithA);
 
-
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
 // Step 2: Log the length of the string.
@@ -178,8 +177,6 @@ const sum: bigint = firstBig + secondBig;
 
 console.log(`The sum of the two bigint is: ${sum}`);
 
-
-
 // Part 5 — Array (array)
 
 // Exercise 12: Product of an array
@@ -188,10 +185,7 @@ console.log(`The sum of the two bigint is: ${sum}`);
 // Step 3: Use a loop to multiply all numbers in the array.
 // Step 4: Log the final product.
 
-//console.log('\nExercise 12');
-
-//const numbers: number[] = [10, 20, 30, 40];
-//let totalProduct: number = 
+// console.log('\nExercise 12');
 
 // Exercise 13: Array of student objects
 // Step 1: Create an array called students.
@@ -202,7 +196,6 @@ console.log(`The sum of the two bigint is: ${sum}`);
 
 //console.log('\nExercise 13');
 
-
 // Part 6 — Functions (function)
 
 // Exercise 14: Function with a union type
@@ -210,8 +203,14 @@ console.log(`The sum of the two bigint is: ${sum}`);
 // Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
 
-//console.log('\nExercise 14');
+console.log('\nExercise 14');
 
+function printId(id: string | number): void {
+  console.log(`The id value is: ${id}`);
+}
+
+printId('Pisi');
+printId(15);
 
 // Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
 // Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
@@ -227,8 +226,9 @@ const hoursPerFunctionality: number = 2;
 
 const totalTimeNeeded: number = numberOfFunctionalities * hoursPerFunctionality;
 
-console.log(`The QA ${qaName} will need ${totalTimeNeeded} hours to complete ${numberOfFunctionalities} project/s.`);
-
+console.log(
+  `The QA ${qaName} will need ${totalTimeNeeded} hours to complete ${numberOfFunctionalities} project/s.`,
+);
 
 // Exercise 16: Union in objects
 // Step 1: Create a type for a user object.
@@ -237,8 +237,23 @@ console.log(`The QA ${qaName} will need ${totalTimeNeeded} hours to complete ${n
 // Step 4: Create one user object with a numeric id.
 // Step 5: Create another user object with a string id.
 
-//console.log('\nExercise 16');
+console.log('\nExercise 16');
 
+type User = {
+  id: number | string;
+  name?: string;
+};
+
+const firstUser: User = {
+  id: 25,
+};
+
+const secondUser: User = {
+  id: 'Harry Potter',
+};
+
+console.log(`First user ID is ${firstUser.id}`);
+console.log(`Second user ID is ${secondUser.id}`);
 
 // Optional Exercises
 
@@ -259,7 +274,6 @@ console.log(`The QA ${qaName} will need ${totalTimeNeeded} hours to complete ${n
 
 //const arr1: number[] = [1, 2, 3, 4];
 //const arr2: number[] = [1, 2, 3, 4];
-
 
 // Exercise 19: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
