@@ -10,7 +10,6 @@
 
 let number1 = 5;
 let number2: number = 10;
-let number3;
 
 console.log('Number 1 original value is: ', number1);
 console.log('Number 2 original value is: ', number2);
