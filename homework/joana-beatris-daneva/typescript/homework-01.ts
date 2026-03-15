@@ -135,6 +135,14 @@ console.log(`isEmpty: ${isEmpty}`);
 // Step 2: Declare a boolean variable and check if the first variable starts with 'A'.
 // Step 3: Log the result.
 
+console.log('\nExercise 9');
+
+const myName: string = 'Anna';
+const startWithA: boolean = myName.startsWith('A');
+
+console.log(startWithA);
+
+
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
 // Step 2: Log the length of the string.
@@ -143,12 +151,34 @@ console.log(`isEmpty: ${isEmpty}`);
 // Step 5: Create a variable called favoriteLanguage.
 // Step 6: Log the sentence using a template string: "My favorite programming language is ___".
 
+console.log('\nExercise 10');
+
+const message: string = 'TypeScript is fun!';
+
+console.log(`String length is: ${message.length}`);
+console.log(message.toUpperCase());
+console.log(message.toLowerCase());
+
+const favoriteLanguage: string = 'TypeScript';
+
+console.log(`My favorite programming language is ${favoriteLanguage}! :)`);
+
 // Part 4 — BigInt (bigint)
 
 // Exercise 11: BigInt addition
 // Step 1: Create two bigint numbers.
 // Step 2: Add the two bigint numbers together.
 // Step 3: Log the result.
+
+console.log('\nExercise 11');
+
+const firstBig: bigint = 200000n;
+const secondBig: bigint = 3000n;
+const sum: bigint = firstBig + secondBig;
+
+console.log(`The sum of the two bigint is: ${sum}`);
+
+
 
 // Part 5 — Array (array)
 
@@ -158,12 +188,20 @@ console.log(`isEmpty: ${isEmpty}`);
 // Step 3: Use a loop to multiply all numbers in the array.
 // Step 4: Log the final product.
 
+//console.log('\nExercise 12');
+
+//const numbers: number[] = [10, 20, 30, 40];
+//let totalProduct: number = 
+
 // Exercise 13: Array of student objects
 // Step 1: Create an array called students.
 // Step 2: Each object should contain name and grade.
 // Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
 // Step 4: Use a loop to go through the array.
 // Step 5: Log each student's name.
+
+//console.log('\nExercise 13');
+
 
 // Part 6 — Functions (function)
 
@@ -172,11 +210,25 @@ console.log(`isEmpty: ${isEmpty}`);
 // Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
 
+//console.log('\nExercise 14');
+
+
 // Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
 // Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
 // Step 3: Log the QA name, number of functionalities, and the total time needed using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
+
+console.log('\nExercise 15');
+
+const qaName: string = 'Joana-Beatris';
+const numberOfFunctionalities: number = 10;
+const hoursPerFunctionality: number = 2;
+
+const totalTimeNeeded: number = numberOfFunctionalities * hoursPerFunctionality;
+
+console.log(`The QA ${qaName} will need ${totalTimeNeeded} hours to complete ${numberOfFunctionalities} project/s.`);
+
 
 // Exercise 16: Union in objects
 // Step 1: Create a type for a user object.
@@ -184,6 +236,9 @@ console.log(`isEmpty: ${isEmpty}`);
 // Step 3: The id property should accept either a number or a string (number | string).
 // Step 4: Create one user object with a numeric id.
 // Step 5: Create another user object with a string id.
+
+//console.log('\nExercise 16');
+
 
 // Optional Exercises
 
@@ -199,6 +254,12 @@ console.log(`isEmpty: ${isEmpty}`);
 // Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
 // Step 4: Store the result in a variable called difference.
 // Step 5: Log the result, which should be [1, 2, 5].
+
+//console.log('\nExercise 18');
+
+//const arr1: number[] = [1, 2, 3, 4];
+//const arr2: number[] = [1, 2, 3, 4];
+
 
 // Exercise 19: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
