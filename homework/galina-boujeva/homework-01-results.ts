@@ -25,12 +25,15 @@ console.log('Number 2 value after swap is: ', number2);
 // Step 3: Log the result
 
 let number: number = 11;
+let numberEven: boolean;
 
 if (number % 2 === 0) {
-  console.log('This number', number, 'is even');
+  numberEven = true;
 } else {
-  console.log('This number', number, 'is odd');
+  numberEven = false;
 }
+
+console.log('Is number even:', numberEven);
 
 // Exercise 3: Verify if a number is positive
 // Step 1: Declare a variable and assign any number to it.
@@ -95,10 +98,18 @@ console.log('Can user enter:', canEnter);
 // Step 2: Declare a boolean variable and check if first variable is an empty string.
 // Step 3: Log the result
 
+const simpleString: string = 'Hello';
+const isEmptyString: boolean = simpleString === '';
+console.log('Is string empty:', isEmptyString);
+
 // Exercise 9: Determine if a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check if first variable starts with 'A'.
 // Step 3: Log the result
+
+const text = 'Air';
+const startsWithA: boolean = text.startsWith('A');
+console.log('Does the string start with "A":', startsWithA);
 
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
@@ -108,12 +119,25 @@ console.log('Can user enter:', canEnter);
 // Step 5: Create a variable called favoriteLanguage.
 // Step 6: Log the sentence using a template string: "My favorite programming language is ___".
 
+const message: string = 'TypeScript is fun';
+console.log('Message length:', message.length);
+console.log('Uppercase message:', message.toUpperCase());
+console.log('Lowercase message:', message.toLowerCase());
+
+const favoriteLanguage: string = 'Typescript';
+console.log(`My favorite programming language is ${favoriteLanguage}`);
+
 // Part 4 — BigInt (bigint)
 
 // Exercise 11: BigInt addition
 // Step 1: Create two bigint numbers.
 // Step 2: Add the two bigint numbers together.
 // Step 3: Log the result.
+
+const bigInt1: bigint = 123456789012345678901234567890n;
+const bigInt2: bigint = 987654321098765432109876543210n;
+const sum: bigint = bigInt1 + bigInt2;
+console.log('bigint sum is:', sum);
 
 // Part 5 — Array (array)
 
