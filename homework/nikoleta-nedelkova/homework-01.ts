@@ -266,6 +266,13 @@ console.log(
 // Step 3: Store the result in a new array.
 // Step 4: Log the new array, which should look like [10, 20, 30, 40].
 
+console.log('\n Exercise 17');
+
+const numbers1: number[] = [10, 20, 10, 30, 40];
+const numbers2 = [...new Set(numbers)];
+
+console.log(`The unique numbers in the array are: ${numbers2}`);
+
 // Exercise 18: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
@@ -273,10 +280,32 @@ console.log(
 // Step 4: Store the result in a variable called difference.
 // Step 5: Log the result, which should be [1, 2, 5].
 
+console.log('\n Exercise 18');
+
+const arr1: number[] = [1, 2, 3, 4];
+const arr2: number[] = [3, 4, 5];
+
+const difference: number[] = [
+  ...arr1.filter((x) => !arr2.includes(x)),
+  ...arr2.filter((x) => !arr1.includes(x)),
+];
+
+console.log(`Difference: ${difference}`);
+
 // Exercise 19: Find the union of two arrays
+
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
 // Step 3: Combine both arrays into one.
 // Step 4: Remove duplicate values.
 // Step 5: Store the result in a variable called union.
 // Step 6: Log the result, which should be [1, 2, 3, 4, 5].
+
+console.log('\n Exercise 19');
+
+const arr11: number[] = [1, 2, 3, 4];
+const arr22: number[] = [3, 4, 5];
+const union = arr11.concat(arr22);
+const unionUniqueValues = [...new Set(union)];
+
+console.log(`The result is: ${unionUniqueValues}`);
