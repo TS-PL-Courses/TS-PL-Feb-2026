@@ -1,52 +1,55 @@
 // Homework 01
 
+//npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
+
 // Part 1 — Numbers (number)
+
 // Exercise 1: Variable swapping
 // Step 1: Declare 2 variables with numbers.
 // Step 2: Swap their values.
 // Step 3: Log the original values and the final values.
 
+console.log('\nExercise 1');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//let fisrtNumber: number = 10;
-//let secondNumber: number = 15;
-//console.log(fisrtNumber, '- This is original value 1');
-//console.log(secondNumber, ' - This is original value 2');
-//let swapped1: number = secondNumber;
-//secondNumber = fisrtNumber;
-//fisrtNumber = swapped1;
-//console.log(fisrtNumber, ' - This is swapped 1 value');
-//console.log(secondNumber, ' - This is swapped 2 value');
+let fisrtNumber: number = 10;
+let secondNumber: number = 15;
+console.log(fisrtNumber, '- This is original value 1');
+console.log(secondNumber, ' - This is original value 2');
+let swapped1: number = secondNumber;
+secondNumber = fisrtNumber;
+fisrtNumber = swapped1;
+console.log(fisrtNumber, ' - This is swapped 1 value');
+console.log(secondNumber, ' - This is swapped 2 value');
 
 // Exercise 2: Check if a number is even or odd
 // Step 1: Declare a variable and assign any number to it.
 // Step 2: Declare a boolean variable and use a logical expression to check if the first variable is even.
 // Step 3: Log the result.
 
+console.log('\nExercise 2');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//const numberIsEven = 44;
-//const isEven = numberIsEven % 2 === 0;
-//if (isEven) {
-//console.log('This number is even');
-//} else {
-//console.log('This number is odd');
-//}
+const numberIsEven = 44;
+const isEven = numberIsEven % 2 === 0;
+if (isEven) {
+  console.log('This number is even');
+} else {
+  console.log('This number is odd');
+}
 
 // Exercise 3: Verify if a number is positive
 // Step 1: Declare a variable and assign any number to it.
 // Step 2: Declare a boolean variable and check if the first variable is greater than 0.
 // Step 3: Log the result.
 
+console.log('\nExercise 3');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//const numberIsNegative = -82;
-//const isGreater: boolean = numberIsNegative > 0;
-//if (isGreater) {
-//console.log('This number is positive');
-//} else {
-// console.log('This number is negative');
-//}
+const numberIsNegative = -82;
+const isGreater: boolean = numberIsNegative > 0;
+if (isGreater) {
+  console.log('This number is positive');
+} else {
+  console.log('This number is negative');
+}
 
 // Exercise 4: Total cost calculation
 // Step 1: Create a variable called price with the value 19.99.
@@ -54,12 +57,12 @@
 // Step 3: Calculate the total cost by multiplying price and quantity.
 // Step 4: Log the total cost.
 
+console.log('\nExercise 4');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//const price: number = 19.99;
-//const quantity: number = 3;
-//const totalCost = quantity * price;
-//console.log(totalCost);
+const price: number = 19.99;
+const quantity: number = 3;
+const totalCost = quantity * price;
+console.log(totalCost);
 
 // Exercise 5: Celsius to Fahrenheit converter
 // Step 1: Create a variable for the temperature in Celsius.
@@ -67,11 +70,11 @@
 // Step 3: Store the result in a variable.
 // Step 4: Log the temperature in Fahrenheit.
 
+console.log('\nExercise 5');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//let temperatureInCelsius: number = 20; // temperature in Celsius
-//const resultInFahrenheit = (temperatureInCelsius * 9) / 5 + 32; // Conversion to Fahrenheit and storing in end variable.
-//console.log(resultInFahrenheit);
+let temperatureInCelsius: number = 20; // temperature in Celsius
+const resultInFahrenheit = (temperatureInCelsius * 9) / 5 + 32; // Conversion to Fahrenheit and storing in end variable.
+console.log(resultInFahrenheit);
 
 // Part 2 — Booleans (boolean)
 
@@ -80,12 +83,14 @@
 // Step 2: If isLoggedIn is true, log "Welcome!".
 // Step 3: If isLoggedIn is false, log "Please log in".
 
-//let isLoggedIn: boolean = false;
-//if (isLoggedIn) {
-//console.log('Welcome!');
-//} else {
-//console.log('Please, log in!');
-//}
+console.log('\nExercise 6');
+//Solution:
+let isLoggedIn: boolean = false;
+if (isLoggedIn) {
+  console.log('Welcome!');
+} else {
+  console.log('Please, log in!');
+}
 
 // Exercise 7: Entry permission
 // Step 1: Create a boolean variable hasTicket with the value true.
@@ -93,12 +98,12 @@
 // Step 3: Create a variable called canEnter that is true only if both variables are true.
 // Step 4: Log the result of canEnter.
 
+console.log('\nExercise 7');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//const hasTicket: boolean = true;
-//const isAdult: boolean = false;
-//let canEnter: boolean = hasTicket && isAdult;
-//console.log(canEnter);
+const hasTicket: boolean = true;
+const isAdult: boolean = false;
+let canEnter: boolean = hasTicket && isAdult;
+console.log(canEnter);
 
 // Part 3 — Strings (string)
 
@@ -106,22 +111,23 @@
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check if the first variable is an empty string.
 // Step 3: Log the result.
+
+console.log('\nExercise 8');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//let anyString: string = 'This string is not empty';
-//let checkIfEmpty: boolean = anyString.length === 0;
-//console.log(checkIfEmpty);
+let anyString: string = 'This string is not empty';
+let checkIfEmpty: boolean = anyString.length === 0;
+console.log(checkIfEmpty);
 
 // Exercise 9: Determine if a string starts with the letter 'A'
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check if the first variable starts with 'A'.
 // Step 3: Log the result.
 
+console.log('\nExercise 9');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
-//let randomString: string = 'Katerina';
-//let isTrue = randomString.charAt(0) === 'A';
-//console.log(isTrue);
+let randomString: string = 'Katerina';
+let isTrue = randomString.charAt(0) === 'A';
+console.log(isTrue);
 
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
@@ -130,14 +136,15 @@
 // Step 4: Log the string in lowercase.
 // Step 5: Create a variable called favoriteLanguage.
 // Step 6: Log the sentence using a template string: "My favorite programming language is ___".
+
+console.log('\nExercise 10');
 //Solution:
-// npx ts-node homework/katerina-karaboeva/typescript-homeworks/katerina-ts-homework-01.ts
 const languages: string = 'Typescript is fun';
 console.log('The length of my string is', languages.length); //lenght of the string
 console.log('My string in Uppercase is', languages.toUpperCase());
 console.log('My string in Lowercase is', languages.toLowerCase());
 const favouriteLanguage: string = 'Java';
-console.log(`My favorite programming language is, ${favouriteLanguage}`);
+console.log(`My favorite programming language is ${favouriteLanguage}`);
 
 // Part 4 — BigInt (bigint)
 
