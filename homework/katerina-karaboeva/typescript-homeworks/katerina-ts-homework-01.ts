@@ -153,6 +153,13 @@ console.log(`My favorite programming language is ${favouriteLanguage}`);
 // Step 2: Add the two bigint numbers together.
 // Step 3: Log the result.
 
+console.log('\nExercise 11');
+//Solution
+const bigInt1: bigint = 5000000n;
+const bigInt2: bigint = 4000000n;
+const resultBigInt: bigint = bigInt1 + bigInt2;
+console.log('This is the sum of my bigInt1 and bigInt 2:', resultBigInt);
+
 // Part 5 — Array (array)
 
 // Exercise 12: Product of an array
@@ -161,12 +168,80 @@ console.log(`My favorite programming language is ${favouriteLanguage}`);
 // Step 3: Use a loop to multiply all numbers in the array.
 // Step 4: Log the final product.
 
+console.log('\nExercise 12');
+//Solution 1:
+let numbers: number[] = [10, 20, 30, 40];
+let totalProduct = 0;
+for (let index = 0; index < numbers.length - 1; index++) {
+  totalProduct += numbers[index] * numbers[index + 1];
+}
+console.log(
+  'This is the total of all numbers multiplied with each other in the array',
+  totalProduct,
+);
+
+//Solution 2:
+let numbers1: number[] = [10, 20, 30, 40];
+numbers1 = numbers1.map((x) => x * 2);
+console.log('This is the array, after each number in it has been multiplied by 2', numbers1);
+
 // Exercise 13: Array of student objects
 // Step 1: Create an array called students.
 // Step 2: Each object should contain name and grade.
 // Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
 // Step 4: Use a loop to go through the array.
 // Step 5: Log each student's name.
+
+console.log('\nExercise 13');
+//Solution1:
+console.log('\nSolution 1');
+const students: { firstName: string; grade: number }[] = [
+  {
+    firstName: 'Draco Malfoy',
+    grade: 6,
+  },
+  {
+    firstName: 'Katerina Karaboeva',
+    grade: 5,
+  },
+  {
+    firstName: 'Hermione Granger',
+    grade: 5,
+  },
+  {
+    firstName: 'Harry Potter',
+    grade: 666,
+  },
+];
+//връщане на нов масив, с имената от оригиналния
+const firstName = students.map((students) => students.firstName);
+console.log('Students from Hogwarts', firstName);
+
+//Solution 2:
+console.log('\nSolution 2');
+
+const students1: { firstName: string; grade: number }[] = [
+  {
+    firstName: 'Draco Malfoy',
+    grade: 6,
+  },
+  {
+    firstName: 'Katerina Karaboeva',
+    grade: 5,
+  },
+  {
+    firstName: 'Hermione Granger',
+    grade: 5,
+  },
+  {
+    firstName: 'Harry Potter',
+    grade: 666,
+  },
+];
+//обхождане на масива и логване на резултата за всяка итерация
+students1.forEach((students1) => {
+  console.log(students1.firstName);
+});
 
 // Part 6 — Functions (function)
 
@@ -175,11 +250,29 @@ console.log(`My favorite programming language is ${favouriteLanguage}`);
 // Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
 
+console.log('\nExercise 14');
+//Solution:
+function printId(stringOrNumber: string | number) {
+  console.log(stringOrNumber);
+}
+printId('This is a string'); //calling the function with string
+printId(7); //calling the function with number
+
 // Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
 // Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
 // Step 3: Log the QA name, number of functionalities, and the total time needed using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
+
+console.log('\nExercise 15');
+//Solution:
+const qaName: string = 'Katerina, The Master of QAs,';
+const numberOfFunctionalities: number = 3; //total number functionalities for testing.
+const timeForTestOneFunct: number = 2; //time needed to test 1 functionality is 2 hours.
+const totalTimeForTest: number = numberOfFunctionalities * timeForTestOneFunct; // multiply number of functionalities by time for testing one functionality.
+console.log(
+  `The QA ${qaName} will need ${totalTimeForTest} hours to complete ${numberOfFunctionalities} project/s.`,
+);
 
 // Exercise 16: Union in objects
 // Step 1: Create a type for a user object.
@@ -188,6 +281,13 @@ console.log(`My favorite programming language is ${favouriteLanguage}`);
 // Step 4: Create one user object with a numeric id.
 // Step 5: Create another user object with a string id.
 
+console.log('\nExercise 16');
+//Solution:
+type user = { id: number | string; name: string };
+let one: user = { id: 4, name: '78' };
+let two: user = { id: '78', name: 'Katerina' };
+console.log('There is nothing to log here');
+
 // Optional Exercises
 
 // Exercise 17: Remove duplicate numbers from an array
@@ -195,6 +295,14 @@ console.log(`My favorite programming language is ${favouriteLanguage}`);
 // Step 2: Remove the duplicate numbers from the array.
 // Step 3: Store the result in a new array.
 // Step 4: Log the new array, which should look like [10, 20, 30, 40].
+
+console.log('\nExercise 17');
+//Solution:
+const duplicateNumbers: number[] = [10, 20, 10, 30, 40];
+const removedDuplicates = duplicateNumbers.filter(
+  (value, index, array) => array.indexOf(value) === index,
+);
+console.log(removedDuplicates);
 
 // Exercise 18: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
