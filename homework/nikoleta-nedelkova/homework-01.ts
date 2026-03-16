@@ -43,6 +43,7 @@ console.log(`The number ${isPositive} is positive: ${checkPositive}`);
 
 // Step 1: Create a variable called price with the value 19.99.
 // Step 2: Create another variable called quantity with the value 3.
+// Step 2: Create another variable called quantity with the value 3.
 // Step 3: Calculate the total cost by multiplying price and quantity.
 // Step 4: Log the total cost.
 
@@ -56,6 +57,7 @@ console.log(`Total cost of multiplied price and quantity is: ${totalCost}`);
 // Exercise 5: Celsius to Fahrenheit converter
 
 // Step 1: Create a variable for the temperature in Celsius.
+// Step 2: Use the formula F = C * 9/5 + 32 to convert it to Fahrenheit.
 // Step 2: Use the formula F = C * 9/5 + 32 to convert it to Fahrenheit.
 // Step 3: Store the result in a variable.
 // Step 4: Log the temperature in Fahrenheit.
