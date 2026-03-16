@@ -214,7 +214,7 @@ const students: { name: string; grade: number }[] = [
   },
 ];
 //връщане на нов масив, с имената от оригиналния
-const firstName = students.map((students) => students.firstName);
+const firstName = students.map((student) => student.firstName);
 console.log('Students from Hogwarts', firstName);
 
 //Solution 2:
