@@ -37,7 +37,6 @@ console.log('\n Exercise 3');
 
 const isPositive: number = -8;
 const checkPositive: boolean = isPositive > 0;
-//console.log(`The number ${isPositive} is positive?`, checkPositive);
 console.log(`The number ${isPositive} is positive: ${checkPositive}`);
 
 // Exercise 4: Total cost calculation
@@ -52,7 +51,6 @@ console.log('\n Exercise 4');
 const price: number = 19.99;
 const quantity: number = 3;
 const totalCost = price * quantity;
-//console.log('The total price is:', totalCost);
 console.log(`Total cost of multiplied price and quantity is: ${totalCost}`);
 
 // Exercise 5: Celsius to Fahrenheit converter
