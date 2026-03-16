@@ -269,7 +269,7 @@ console.log(
 console.log('\n Exercise 17');
 
 const numbers1: number[] = [10, 20, 10, 30, 40];
-const numbers2 = [...new Set(numbers)];
+const numbers2 = [...new Set(numbers1)];
 
 console.log(`The unique numbers in the array are: ${numbers2}`);
 
