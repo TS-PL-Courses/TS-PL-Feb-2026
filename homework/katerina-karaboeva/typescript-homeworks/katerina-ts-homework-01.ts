@@ -11,14 +11,14 @@
 
 console.log('\nExercise 1');
 //Solution:
-let fisrtNumber: number = 10;
+let firstNumber: number = 10;
 let secondNumber: number = 15;
-console.log(fisrtNumber, '- This is original value 1');
+console.log(firstNumber, '- This is original value 1');
 console.log(secondNumber, ' - This is original value 2');
 let swapped1: number = secondNumber;
-secondNumber = fisrtNumber;
-fisrtNumber = swapped1;
-console.log(fisrtNumber, ' - This is swapped 1 value');
+secondNumber = firstNumber;
+firstNumber = swapped1;
+console.log(firstNumber, ' - This is swapped 1 value');
 console.log(secondNumber, ' - This is swapped 2 value');
 
 // Exercise 2: Check if a number is even or odd
