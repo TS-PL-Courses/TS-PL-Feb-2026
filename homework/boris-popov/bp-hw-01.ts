@@ -1,0 +1,206 @@
+// Homework 01
+
+// Part 1 — Numbers (number)
+
+// Exercise 1: Variable swapping
+console.log('--- Exercise 1: Variable swapping ---');
+let a: number = 3;
+let b: number = 7;
+console.log('Initial values: a =', a, 'b =', b);
+
+let temp: number = a;
+a = b;
+b = temp;
+console.log('Values after swap: a =', a, 'b =', b);
+
+// Exercise 2: Check if a number is even or odd
+console.log('--- Exercise 2: Check if a number is even or odd ---');
+let myNum1: number = 23;
+let isEven: boolean = myNum1 % 2 === 0;
+console.log('The number', myNum1, 'is even:', isEven);
+
+// Exercise 3: Verify if a number is positive
+console.log('--- Exercise 3: Verify if a number is positive ---');
+let myNum2: number = -23;
+let isPositive: boolean = myNum2 > 0;
+console.log('The number', myNum2, 'is positive:', isPositive);
+
+// Exercise 4: Total cost calculation
+console.log('--- Exercise 4: Total cost calculation ---');
+const price: number = 19.99;
+const quantity: number = 3;
+const totalCost: number = price * quantity;
+console.log('The total cost is:', totalCost);
+
+// Exercise 5: Celsius to Fahrenheit converter
+console.log('--- Exercise 5: Celsius to Fahrenheit converter ---');
+const celsius: number = 32;
+const fahrenheit: number = (celsius * 9) / 5 + 32;
+console.log(celsius, 'C =', fahrenheit, 'F');
+
+// Part 2 — Booleans (boolean)
+
+// Exercise 6: Login check
+console.log('--- Exercise 6: Login check ---');
+let isLoggedIn: boolean = false;
+if (isLoggedIn) {
+  console.log('Welcome!');
+} else {
+  console.log('Please log in');
+}
+
+// Exercise 7: Entry permission
+console.log('--- Exercise 7: Entry permission ---');
+let hasTicket: boolean = true;
+let isAdult: boolean = false;
+let canEnter: boolean = hasTicket && isAdult;
+
+if (canEnter) {
+  console.log('You can enter.');
+} else {
+  console.log("You can't enter.");
+}
+
+// Part 3 — Strings (string)
+
+// Exercise 8: Check if a string is empty (empty string is "")
+console.log('--- Exercise 8: Check if a string is empty ---');
+let myString: string = 'Test string blah-blah';
+let isEmpty: boolean = myString === '';
+console.log('String is empty:', isEmpty);
+
+// Exercise 9: Determine if a string starts with the letter 'A'
+console.log('--- Exercise 9: Determine if a string starts with the letter A ---');
+let myString2: string = 'Argentina';
+let startsWithA: boolean = myString2.startsWith('A');
+console.log("The string starts with the letter 'A':", startsWithA);
+
+// Exercise 10: String operations
+console.log('--- Exercise 10: String operations ---');
+let message: string = 'TypeScript is fun';
+console.log('The length of the string is:', message.length);
+console.log('Uppercase:', message.toUpperCase());
+console.log('Lowercase:', message.toLowerCase());
+let favoriteLanguage: string = 'TypeScript';
+console.log(`My favorite programming language is ${favoriteLanguage}`);
+
+// Part 4 — BigInt (bigint)
+
+// Exercise 11: BigInt addition
+console.log('--- Exercise 11: BigInt addition ---');
+let bigInt1: bigint = 1234567890123456789012345678901234567890n;
+let bigInt2: bigint = 9876543210987654321098765432109876543210n;
+let bigIntSum: bigint = bigInt1 + bigInt2;
+console.log('The sum of the two BigInts is:', bigIntSum);
+
+// Part 5 — Array (array)
+
+// Exercise 12: Product of an array
+console.log('--- Exercise 12: Product of an array ---');
+let numbers: number[] = [10, 20, 30, 40];
+let totalProduct: number = 1;
+for (let i = 0; i < numbers.length; i++) {
+  totalProduct = totalProduct * numbers[i];
+}
+console.log('The total product is:', totalProduct);
+
+// Exercise 13: Array of student objects
+console.log('--- Exercise 13: Array of student objects ---');
+let students = [
+  { name: 'Harry', grade: 90 },
+  { name: 'Ron', grade: 85 },
+  { name: 'Hermione', grade: 100 },
+];
+
+for (let i = 0; i < students.length; i++) {
+  console.log('Student name:', students[i].name);
+}
+
+// Part 6 — Functions (function)
+
+// Exercise 14: Function with union type
+console.log('--- Exercise 14: Function with union type ---');
+function printId(id: string | number): void {
+  console.log('ID:', id);
+}
+
+printId(569365);
+printId('MF56A45G');
+
+// Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
+console.log('--- Exercise 15: Time calculation for QA testing ---');
+let qaName: string = 'Sirius Black';
+let numberOfFunctionalities: number = 8;
+let timePerFunctionality: number = 2;
+let totalTime: number = numberOfFunctionalities * timePerFunctionality;
+console.log(
+  `The QA ${qaName} will need ${totalTime} hours to complete ${numberOfFunctionalities} task/s.`,
+);
+
+// Exercise 16: Union in objects
+console.log('--- Exercise 16: Union in objects ---');
+type User = {
+  id: number | string;
+  name: string;
+};
+
+let user1: User = {
+  id: 35859,
+  name: 'John',
+};
+
+let user2: User = {
+  id: 'UID786841232A',
+  name: 'Jane',
+};
+
+console.log(user1,'\n', user2);
+
+// Optional Exercises
+
+// Exercise 17: Remove duplicate numbers from an array
+console.log('--- Exercise 17: Remove duplicate numbers from an array ---');
+let numbersArray: number[] = [10, 20, 10, 30, 40];
+let updatedNumbersArray: number[] = [];
+
+for (let i = 0; i < numbersArray.length; i++) {
+  if (!updatedNumbersArray.includes(numbersArray[i])) {
+    updatedNumbersArray.push(numbersArray[i]);
+  }
+}
+console.log(updatedNumbersArray);
+
+// Exercise 18: Find the difference between two arrays
+console.log('--- Exercise 18: Find the difference between two arrays ---');
+let firstArray: number[] = [1, 2, 3, 4];
+let secondArray: number[] = [3, 4, 5];
+let difference: number[] = [];
+
+for (let i = 0; i < firstArray.length; i++) {
+  if (!secondArray.includes(firstArray[i])) {
+    difference.push(firstArray[i]);
+  }
+}
+
+for (let i = 0; i < secondArray.length; i++) {
+  if (!firstArray.includes(secondArray[i])) {
+    difference.push(secondArray[i]);
+  }
+}
+
+console.log(difference);
+
+// Exercise 19: Find the union of two arrays
+console.log('--- Exercise 19: Find the union of two arrays ---');
+let arrayOne: number[] = [1, 2, 3, 4];
+let arrayTwo: number[] = [3, 4, 5];
+let combined: number[] = arrayOne.concat(arrayTwo);
+let union: number[] = [];
+
+for (let i = 0; i < combined.length; i++) {
+  if (!union.includes(combined[i])) {
+    union.push(combined[i]);
+  }
+}
+
+console.log(union);
