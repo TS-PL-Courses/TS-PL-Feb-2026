@@ -6,6 +6,9 @@
 // Step 1: Declare 2 variables with numbers.
 let firstNumber: number = 10;
 let secondNumber: number = 5;
+console.log('Before swapping:');
+console.log('First number:', firstNumber);
+console.log('Second number:', secondNumber);
 
 // Step 2: Swap their values.
 let temp: number = firstNumber; // store the value of firstNumber in a temporary variable
@@ -13,10 +16,6 @@ firstNumber = secondNumber; // assign the value of secondNumber to firstNumber
 secondNumber = temp; // assign the value of temp (original firstNumber) to secondNumber
 
 // Step 3: Log the original values and the final values.
-console.log('Before swapping:');
-console.log('First number:', firstNumber);
-console.log('Second number:', secondNumber);
-
 console.log('After swapping:');
 console.log('First number:', firstNumber);
 console.log('Second number:', secondNumber);
@@ -107,14 +106,14 @@ console.log(`Can enter: ${canEnter}`);
 
 // Step 1: Declare a variable and assign any string to it.
 let stringToCheck: string = "";
-let anotherStringToCheck: string = "Hello, World!";
+let secondStringToCheck: string = "Hello, World!";
 
 // Step 2: Declare a boolean variable and check if the first variable is an empty string.
 let isEmpty: boolean = stringToCheck === "";
 
 // Step 3: Log the result.
 console.log(`Is the string empty? ${isEmpty}`);
-console.log(`Is the another string empty? ${anotherStringToCheck === ""}`); // checking if the second string is empty as well   
+console.log(`Is the second string empty? ${secondStringToCheck === ""}`); // checking if the second string is empty as well   
 
 // Exercise 9: Determine if a string starts with the letter 'A'
 
@@ -186,7 +185,7 @@ console.log(`Total product: ${totalProduct}`);
 // Step 1: Create an array called students.
 // Step 2: Each object should contain name and grade.
 // Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
-let studentsarray: { name: string; grade: number }[] = [
+let studentsArray: { name: string; grade: number }[] = [
     { name: "Alice", grade: 90 },
     { name: "Bob", grade: 85 },
     { name: "Charlie", grade: 92 },
@@ -194,8 +193,8 @@ let studentsarray: { name: string; grade: number }[] = [
 ];
 // Step 4: Use a loop to go through the array.  
 // Step 5: Log each student's name.
-for (let i = 0; i < studentsarray.length; i++) {
-    const student = studentsarray[i];
+for (let i = 0; i < studentsArray.length; i++) {
+    const student = studentsArray[i];
     console.log(`Student: ${student.name}, Grade: ${student.grade}`);
 } 
 
@@ -223,7 +222,7 @@ const timePerFunctionality: number = 2; // hours
 let totalTime: number = numberOfFunctionalities * timePerFunctionality;
 // Step 3: Log the QA name, number of functionalities, and the total time needed using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
-console.log(`The QA ${qaName} will need ${totalTime} hours to complete ${numberOfFunctionalities} the project.`);
+console.log(`The QA ${qaName} will need ${totalTime} hours to complete ${numberOfFunctionalities} project/s.`);
 
 // Exercise 16: Union in objects
 
