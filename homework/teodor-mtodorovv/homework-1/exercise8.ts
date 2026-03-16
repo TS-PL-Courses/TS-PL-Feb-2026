@@ -9,4 +9,5 @@ const something: string = 'Something';
 // Step 2: Declare a boolean variable and check if first variable is an empty string.
 const isEmpty: boolean = something === '';
 
+// Step 3: Log the result
 console.log('Check if a string is empty ', isEmpty);
