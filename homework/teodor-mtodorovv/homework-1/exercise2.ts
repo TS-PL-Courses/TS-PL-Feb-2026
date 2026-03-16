@@ -3,7 +3,7 @@
 // Step 2: Declare a boolean variable and use a logical expression to check if first variable is even.
 // Step 3: Log the result
 
-// npx ts-node homework/teodor-mtodorovv/homework-01/exercise2.ts
+// npx ts-node homework/teodor-mtodorovv/homework-1/exercise2.ts
 
 // Step 1: Declare a variable and assign any number to it.
 let oddOrEvenNumber: number = 15;
