@@ -140,7 +140,7 @@ console.log(isTrue);
 console.log('\nExercise 10');
 //Solution:
 const languages: string = 'Typescript is fun';
-console.log('The length of my string is', languages.length); //lenght of the string
+console.log('The length of my string is', languages.length); //length of the string
 console.log('My string in Uppercase is', languages.toUpperCase());
 console.log('My string in Lowercase is', languages.toLowerCase());
 const favouriteLanguage: string = 'Java';
