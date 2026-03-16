@@ -13,5 +13,3 @@ if (isLoggedIn) {
 } else {
   console.log('Please log in');
 }
-
-// Step 3: If isLoggedIn is false, log "Please log in".
