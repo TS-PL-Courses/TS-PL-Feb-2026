@@ -283,9 +283,9 @@ console.log(
 
 console.log('\nExercise 16');
 //Solution:
-type user = { id: number | string; name: string };
-let one: user = { id: 4, name: '78' };
-let two: user = { id: '78', name: 'Katerina' };
+type User = { id: number | string; name: string };
+let one: User = { id: 4, name: '78' };
+let two: User = { id: '78', name: 'Katerina' };
 console.log('There is nothing to log here');
 
 // Optional Exercises
