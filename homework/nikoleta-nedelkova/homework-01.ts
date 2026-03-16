@@ -43,7 +43,6 @@ console.log(`The number ${isPositive} is positive: ${checkPositive}`);
 
 // Step 1: Create a variable called price with the value 19.99.
 // Step 2: Create another variable called quantity with the value 3.
-// Step 2: Create another variable called quantity with the value 3.
 // Step 3: Calculate the total cost by multiplying price and quantity.
 // Step 4: Log the total cost.
 
@@ -57,7 +56,6 @@ console.log(`Total cost of multiplied price and quantity is: ${totalCost}`);
 // Exercise 5: Celsius to Fahrenheit converter
 
 // Step 1: Create a variable for the temperature in Celsius.
-// Step 2: Use the formula F = C * 9/5 + 32 to convert it to Fahrenheit.
 // Step 2: Use the formula F = C * 9/5 + 32 to convert it to Fahrenheit.
 // Step 3: Store the result in a variable.
 // Step 4: Log the temperature in Fahrenheit.
@@ -179,6 +177,7 @@ for (let i = 0; i < numbers.length; i++) {
 console.log(`The total products are: ${totalProduct}`);
 
 // Exercise 13: Array of student objects
+
 // Step 1: Create an array called students.
 // Step 2: Each object should contain name and grade.
 // Step 3: Example objects: { name: "Alice", grade: 90 } and { name: "Bob", grade: 85 }.
@@ -201,6 +200,7 @@ for (const student of students) {
 // Part 6 — Functions (function)
 
 // Exercise 14: Function with a union type
+
 // Step 1: Create a function called printId.
 // Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
@@ -215,6 +215,7 @@ printId('Hello World');
 printId(234);
 
 // Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
+
 // Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
 // Step 3: Log the QA name, number of functionalities, and the total time needed using string interpolation like:
@@ -232,6 +233,7 @@ console.log(
 );
 
 // Exercise 16: Union in objects
+
 // Step 1: Create a type for a user object.
 // Step 2: The object should have two properties: id and name.
 // Step 3: The id property should accept either a number or a string (number | string).
@@ -261,6 +263,7 @@ console.log(
 // Optional Exercises
 
 // Exercise 17: Remove duplicate numbers from an array
+
 // Step 1: Create an array with the numbers [10, 20, 10, 30, 40].
 // Step 2: Remove the duplicate numbers from the array.
 // Step 3: Store the result in a new array.
@@ -274,6 +277,7 @@ const numbers2 = [...new Set(numbers1)];
 console.log(`The unique numbers in the array are: ${numbers2}`);
 
 // Exercise 18: Find the difference between two arrays
+
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
 // Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
