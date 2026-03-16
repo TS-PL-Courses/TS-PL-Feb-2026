@@ -8,13 +8,13 @@
 console.log('\n Exercise 1');
 
 let firstNumber: number = 5;
-let seconNumber: number = 9;
+let secondNumber: number = 9;
 
-console.log(`Original values are: ${firstNumber} and ${seconNumber}`);
+console.log(`Original values are: ${firstNumber} and ${secondNumber}`);
 
-[firstNumber, seconNumber] = [seconNumber, firstNumber];
+[firstNumber, secondNumber] = [secondNumber, firstNumber];
 
-console.log(`Final values after swap are: ${firstNumber} and ${seconNumber}`);
+console.log(`Final values after swap are: ${firstNumber} and ${secondNumber}`);
 
 // Exercise 2: Check if a number is even or odd
 
