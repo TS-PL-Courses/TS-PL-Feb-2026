@@ -81,7 +81,7 @@ console.log('\n Exercise 6');
 
 const isLoggedIn: boolean = true;
 if (isLoggedIn) {
-  console.log('Welcome');
+  console.log('Welcome!');
 } else console.log('Please log in');
 
 // Exercise 7: Entry permission
