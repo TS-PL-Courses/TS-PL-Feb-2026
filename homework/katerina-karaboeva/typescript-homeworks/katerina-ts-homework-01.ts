@@ -171,12 +171,12 @@ console.log('This is the sum of my bigInt1 and bigInt 2:', resultBigInt);
 console.log('\nExercise 12');
 //Solution 1:
 let numbers: number[] = [10, 20, 30, 40];
-let totalProduct = 0;
-for (let index = 0; index < numbers.length - 1; index++) {
-  totalProduct += numbers[index] * numbers[index + 1];
+let totalProduct = 1;
+for (let index = 0; index < numbers.length; index++) {
+  totalProduct *= numbers[index];
 }
 console.log(
-  'This is the total of all numbers multiplied with each other in the array',
+  'This is the product of all numbers in the array',
   totalProduct,
 );
 
