@@ -195,21 +195,21 @@ console.log('This is the array, after each number in it has been multiplied by 2
 console.log('\nExercise 13');
 //Solution1:
 console.log('\nSolution 1');
-const students: { firstName: string; grade: number }[] = [
+const students: { name: string; grade: number }[] = [
   {
-    firstName: 'Draco Malfoy',
+    name: 'Draco Malfoy',
     grade: 6,
   },
   {
-    firstName: 'Katerina Karaboeva',
+    name: 'Katerina Karaboeva',
     grade: 5,
   },
   {
-    firstName: 'Hermione Granger',
+    name: 'Hermione Granger',
     grade: 5,
   },
   {
-    firstName: 'Harry Potter',
+    name: 'Harry Potter',
     grade: 666,
   },
 ];
