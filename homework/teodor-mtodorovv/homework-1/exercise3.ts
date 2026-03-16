@@ -13,4 +13,4 @@ const verifyNumber: boolean = number > 0;
 
 // Step 3: Log the result
 console.log(`My number is :${number}`);
-console.log(`Is positive: ${verifyNumber}`);
+console.log(`Is positive :${verifyNumber}`);
