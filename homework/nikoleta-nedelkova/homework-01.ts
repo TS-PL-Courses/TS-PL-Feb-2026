@@ -140,7 +140,7 @@ console.log('Message length:', message.length);
 console.log('Message to uppercase:', message.toUpperCase());
 console.log('Message to lowercase:', message.toLowerCase());
 
-const favoriteLanguage: string = 'Typecript';
+const favoriteLanguage: string = 'TypeScript';
 console.log(`My favorite programming language is ${favoriteLanguage}.`);
 
 // Part 4 — BigInt (bigint)
