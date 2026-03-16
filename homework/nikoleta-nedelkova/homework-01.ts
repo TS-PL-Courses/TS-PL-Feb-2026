@@ -136,7 +136,7 @@ console.log(`Does the string start with A - ${firstLetter}`);
 console.log('\n Exercise 10');
 
 const message: string = 'Typescript is fun';
-console.log('Message lenght:', message.length);
+console.log('Message length:', message.length);
 console.log('Message to uppercase:', message.toUpperCase());
 console.log('Message to lowercase:', message.toLowerCase());
 
