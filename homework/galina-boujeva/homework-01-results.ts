@@ -147,6 +147,15 @@ console.log('bigint sum is:', sum);
 // Step 3: Use a loop to multiply all numbers in the array.
 // Step 4: Log the final product.
 
+const numArray: number[] = [10, 20, 30, 40];
+let totalProduct: number = 1;
+
+for (const num of numArray) {
+  totalProduct *= num;
+}
+
+console.log('Final product:', totalProduct);
+
 // Exercise 13: Array of student objects
 // Step 1: Create an array called students.
 // Step 2: Each object should contain name and grade.
@@ -154,18 +163,43 @@ console.log('bigint sum is:', sum);
 // Step 4: Use a loop to go through the array.
 // Step 5: Log each student's name.
 
+const students: { name: string; grade: number }[] = [
+  { name: 'Alice', grade: 90 },
+  { name: 'Bob', grade: 85 },
+];
+
+for (const student of students) {
+  console.log(student.name);
+}
+
 // Part 6 — Functions (function)
 
 // Exercise 14: Function with union type
 // Step 1: Create a function called printId.
-// Step 2: The parameter id should accept string or number (string | number).
+// Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
+
+function printId(id: string | number): void {
+  console.log('ID is:', id);
+}
+
+printId('12344ABCFFGH');
 
 // Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
 // Step 1: Declare a variables: QA name (string), number of functionalities (whole number), lets accpet time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
 // Step 3: Log the QA name, number of functionalities and the total time needed to test all functionalities using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
+
+const qaName: string = 'Galina';
+const numberOfFunctionalities: number = 5;
+const timePerFunctionality: number = 2;
+
+const totalTime = numberOfFunctionalities * timePerFunctionality;
+
+console.log(
+  `The QA ${qaName} will need ${totalTime} hours to complete ${numberOfFunctionalities} project/s.`,
+);
 
 // Exercise 16: Union in objects
 // Step 1: Create a type for a user object.
@@ -180,12 +214,21 @@ console.log('bigint sum is:', sum);
 // Step 3: Store the result in a new array.
 // Step 4: Log the new array which should look like [10, 20, 30, 40].
 
+const arrA: number[] = [10, 20, 10, 30, 40];
+
+const newA = [...new Set(arrA)];
+
+console.log('New Array is: ', newA);
+
 // Exercise 18: Find the difference between two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
 // Step 2: Create another array arr2 with values [3, 4, 5].
 // Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
 // Step 4: Store the result in a variable called difference.
 // Step 5: Log the result which should be [1, 2, 5].
+
+const arr1: number[] = [1, 2, 3, 4];
+const arr2: number[] = [3, 4, 5];
 
 // Exercise 19: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
@@ -194,3 +237,11 @@ console.log('bigint sum is:', sum);
 // Step 4: Remove duplicate values.
 // Step 5: Store the result in a variable called union.
 // Step 6: Log the result which should be [1, 2, 3, 4, 5]
+
+const array1: number[] = [1, 2, 3, 4];
+const array2: number[] = [3, 4, 5];
+
+const combine = array1.concat(array2);
+const union = [...new Set(combine)];
+
+console.log(union);
