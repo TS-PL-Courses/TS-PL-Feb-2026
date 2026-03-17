@@ -201,7 +201,6 @@ function printId(id: string | number): void {
 }
 printId(123);
 printId('ABC123');
-``;
 
 // Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
 // Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
