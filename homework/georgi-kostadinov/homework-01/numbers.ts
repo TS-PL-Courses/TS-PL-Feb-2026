@@ -19,10 +19,6 @@ console.log(
   `Exercise 1 - AFTER swap -> firstNumber: ${firstNumber}, secondNumber: ${secondNumber}`,
 );
 
-// ==============================
-// Part 2 — Booleans
-// ==============================
-
 // Exercise 2: Check if a number is even or odd
 
 const numberToCheck: number = 4;
