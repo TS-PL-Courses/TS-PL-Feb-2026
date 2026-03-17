@@ -14,8 +14,8 @@ console.log('===============Exercise 1 : Variable swapping===============');
 let a: number = 7;
 let b: number = 88;
 
-let initialA: number = a;
-let initialB: number = b;
+const initialA: number = a;
+const initialB: number = b;
 
 a = initialB;
 b = initialA;
@@ -30,8 +30,8 @@ console.log(`Swapped values: a = ${a}, b = ${b}`);
 
 console.log('===============Exercise 2 : Check if a number is even or odd===============');
 
-let num: number = 3244;
-let isEven: boolean = num % 2 === 0;
+const num: number = 3244;
+const isEven: boolean = num % 2 === 0;
 
 console.log('The number:', num, 'is even:', isEven);
 
@@ -42,8 +42,8 @@ console.log('The number:', num, 'is even:', isEven);
 
 console.log('===============Exercise 3 : Verify if a number is positive===============');
 
-let digit: number = -90;
-let isPositive: boolean = digit > 0 ? true : false;
+const digit: number = -90;
+const isPositive: boolean = digit > 0 ? true : false;
 
 console.log('The number:', digit, isPositive ? 'is positive.' : 'is negative.');
 
@@ -55,9 +55,9 @@ console.log('The number:', digit, isPositive ? 'is positive.' : 'is negative.');
 
 console.log('===============Exercise 4 : Total cost calculation===============');
 
-let price: number = 19.99;
-let quantity: number = 3;
-let totalCost: number = price * quantity;
+const price: number = 19.99;
+const quantity: number = 3;
+const totalCost: number = price * quantity;
 
 console.log('Total cost:', totalCost);
 
