@@ -48,7 +48,7 @@ console.log('Is the number positive?', isPositive);
 // Step 3: Calculate the total cost by multiplying price and quantity.
 // Step 4: Log the total cost.
 
-let price: number = 18.99;
+let price: number = 19.99;
 
 let quantity: number = 3;
 
