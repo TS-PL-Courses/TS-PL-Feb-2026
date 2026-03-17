@@ -300,9 +300,12 @@ console.log('===============Exercise 18 : Find the difference between two arrays
 let arr1: number[] = [1, 2, 3, 4];
 let arr2: number[] = [3, 4, 5];
 
+const set1 = new Set(arr1);
+const set2 = new Set(arr2);
+
 let difference = [
-  ...arr1.filter((x) => !arr2.includes(x)),
-  ...arr2.filter((x) => !arr1.includes(x)),
+  ...arr1.filter((x) => !set2.has(x)),
+  ...arr2.filter((x) => !set1.has(x)),
 ];
 
 console.log(difference);
