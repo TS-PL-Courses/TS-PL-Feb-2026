@@ -175,10 +175,7 @@ let totalProduct = 1;
 for (let index = 0; index < numbers.length; index++) {
   totalProduct *= numbers[index];
 }
-console.log(
-  'This is the product of all numbers in the array',
-  totalProduct,
-);
+console.log('This is the product of all numbers in the array', totalProduct);
 
 //Solution 2:
 let numbers1: number[] = [10, 20, 30, 40];
@@ -214,7 +211,7 @@ const students: { name: string; grade: number }[] = [
   },
 ];
 //връщане на нов масив, с имената от оригиналния
-const firstName = students.map((student) => student.firstName);
+const firstName = students.map((student) => student.name);
 console.log('Students from Hogwarts', firstName);
 
 //Solution 2:
