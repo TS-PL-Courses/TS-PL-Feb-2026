@@ -4,8 +4,9 @@
 
 // Exercise 1: Variable swapping
 // Step 1: Declare 2 variables with numbers.
-// Step 2: Swap their values.
-// Step 3: Log the original values and the final values.
+// Step 2: Log the original values.
+// Step 3: Swap their values.
+// Step 4: Log the final values.
 
 // Exercise 2: Check if a number is even or odd
 // Step 1: Declare a variable and assign any number to it.
