@@ -8,7 +8,7 @@
 // Step 1: Create a type for a user object.
 // Step 2: The object should have two properties: id and name.
 // Step 3: The id property should accept either a number or a string (number | string).
-type User = { id: number | string; name: string };
+type user = { id: number | string; name: string };
 
 // Step 4: Create one user object with a numeric id.
 const numUser = { id: 1, name: 'Petko' };
