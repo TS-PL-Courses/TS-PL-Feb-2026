@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // npx ts-node Bigint.ts
 =======
 // npx ts-node typescript/Homework-01/Bigint.ts
 >>>>>>> Added homework
+=======
+//npx ts-node BigInt.ts
+>>>>>>> Comments fixed hopefully
 // Part 4 — BigInt (bigint)
 
 // Exercise 11: BigInt addition

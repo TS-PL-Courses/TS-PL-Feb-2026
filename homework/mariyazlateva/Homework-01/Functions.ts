@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 //npx ts-node Functions.ts
 =======
 //npx ts-node typescript/Homework-01/Functions.ts
 >>>>>>> Added homework
+=======
+//npx ts-node Functions.ts
+>>>>>>> Comments fixed hopefully
 // Part 6 — Functions (function)
 
 // Exercise 14: Function with union type
@@ -17,9 +21,11 @@ function printId(id: string | number): void {
     console.log("ID value:", id);
 >>>>>>> Added homework
 }
+printId(123);
+printId("abc");
 
-// Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
-// Step 1: Declare a variables: QA name (string), number of functionalities (whole number), lets accpet time needed to test one functionality is 2 hours.
+// Exercise 15: Write code calculating the amount of time a QA engineer needs to test a number of functionalities
+// Step 1: Declare a variables: QA name (string), number of functionalities (whole number), let's accept time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
 // Step 3: Log the QA name, number of functionalities and the total time needed to test all functionalities using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."

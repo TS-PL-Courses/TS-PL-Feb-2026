@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // npx ts-node Strings.ts
 =======
 // npx ts-node typescript/Homework-01/Strings.ts
 >>>>>>> Added homework
+=======
+// npx ts-node Strings.ts
+>>>>>>> Comments fixed hopefully
 //Part 3 — Strings (string)
 
 // Exercise 8: Check if a string is empty (empty string is "")
@@ -47,6 +51,7 @@ console.log("Starts with 'A' (case-insensitive):", startsWithA);
 // Step 5: Create a variable called favoriteLanguage.
 // Step 6: Log the sentence using a template string: "My favorite programming language is ___".
 <<<<<<< HEAD
+<<<<<<< HEAD
 let text: string = 'Norway';
 console.log('Length', text.length);
 console.log('Glavni bukvi', text.toUpperCase());
@@ -55,6 +60,9 @@ let favoriteLanguage: string = 'Fortran';
 console.log('My favorite programming language is', favoriteLanguage);
 =======
 let text: string = "Norway";
+=======
+let text: string = "TypeScript is fun";
+>>>>>>> Comments fixed hopefully
 console.log("Length", text.length);
 console.log("Glavni bukvi", text.toUpperCase());
 console.log("Malki bukvi", text.toLowerCase());
