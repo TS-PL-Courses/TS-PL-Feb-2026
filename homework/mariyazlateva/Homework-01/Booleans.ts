@@ -1,4 +1,4 @@
-// npx ts-node typescript/Homework-01/Booleans.ts
+// npx ts-node Booleans.ts
 // Exercise 6
 
 let isLoggedIn: boolean = false;
