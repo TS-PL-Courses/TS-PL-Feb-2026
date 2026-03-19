@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // npx ts-node Numbers.ts
+=======
+// npx ts-node typescript/Homework-01/Numbers.ts
+>>>>>>> 732ef7e2f6e67dde7012fb406cc99f4d443c151d
 //Exercise 1: Variable swapping
 // Step 1: Declare 2 variables with numbers.
 let a = 5;

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //npx ts-node Arrays.ts
+=======
+//npx ts-node typescript/Homework-01/Arrays.ts
+>>>>>>> 732ef7e2f6e67dde7012fb406cc99f4d443c151d
 // Part 5 — Array (array)
 
 // Exercise 12: Product of an array
