@@ -1,7 +1,5 @@
 // Homework 01
 
-import { arch } from "os";
-
 // Part 1 — Numbers (number)
 
 // Exercise 1: Variable swapping
