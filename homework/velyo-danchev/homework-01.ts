@@ -103,17 +103,13 @@ console.log(celsiusToFahrenheitConverter(37));
 // Step 2: If isLoggedIn is true, log "Welcome!".
 // Step 3: If isLoggedIn is false, log "Please log in".
 
-function isLoggedIn() {
-  const LoggedIn = true;
-  if (LoggedIn) {
-    console.log('Welcome!');
-  } else {
-    console.log('Please Log in.');
-  }
+const isLoggedIn: boolean = true;
+
+if (isLoggedIn) {
+  console.log('Welcome!');
+} else {
+  console.log('Please log in');
 }
-
-isLoggedIn();
-
 //-------------------------------------------------------------------------------//
 
 // Exercise 7: Entry permission
