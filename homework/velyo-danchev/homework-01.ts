@@ -281,18 +281,18 @@ console.log(testingTimeEstimation("Velyo", 7));
 // Step 5: Create another user object with a string id.
 
 type User = {
-    id: number | string;
-    name: string;
+  id: number | string;
+  name: string;
 };
 
 const userOne: User = {
-    id: 1,
-    name: 'Okami'
+  id: 1,
+  name: 'Okami',
 };
 
 const userTwo: User = {
-    id: '777',
-    name: 'Kozure'
+  id: '777',
+  name: 'Kozure',
 };
 
 //-------------------------------------------------------------------------------//
