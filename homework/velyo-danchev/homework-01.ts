@@ -119,7 +119,7 @@ if (isLoggedIn) {
 // Step 4: Log the result of canEnter.
 
 function checkPermission(hasTicket: boolean, isAdult: boolean): void {
-  let canEnter = hasTicket && isAdult;
+  const canEnter = hasTicket && isAdult;
   if (canEnter) {
     console.log('You can enter.');
   } else {
