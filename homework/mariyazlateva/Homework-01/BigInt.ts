@@ -1,4 +1,5 @@
-// npx ts-node typescript/Homework-01/Bigint.ts
+//npx ts-node BigInt.ts
+
 // Part 4 — BigInt (bigint)
 
 // Exercise 11: BigInt addition

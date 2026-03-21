@@ -1,4 +1,5 @@
-// npx ts-node typescript/Homework-01/Strings.ts
+// npx ts-node Strings.ts
+
 //Part 3 — Strings (string)
 
 // Exercise 8: Check if a string is empty (empty string is "")
@@ -27,7 +28,8 @@ console.log("Starts with 'A' (case-insensitive):", startsWithA);
 // Step 4: Log the string in lowercase.
 // Step 5: Create a variable called favoriteLanguage.
 // Step 6: Log the sentence using a template string: "My favorite programming language is ___".
-let text: string = "Norway";
+let text: string = "TypeScript is fun";
+
 console.log("Length", text.length);
 console.log("Glavni bukvi", text.toUpperCase());
 console.log("Malki bukvi", text.toLowerCase());
