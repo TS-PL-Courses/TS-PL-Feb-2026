@@ -260,12 +260,16 @@ printId(7);
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
 
 
-const testingTimeEstimantion = (QAname: string, functionalitiesNumber: number, time = 2): any => {
-    const totalTime: number = functionalitiesNumber * time;
-    return `The QA ${QAname}, will need ${totalTime} hours to comple the ${functionalitiesNumber} project/s.`
-}
+const testingTimeEstimation = (
+  QAname: string,
+  functionalitiesNumber: number,
+  time = 2,
+): string => {
+  const totalTime: number = functionalitiesNumber * time;
+  return `The QA ${QAname}, will need ${totalTime} hours to comple the ${functionalitiesNumber} project/s.`;
+};
 
-console.log(testingTimeEstimantion('Velyo', 7));
+console.log(testingTimeEstimation("Velyo", 7));
 
 //-------------------------------------------------------------------------------//
 
