@@ -304,10 +304,10 @@ const userTwo: User = {
 // Step 4: Log the new array, which should look like [10, 20, 30, 40].
 
 const removeDuplicate = (): void => {
-    const duplicates: number [] = [10, 20, 10, 30, 40]
-    const removedDuplicates = [...new Set(duplicates)]
-    console.log(removedDuplicates);
-}
+  const duplicates: number[] = [10, 20, 10, 30, 40];
+  const removedDuplicates = [...new Set(duplicates)];
+  console.log(removedDuplicates);
+};
 
 removeDuplicate();
 
