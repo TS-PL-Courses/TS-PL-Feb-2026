@@ -154,11 +154,11 @@ const items: Item[] = [
   { name: 'Bear', price: 6, quantity: 9 },
 ];
 
-const itemPrice = items.map((items) => items.price * items.quantity);
+const itemPrice = items.map((item) => item.price * item.quantity);
 console.log(`The price of the items are: ${itemPrice}`);
 
-const sumAllItams = itemPrice.reduce((acc, num) => acc + num, 0);
-console.log(`The sum of the price of all items is ${sumAllItams}`);
+const sumAllItems = itemPrice.reduce((acc, num) => acc + num, 0);
+console.log(`The sum of the price of all items is ${sumAllItems}`);
 
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
