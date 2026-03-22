@@ -58,9 +58,17 @@ numbers.sort((a, b) => a - b);
 console.log(`The order of the numbers is: ${numbers[0]}, ${numbers[1]}, ${numbers[2]}`);
 
 // Exercise 4: Check if a string has more than 10 characters
-// Step 1: Declare a variable and assign any string to it.
-// Step 2: Check if the length of the variable is greater than 10 using if/else statements.
-// Step 3: Log the result.
+console.log('-----Exercise 4: Check if a string has more than 10 characters-----');
+let stringToCheck: string = 'This is my string';
+
+if (stringToCheck.length > 10) {
+  console.log(`The string "${stringToCheck}" has MORE than 10 characters.`);
+} else if(stringToCheck.length === 10){
+  console.log(`The string "${stringToCheck}" has EXACTLY 10 characters.`);
+}
+else {
+  console.log(`The string "${stringToCheck}" has LESS than 10 characters.`);
+}
 
 // Exercise 5: Check if a string contains the letter 'B'
 // Step 1: Declare a variable and assign a 3-character string to it.
