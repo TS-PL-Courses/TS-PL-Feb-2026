@@ -7,11 +7,11 @@
 // Step 2: Use the boolean variable as a condition in an if/else statement.
 // Step 3: Log both possible results.
 
-const isMale = true;
+const isMale: boolean = false;
 if (isMale) {
-  console.log(`Is the person male? - ${isMale}`);
+  console.log(`Is the person male.`);
 } else {
-  console.log(`The person is male - ${isMale}`);
+  console.log(`The person is female.`);
 }
 
 // Exercise 2: Check if a number is between two other numbers
@@ -155,7 +155,7 @@ const items: Item[] = [
   { name: 'Bear', price: 6, quantity: 9 },
 ];
 
-const itemPrice = items.map((items) => items.price * items.quantity);
+const itemPrice = items.map((item) => item.price * item.quantity);
 console.log(`The price of the items are: ${itemPrice}`);
 
 const sumAllItams = itemPrice.reduce((acc, num) => acc + num, 0);
