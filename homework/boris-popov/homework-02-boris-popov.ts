@@ -63,19 +63,21 @@ let stringToCheck: string = 'This is my string';
 
 if (stringToCheck.length > 10) {
   console.log(`The string "${stringToCheck}" has MORE than 10 characters.`);
-} else if(stringToCheck.length === 10){
+} else if (stringToCheck.length === 10) {
   console.log(`The string "${stringToCheck}" has EXACTLY 10 characters.`);
-}
-else {
+} else {
   console.log(`The string "${stringToCheck}" has LESS than 10 characters.`);
 }
 
 // Exercise 5: Check if a string contains the letter 'B'
-// Step 1: Declare a variable and assign a 3-character string to it.
-// Step 2: Check if the string contains the letter 'B' using if/else statements.
-// Step 3: Log the result like so:
-// "The string {string} contains the letter 'B'"
-// "The string {string} does NOT contain the letter 'B'"
+console.log('-----Exercise 5: Check if a string contains the letter "B"-----');
+let stringToCheck2: string = 'aBc';
+
+if (stringToCheck2.includes('B')) {
+  console.log(`The string "${stringToCheck2}" contains the letter 'B'.`);
+} else {
+  console.log(`The string "${stringToCheck2}" does NOT contain the letter 'B'.`);
+}
 
 // Exercise 6: Check if a client will be allowed in a karting competition.
 // Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
