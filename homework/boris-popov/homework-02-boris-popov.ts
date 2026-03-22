@@ -84,10 +84,14 @@ console.log('-----Exercise 6: Check if a client will be allowed in a karting com
 let clientAge: number = 35;
 let clientBestLapTime: number = 55.5;
 
-if ((clientAge >= 18 && clientAge < 65) && clientBestLapTime < 60) {
-  console.log(`Client age: ${clientAge}, Best lap time: ${clientBestLapTime}. The client is allowed to compete.`);
+if (clientAge >= 18 && clientAge < 65 && clientBestLapTime < 60) {
+  console.log(
+    `Client age: ${clientAge}, Best lap time: ${clientBestLapTime}. The client is allowed to compete.`,
+  );
 } else {
-  console.log(`Client age: ${clientAge}, Best lap time: ${clientBestLapTime}. The client is NOT allowed to compete.`);
+  console.log(
+    `Client age: ${clientAge}, Best lap time: ${clientBestLapTime}. The client is NOT allowed to compete.`,
+  );
 }
 
 // Part 2: Map, Filter, Reduce
@@ -95,14 +99,14 @@ if ((clientAge >= 18 && clientAge < 65) && clientBestLapTime < 60) {
 // Exercise 7: Convert Strings to Uppercase (map)
 console.log('-----Exercise 7: Convert Strings to Uppercase (map)-----');
 let stringArray: string[] = ['testing', 'uppercase', 'strings'];
-let uppercaseArray: string[] = stringArray.map(str => str.toUpperCase());
+let uppercaseArray: string[] = stringArray.map((str) => str.toUpperCase());
 console.log(uppercaseArray);
 
 // Exercise 8: Filter Long Words (filter)
-// Step 1: Declare a variable and assign an array of words to it.
-// Step 2: Use the filter() method to keep only words longer than 5 characters.
-// Step 3: Store the result in a new variable.
-// Step 4: Log the result.
+console.log('-----Exercise 8: Filter Long Words (filter)-----');
+let wordArray: string[] = ['asl', 'ggnore', 'lllllooooonnnnnggggg', 'boo', 'another long one', 'glhf', 'lorem ipsum'];
+let longWordsArray: string[] = wordArray.filter((word) => word.length > 5);
+console.log(longWordsArray);
 
 // Exercise 9: Find Maximum Number (reduce)
 // Step 1: Declare a variable and assign an array of numbers to it.
