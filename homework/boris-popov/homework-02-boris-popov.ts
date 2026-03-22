@@ -1,11 +1,16 @@
 // Homework 02
+// npx ts-node homework/boris-popov/homework-02-boris-popov.ts
 
 // Part 1: Conditional Statements
 
 // Exercise 1: Use a boolean as an if/else condition
-// Step 1: Declare a boolean variable indicating whether a person is male or female and assign it a value of true or false.
-// Step 2: Use the boolean variable as a condition in an if/else statement.
-// Step 3: Log both possible results.
+console.log("-----Exercise 1: Use a boolean as an if/else condition-----");
+let isMale: boolean = false;
+if (isMale) {
+    console.log("The person is male.");
+} else {
+    console.log("The person is female.");
+}
 
 // Exercise 2: Check if a number is between two other numbers
 // Step 1: Declare 3 number variables.
