@@ -4,20 +4,28 @@
 // Part 1: Conditional Statements
 
 // Exercise 1: Use a boolean as an if/else condition
-console.log("-----Exercise 1: Use a boolean as an if/else condition-----");
+console.log('-----Exercise 1: Use a boolean as an if/else condition-----');
 let isMale: boolean = false;
 if (isMale) {
-    console.log("The person is male.");
+  console.log('The person is male.');
 } else {
-    console.log("The person is female.");
+  console.log('The person is female.');
 }
 
 // Exercise 2: Check if a number is between two other numbers
-// Step 1: Declare 3 number variables.
-// Step 2: Check if the first number is between the second and third numbers using if-else statements.
-// Step 3: Log the result like so:
-// "The number {first number} is between {second number} and {third number}"
-// "The number {first number} is NOT between {second number} and {third number}"
+console.log('-----Exercise 2: Check if a number is between two other numbers-----');
+let firstNumber: number = 350;
+let secondNumber: number = 400;
+let thirdNumber: number = 180;
+let isBetween: boolean =
+  (firstNumber > secondNumber && firstNumber < thirdNumber) ||
+  (firstNumber < secondNumber && firstNumber > thirdNumber);
+
+if (isBetween) {
+  console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
+} else {
+  console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
+}
 
 // Exercise 3: Multiple number comparison
 // Step 1: Declare 3 number variables.
