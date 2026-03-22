@@ -50,6 +50,9 @@ if (firstNumber2 > secondNumber2 && secondNumber2 > thirdNumber2) {
   } else {
     console.log(`The order of the numbers is: ${firstNumber2}, ${thirdNumber2}, ${secondNumber2}`);
   }
+} else {
+  const numbers = [firstNumber2, secondNumber2, thirdNumber2].sort((a, b) => a - b);
+  console.log(`Sorted order: ${numbers}`);
 }
 
 //Option 2: Using array and sort method
