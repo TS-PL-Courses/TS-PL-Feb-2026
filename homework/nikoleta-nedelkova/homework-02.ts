@@ -76,7 +76,6 @@ let message1: string;
 
 if (text1.toUpperCase().includes('B')) {
   message1 = "contains the letter 'B/b'.";
-  //console.log(`The string ${text} contains the letter 'B'`)
 } else {
   message1 = "does NOT contain the letter 'B/b'.";
 }
@@ -101,7 +100,7 @@ if (clientAge < 18) {
   );
 } else {
   console.log(
-    `The client is ${clientAge} years old and the best lap time is ${clientBestTime} -> Allawed to compete.`,
+    `The client is ${clientAge} years old and the best lap time is ${clientBestTime} -> Allowed to compete.`,
   );
 }
 
@@ -158,8 +157,8 @@ const items: Item[] = [
 const itemPrice = items.map((item) => item.price * item.quantity);
 console.log(`The price of the items are: ${itemPrice}`);
 
-const sumAllItams = itemPrice.reduce((acc, num) => acc + num, 0);
-console.log(`The sum of the price of all items is ${sumAllItams}`);
+const sumAllItems = itemPrice.reduce((acc, num) => acc + num, 0);
+console.log(`The sum of the price of all items is ${sumAllItems}`);
 
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
