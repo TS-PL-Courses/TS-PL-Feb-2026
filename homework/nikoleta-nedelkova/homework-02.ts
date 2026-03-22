@@ -76,7 +76,6 @@ let message1: string;
 
 if (text1.toUpperCase().includes('B')) {
   message1 = "contains the letter 'B/b'.";
-  //console.log(`The string ${text} contains the letter 'B'`)
 } else {
   message1 = "does NOT contain the letter 'B/b'.";
 }
