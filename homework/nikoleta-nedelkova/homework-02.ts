@@ -100,7 +100,7 @@ if (clientAge < 18) {
   );
 } else {
   console.log(
-    `The client is ${clientAge} years old and the best lap time is ${clientBestTime} -> Allawed to compete.`,
+    `The client is ${clientAge} years old and the best lap time is ${clientBestTime} -> Allowed to compete.`,
   );
 }
 
