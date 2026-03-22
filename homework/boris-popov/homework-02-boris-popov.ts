@@ -104,15 +104,29 @@ console.log(uppercaseArray);
 
 // Exercise 8: Filter Long Words (filter)
 console.log('-----Exercise 8: Filter Long Words (filter)-----');
-let wordArray: string[] = ['asl', 'ggnore', 'lllllooooonnnnnggggg', 'boo', 'another long one', 'glhf', 'lorem ipsum'];
+let wordArray: string[] = [
+  'asl',
+  'ggnore',
+  'lllllooooonnnnnggggg',
+  'boo',
+  'another long one',
+  'glhf',
+  'lorem ipsum',
+];
 let longWordsArray: string[] = wordArray.filter((word) => word.length > 5);
 console.log(longWordsArray);
 
 // Exercise 9: Find Maximum Number (reduce)
-// Step 1: Declare a variable and assign an array of numbers to it.
-// Step 2: Use the reduce() method to find the largest number.
-// Step 3: Store the result in a variable.
-// Step 4: Log the result.
+console.log('-----Exercise 9: Find Maximum Number (reduce)-----');
+let numberArray: number[] = [5, 10, 3, 18, 2];
+let maxNumber = numberArray[0];
+
+for (let num of numberArray) {
+  if (num > maxNumber) {
+    maxNumber = num;
+  }
+}
+console.log(`The largest number is: ${maxNumber}`);
 
 // Exercise 10: Calculate Total Price (map + reduce)
 // Step 1: Declare a type Item with name, price, and quantity.
