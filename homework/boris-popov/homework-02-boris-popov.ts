@@ -28,8 +28,34 @@ if (isBetween) {
 }
 
 // Exercise 3: Multiple number comparison
-// Step 1: Declare 3 number variables.
-// Step 2: Log the numbers in ascending order using if-else statements.
+console.log('-----Exercise 3: Multiple number comparison-----');
+let firstNumber2: number = 5;
+let secondNumber2: number = 4;
+let thirdNumber2: number = 1;
+
+//Option 1: Using if/else statements
+if (firstNumber2 > secondNumber2 && secondNumber2 > thirdNumber2) {
+  console.log(`The order of the numbers is: ${thirdNumber2}, ${secondNumber2}, ${firstNumber2}`);
+} else if (firstNumber2 < secondNumber2 && secondNumber2 < thirdNumber2) {
+  console.log(`The order of the numbers is: ${firstNumber2}, ${secondNumber2}, ${thirdNumber2}`);
+} else if (firstNumber2 > secondNumber2 && secondNumber2 < thirdNumber2) {
+  if (firstNumber2 > thirdNumber2) {
+    console.log(`The order of the numbers is: ${secondNumber2}, ${thirdNumber2}, ${firstNumber2}`);
+  } else {
+    console.log(`The order of the numbers is: ${secondNumber2}, ${firstNumber2}, ${thirdNumber2}`);
+  }
+} else if (firstNumber2 < secondNumber2 && secondNumber2 > thirdNumber2) {
+  if (firstNumber2 > thirdNumber2) {
+    console.log(`The order of the numbers is: ${thirdNumber2}, ${firstNumber2}, ${secondNumber2}`);
+  } else {
+    console.log(`The order of the numbers is: ${firstNumber2}, ${thirdNumber2}, ${secondNumber2}`);
+  }
+}
+
+//Option 2: Using array and sort method
+const numbers = [firstNumber2, secondNumber2, thirdNumber2];
+numbers.sort((a, b) => a - b);
+console.log(`The order of the numbers is: ${numbers[0]}, ${numbers[1]}, ${numbers[2]}`);
 
 // Exercise 4: Check if a string has more than 10 characters
 // Step 1: Declare a variable and assign any string to it.
