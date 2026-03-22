@@ -157,8 +157,17 @@ console.log(`The initial numbers are: ${initialNumbers}`);
 console.log(`The unique numbers are: ${uniqueNumbers}`);
 
 // Exercise 12: Filter + Transform Users (filter + map – advanced)
-// Step 1: Declare a type User with name and age.
-// Step 2: Create an array of users.
-// Step 3: Use filter() to keep only users over 18.
-// Step 4: Use map() to extract their names.
-// Step 5: Log the result.
+console.log('-----Exercise 12: Filter + Transform Users (filter + map – advanced)-----');
+type User = {
+  name: string;
+  age: number;
+};
+let users: User[] = [
+  { name: 'Bilbo', age: 25 },
+  { name: 'Eomer', age: 17 },
+  { name: 'Gandalf', age: 30 },
+  { name: 'Faramir', age: 15 },
+];
+let filteredUsers = users.filter((user) => user.age > 18);
+let userNames = filteredUsers.map((user) => user.name);
+console.log(`The names of users over 18 are: ${userNames}`);
