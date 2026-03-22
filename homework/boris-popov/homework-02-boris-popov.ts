@@ -119,21 +119,28 @@ console.log(longWordsArray);
 // Exercise 9: Find Maximum Number (reduce)
 console.log('-----Exercise 9: Find Maximum Number (reduce)-----');
 let numberArray: number[] = [5, 10, 3, 18, 2];
-let maxNumber = numberArray[0];
-
-for (let num of numberArray) {
-  if (num > maxNumber) {
-    maxNumber = num;
-  }
-}
+let maxNumber: number = numberArray.reduce(
+  (max, current) => (current > max ? current : max),
+  numberArray[0],
+);
 console.log(`The largest number is: ${maxNumber}`);
 
 // Exercise 10: Calculate Total Price (map + reduce)
-// Step 1: Declare a type Item with name, price, and quantity.
-// Step 2: Create an array of items.
-// Step 3: Use map() to calculate price × quantity for each item.
-// Step 4: Use reduce() to sum all values.
-// Step 5: Log the total.
+console.log('-----Exercise 10: Calculate Total Price (map + reduce)-----');
+type Item = {
+  name: string;
+  price: number;
+  quantity: number;
+};
+let items: Item[] = [
+  { name: 'Item 1', price: 10, quantity: 2 },
+  { name: 'Item 2', price: 5, quantity: 5 },
+  { name: 'Item 3', price: 15, quantity: 1 },
+];
+let totalPrice: number = items
+  .map((item) => item.price * item.quantity)
+  .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(`The total price is: ${totalPrice}`);
 
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
