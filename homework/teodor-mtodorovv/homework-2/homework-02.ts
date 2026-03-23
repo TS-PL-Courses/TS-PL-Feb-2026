@@ -133,10 +133,24 @@ console.log(`The maximum number is: ${maxNumber}`);
 
 // Exercise 10: Calculate Total Price (map + reduce)
 // Step 1: Declare a type Item with name, price, and quantity.
+type Item = {
+  name: string;
+  price: number;
+  quantity: number;
+};
 // Step 2: Create an array of items.
+const itemsArray: Item[] = [
+  { name: 'car', price: 20000, quantity: 1 },
+  { name: 'mobile', price: 105.5, quantity: 11 },
+  { name: 'pen', price: 1.2, quantity: 150 },
+];
 // Step 3: Use map() to calculate price × quantity for each item.
+const itemsPrice: number[] = itemsArray.map((item) => item.price * item.quantity);
 // Step 4: Use reduce() to sum all values.
+const sumValues = itemsPrice.reduce((sum, current) => sum + current, 0);
 // Step 5: Log the total.
+console.log(itemsPrice);
+console.log(sumValues);
 
 // Exercise 11: Get Unique Values (reduce)
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
