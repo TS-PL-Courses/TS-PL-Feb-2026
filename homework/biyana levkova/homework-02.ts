@@ -10,9 +10,9 @@
 
 let isFemale: boolean = false;
 if (isFemale) {
-  console.log('This is a female');
+  console.log("This is a female");
 } else {
-  console.log('This is a Male');
+  console.log("This is a Male");
 }
 
 // Exercise 2: Check if a number is between two other numbers
@@ -29,9 +29,13 @@ if (
   (firstNumber > secondNumber && firstNumber < thirdNumber) ||
   (firstNumber < secondNumber && firstNumber > thirdNumber)
 ) {
-  console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
+  console.log(
+    `The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`,
+  );
 } else {
-  console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
+  console.log(
+    `The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`,
+  );
 }
 
 // Exercise 3: Multiple number comparison
@@ -79,7 +83,7 @@ console.log(smallest, mid, largest);
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Check if the length of the variable is greater than 10 using if/else statements.
 // Step 3: Log the result.
-let myString: string = 'notebook';
+let myString: string = "notebook";
 if (myString.length > 10) {
   console.log(`${myString} has more than 10 characters.`);
 } else if (myString.length === 10) {
@@ -95,8 +99,8 @@ if (myString.length > 10) {
 // "The string {string} contains the letter 'B'"
 // "The string {string} does NOT contain the letter 'B'"
 
-let threeCharString: string = 'oBs';
-if (threeCharString.toLowerCase().includes('b')) {
+let threeCharString: string = "oBs";
+if (threeCharString.toLowerCase().includes("b")) {
   console.log(`The string ${threeCharString} contains the letter 'B'`);
 } else {
   console.log(`The string ${threeCharString} does NOT contain the letter 'B'`);
@@ -112,7 +116,9 @@ const bestLapTime: number = 59;
 if (clientAge >= 18 && clientAge < 65 && bestLapTime < 60) {
   console.log(`${clientAge}, ${bestLapTime} - client is allowed to compete!`);
 } else {
-  console.log(`${clientAge}, ${bestLapTime} - client is NOT allowed to compete!`);
+  console.log(
+    `${clientAge}, ${bestLapTime} - client is NOT allowed to compete!`,
+  );
 }
 
 // Part 2: Map, Filter, Reduce
@@ -123,7 +129,7 @@ if (clientAge >= 18 && clientAge < 65 && bestLapTime < 60) {
 // Step 3: Store the result in a new variable.
 // Step 4: Log the result.
 
-const lowercase: string[] = ['convert', 'string', 'to', 'uppercase'];
+const lowercase: string[] = ["convert", "string", "to", "uppercase"];
 const uppercase: string[] = [];
 for (let i = 0; i < lowercase.length; i++) {
   uppercase.push(lowercase[i].toUpperCase());
@@ -137,7 +143,7 @@ console.log(uppercase);
 // Step 3: Store the result in a new variable.
 // Step 4: Log the result.
 
-const longWords: string[] = ['filter', 'long', 'words'];
+const longWords: string[] = ["filter", "long", "words"];
 const filteredLongWords: string[] = longWords.filter((word) => word.length > 5);
 console.log(longWords);
 console.log(filteredLongWords);
@@ -172,17 +178,17 @@ type Item = {
   quantity: number;
 };
 let pen: Item = {
-  name: 'schneider',
+  name: "schneider",
   price: 1.99,
   quantity: 5,
 };
 let notebook: Item = {
-  name: 'planner',
+  name: "planner",
   price: 6.5,
   quantity: 1,
 };
 let backpack: Item = {
-  name: 'school backpack',
+  name: "school backpack",
   price: 45,
   quantity: 2,
 };
@@ -224,20 +230,22 @@ type User12 = {
 };
 
 let user121: User12 = {
-  name: 'Simon',
+  name: "Simon",
   age: 19,
 };
 let user122: User12 = {
-  name: 'Hristina',
+  name: "Hristina",
   age: 16,
 };
 let user123: User12 = {
-  name: 'Alex',
+  name: "Alex",
   age: 21,
 };
 let user124: User12 = {
-  name: 'Boris',
+  name: "Boris",
   age: 18,
 };
 const Users12arr: User12[] = [user121, user122, user123, user124];
-console.log(Users12arr.filter((user) => user.age > 18).map((user) => user.name));
+console.log(
+  Users12arr.filter((user) => user.age > 18).map((user) => user.name),
+);
