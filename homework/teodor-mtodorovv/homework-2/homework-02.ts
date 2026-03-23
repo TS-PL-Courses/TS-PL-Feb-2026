@@ -103,15 +103,21 @@ if (clientAge >= 18 && clientAge < 65 && clientBestTime < 60) {
 
 // Exercise 7: Convert Strings to Uppercase (map)
 // Step 1: Declare a variable and assign an array of strings to it.
+const words: string[] = ['my', 'type', 'script', 'course'];
 // Step 2: Use the map() method to transform each string to uppercase.
 // Step 3: Store the result in a new variable.
+const upperCaseWords: string[] = words.map((word) => word.toUpperCase());
 // Step 4: Log the result.
+console.log(upperCaseWords);
 
 // Exercise 8: Filter Long Words (filter)
 // Step 1: Declare a variable and assign an array of words to it.
+const footballTeams: string[] = ['Ajax', 'Barcelona', 'Milan', 'AEK'];
 // Step 2: Use the filter() method to keep only words longer than 5 characters.
 // Step 3: Store the result in a new variable.
+const shortTeams: string[] = footballTeams.filter((team) => team.length < 5);
 // Step 4: Log the result.
+console.log(shortTeams);
 
 // Exercise 9: Find Maximum Number (reduce)
 // Step 1: Declare a variable and assign an array of numbers to it.
