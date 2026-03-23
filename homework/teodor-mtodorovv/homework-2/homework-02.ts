@@ -72,10 +72,16 @@ if (varLength.length > 10) {
 
 // Exercise 5: Check if a string contains the letter 'B'
 // Step 1: Declare a variable and assign a 3-character string to it.
+const secondText = 'ABC';
 // Step 2: Check if the string contains the letter 'B' using if/else statements.
 // Step 3: Log the result like so:
 // "The string {string} contains the letter 'B'"
 // "The string {string} does NOT contain the letter 'B'"
+if (secondText.includes('B')) {
+  console.log(`The string ${secondText} contains the letter 'B'`);
+} else {
+  console.log(`The string ${secondText} does NOT contain the letter 'B'`);
+}
 
 // Exercise 6: Check if a client will be allowed in a karting competition.
 // Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
