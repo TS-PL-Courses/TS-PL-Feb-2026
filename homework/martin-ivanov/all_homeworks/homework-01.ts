@@ -8,7 +8,7 @@ console.log('Exercise 1:', exercise1);
 let a: number = 20;
 let b: number = 30;
 console.log('Original values:');
-console.log(' a=', a);
+console.log('a=', a);
 console.log('b =', b);
 let c = a;
 a = b;
@@ -44,8 +44,8 @@ let greater_number: number = 12;
 let less_number: number = -6;
 let greater_check: boolean = greater_number > 0;
 let less_check: boolean = less_number < 0;
-console.log('This is greater than 0 =', greater_number);
-console.log('This is less than 0 =', less_number);
+console.log('This is greater than 0 =', greater_check);
+console.log('This is less than 0 =', less_check);
 console.log('');
 
 // Exercise 4: Total cost calculation
@@ -188,8 +188,11 @@ console.log('');
 let exercise12: string = 'Product of an array';
 console.log('Exercise12 :', exercise12);
 let number_array: number[] = [10, 20, 30, 40];
-//let total_product: number = '';
-
+let sumNumber = 0;
+for (let i = 0; i < number_array.length; i++) {
+  sumNumber += number_array[i];
+}
+console.log(sumNumber);
 console.log('');
 
 // Exercise 13: Array of student objects
@@ -200,8 +203,17 @@ console.log('');
 // Step 5: Log each student's name.
 let exercise13: string = 'Array of student objects';
 console.log('Exercise13 :', exercise13);
-let students: string[] = ['Alice', 'Bob', 'Genadi', 'Pesho', 'Viktor', 'Valeri'];
-
+let students = [
+  { name: 'Alice', grade: 90 },
+  { name: 'Bob', grade: 85 },
+  { name: 'Genadi', grade: 75 },
+  { name: 'Pesho', grade: 54 },
+  { name: 'Viktor', grade: 33 },
+  { name: 'Valeri', grade: 12 },
+];
+for (let student of students) {
+  console.log(student.name);
+}
 console.log('');
 
 // Part 6 — Functions (function)
@@ -212,7 +224,10 @@ console.log('');
 // Step 3: Inside the function, log the id value.
 let exercise14: string = 'Function with a union type';
 console.log('Exercise14 :', exercise14);
-
+function printId(name: string | number) {
+  console.log('Id', name);
+}
+printId(123);
 console.log('');
 
 // Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
