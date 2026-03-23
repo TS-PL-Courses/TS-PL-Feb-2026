@@ -59,8 +59,16 @@ if (number1 <= number2 && number1 <= number3) {
 
 // Exercise 4: Check if a string has more than 10 characters
 // Step 1: Declare a variable and assign any string to it.
+const varLength: string = 'Elephant';
+
 // Step 2: Check if the length of the variable is greater than 10 using if/else statements.
 // Step 3: Log the result.
+
+if (varLength.length > 10) {
+  console.log(`The string ${varLength} string contains more than 10 symbols`);
+} else {
+  console.log(`The string ${varLength} string contains less than 10 symbols`);
+}
 
 // Exercise 5: Check if a string contains the letter 'B'
 // Step 1: Declare a variable and assign a 3-character string to it.
