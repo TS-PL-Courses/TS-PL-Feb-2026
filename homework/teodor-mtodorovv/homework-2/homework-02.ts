@@ -21,19 +21,41 @@ const secondNumber: number = 1;
 const thirdNumber: number = 3;
 
 // Step 2: Check if the first number is between the second and third numbers using if-else statements.
+// Step 3: Log the result like so:
+// "The number {first number} is between {second number} and {third number}"
+// "The number {first number} is NOT between {second number} and {third number}"
 if (firstNumber > secondNumber && thirdNumber > firstNumber) {
   console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
 } else {
   console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
 }
 
-// Step 3: Log the result like so:
-// "The number {first number} is between {second number} and {third number}"
-// "The number {first number} is NOT between {second number} and {third number}"
-
 // Exercise 3: Multiple number comparison
 // Step 1: Declare 3 number variables.
+const number1: number = 20;
+const number2: number = 10;
+const number3: number = 30;
+
 // Step 2: Log the numbers in ascending order using if-else statements.
+if (number1 <= number2 && number1 <= number3) {
+  if (number2 <= number3) {
+    console.log(`${number1}, ${number2}, ${number3}`);
+  } else {
+    console.log(`${number1}, ${number3}, ${number2}`);
+  }
+} else if (number2 <= number1 && number2 <= number3) {
+  if (number1 <= number3) {
+    console.log(`${number2}, ${number1}, ${number3}`);
+  } else {
+    console.log(`${number2}, ${number3}, ${number1}`);
+  }
+} else {
+  if (number1 <= number2) {
+    console.log(`${number3}, ${number1}, ${number2}`);
+  } else {
+    console.log(`${number3}, ${number2}, ${number1}`);
+  }
+}
 
 // Exercise 4: Check if a string has more than 10 characters
 // Step 1: Declare a variable and assign any string to it.
