@@ -85,8 +85,19 @@ if (secondText.includes('B')) {
 
 // Exercise 6: Check if a client will be allowed in a karting competition.
 // Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
+const clientAge: number = 22;
+const clientBestTime: number = 67.3;
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
 // Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
+if (clientAge >= 18 && clientAge < 65 && clientBestTime < 60) {
+  console.log(
+    `Client age: ${clientAge}, client best time: ${clientBestTime}, and he is allowed to participate in the competition`,
+  );
+} else {
+  console.log(
+    `Client age: ${clientAge}, client best time: ${clientBestTime}, and he is NOT allowed to participate in the competition`,
+  );
+}
 
 // Part 2: Map, Filter, Reduce
 
