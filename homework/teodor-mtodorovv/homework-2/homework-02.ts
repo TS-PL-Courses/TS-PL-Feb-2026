@@ -16,7 +16,17 @@ if (isMale) {
 
 // Exercise 2: Check if a number is between two other numbers
 // Step 1: Declare 3 number variables.
+const firstNumber: number = 2;
+const secondNumber: number = 1;
+const thirdNumber: number = 3;
+
 // Step 2: Check if the first number is between the second and third numbers using if-else statements.
+if (firstNumber > secondNumber && thirdNumber > firstNumber) {
+  console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
+} else {
+  console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
+}
+
 // Step 3: Log the result like so:
 // "The number {first number} is between {second number} and {third number}"
 // "The number {first number} is NOT between {second number} and {third number}"
