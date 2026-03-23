@@ -76,7 +76,7 @@ let str: string = 'Quality Assurance';
 if (str.length > 10) {
   console.log('The string ' + str + ' has more than 10 chars');
 } else {
-  console.log('The string ' + str + 'does NOT have more than 10 chars');
+  console.log('The string ' + str + ' does NOT have more than 10 chars');
 }
 
 // Exercise 5: Check if a string contains the letter 'B'
