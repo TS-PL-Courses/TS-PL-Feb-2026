@@ -121,9 +121,15 @@ console.log(shortTeams);
 
 // Exercise 9: Find Maximum Number (reduce)
 // Step 1: Declare a variable and assign an array of numbers to it.
+const numberArray: number[] = [1, 2, 3, 4];
 // Step 2: Use the reduce() method to find the largest number.
 // Step 3: Store the result in a variable.
+const maxNumber: number = numberArray.reduce(
+  (max, current) => (current > max ? current : max),
+  numberArray[0],
+);
 // Step 4: Log the result.
+console.log(`The maximum number is: ${maxNumber}`);
 
 // Exercise 10: Calculate Total Price (map + reduce)
 // Step 1: Declare a type Item with name, price, and quantity.
