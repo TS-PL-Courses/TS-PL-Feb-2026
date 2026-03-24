@@ -1,4 +1,4 @@
-// npx ts-node homework/todor-todorov/homework01Todor.ts
+// npx ts-node homework/todor-todorov/homework-01-Todor.ts
 
 // Exercise 1: Variable swapping
 // Step 1: Declare 2 variables with numbers.
@@ -13,12 +13,13 @@ let secondNumber: number = 14;
 // console.log(secondNumber);
 
 const firstNumberSaved: number = firstNumber;
+const secondNumberSaved: number = secondNumber;
 
 firstNumber = secondNumber;
 secondNumber = firstNumberSaved;
 
-console.log(firstNumberSaved);
-console.log(firstNumber);
+console.log('Original values are:', firstNumberSaved, secondNumberSaved);
+console.log('Swapped values are:', firstNumber, secondNumber);
 
 console.log(firstNumber);
 console.log(secondNumber);
@@ -28,13 +29,10 @@ console.log(secondNumber);
 // Step 2: Declare a boolean variable and use a logical expression to check if the first variable is even.
 // Step 3: Log the result.
 
-let anyNumber: number = 887;
-let evenNumber: boolean = true;
+let anyNumber: number = 888;
+let remainderNumber: boolean = anyNumber % 2 === 0;
 
-const remainderNumber = anyNumber % 2;
-
-if (remainderNumber === 0) {
-  evenNumber = true;
+if (remainderNumber) {
   console.log('Number is Even');
 } else {
   console.log('Number is Odd');
@@ -46,16 +44,12 @@ if (remainderNumber === 0) {
 // Step 3: Log the result.
 
 let anyNumber1: number = 0;
-let isPositive: boolean = true;
+let isPositive: boolean = anyNumber1 > 0;
 
-if (anyNumber1 < 0) {
-  isPositive = false;
-  console.log(isPositive);
-} else if (anyNumber1 === 0) {
+if (anyNumber1 === 0) {
   console.log('Number is 0');
-} else {
-  console.log(isPositive);
 }
+console.log(isPositive);
 
 // Exercise 4: Total cost calculation
 // Step 1: Create a variable called price with the value 19.99.
@@ -181,6 +175,7 @@ let students = [
 let names: string[] = [];
 
 for (const student of students) {
+  console.log(student.name);
   names.push(student.name);
 }
 
@@ -191,8 +186,96 @@ console.log(names);
 // Step 2: The parameter id should accept a string or a number (string | number).
 // Step 3: Inside the function, log the id value.
 
-function printId(values: string | number): void {
-  console.log('The id is', values);
+function printId(id: string | number): void {
+  console.log('The id is', id);
 }
 
 printId('66');
+
+// Exercise 15: Calculate the amount of time a QA engineer needs to test a number of functionalities
+// Step 1: Declare variables: QA name (string) and number of functionalities (whole number). Assume the time needed to test one functionality is 2 hours.
+// Step 2: Calculate the total time needed to test all functionalities.
+// Step 3: Log the QA name, number of functionalities, and the total time needed using string interpolation like:
+// "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
+
+let qaName: string;
+let numberOfFunctionalities: number;
+
+function calculateTasks(numberOfFunctionalities: number, qaName: string) {
+  let totalTime: number = numberOfFunctionalities * 2;
+  console.log(
+    `"The QA ${qaName} will need ${totalTime} hours to complete ${numberOfFunctionalities} project/s.`,
+  );
+}
+
+calculateTasks(100, 'Ivan');
+
+// Exercise 16: Union in objects
+// Step 1: Create a type for a user object.
+// Step 2: The object should have two properties: id and name.
+// Step 3: The id property should accept either a number or a string (number | string).
+// Step 4: Create one user object with a numeric id.
+// Step 5: Create another user object with a string id.
+
+const user: { id: number | string; name: string } = {
+  id: 645,
+  name: 'Georgi',
+};
+
+const newUser: { id: number | string; name: string } = {
+  id: 'Mitko',
+  name: 'Georgi',
+};
+
+console.log(user);
+console.log(newUser);
+
+// Optional Exercises
+
+// Exercise 17: Remove duplicate numbers from an array
+// Step 1: Create an array with the numbers [10, 20, 10, 30, 40].
+// Step 2: Remove the duplicate numbers from the array.
+// Step 3: Store the result in a new array.
+// Step 4: Log the new array, which should look like [10, 20, 30, 40].
+
+let duplicateArray: number[] = [10, 20, 10, 30, 40];
+
+const uniqueNumbers: number[] = duplicateArray.filter((value, index) => {
+  return duplicateArray.indexOf(value) === index;
+});
+
+console.log(uniqueNumbers);
+
+// Exercise 18: Find the difference between two arrays
+// Step 1: Create an array arr1 with values [1, 2, 3, 4].
+// Step 2: Create another array arr2 with values [3, 4, 5].
+// Step 3: Find the elements that exist in arr1 but not in arr2, and in arr2 but not in arr1.
+// Step 4: Store the result in a variable called difference.
+// Step 5: Log the result, which should be [1, 2, 5].
+
+const arr1: number[] = [1, 2, 3, 4];
+const arr2: number[] = [3, 4, 5];
+
+const difference: number[] = [
+  ...arr1.filter((num) => !arr2.includes(num)),
+  ...arr2.filter((num) => !arr1.includes(num)),
+];
+
+console.log(difference);
+
+// Exercise 19: Find the union of two arrays
+// Step 1: Create an array arr1 with values [1, 2, 3, 4].
+// Step 2: Create another array arr2 with values [3, 4, 5].
+// Step 3: Combine both arrays into one.
+// Step 4: Remove duplicate values.
+// Step 5: Store the result in a variable called union.
+// Step 6: Log the result, which should be [1, 2, 3, 4, 5].
+
+const newArr1: number[] = [1, 2, 3, 4];
+const newArr2: number[] = [3, 4, 5];
+
+let combined: number[] = [...newArr1, ...newArr2];
+
+let union: number[] = combined.filter((num, index) => combined.indexOf(num) === index);
+
+console.log(union);
