@@ -9,9 +9,9 @@
 
 console.log('Exercise 1');
 
-let isFemale = true;
+let isMale = true;
 
-if (isFemale) {
+if (isMale) {
   console.log('This person is male');
 } else {
   console.log('This person is female');
@@ -101,9 +101,9 @@ let word: string = 'Yes';
 let letter: string = 'B';
 
 if (word.includes(letter)) {
-  console.log(`The string "${word}" contains the letter 'B'`);
+  console.log(`The string "${word}" contains the letter ${letter}`);
 } else {
-  console.log(`The string "${word}" does NOT contain the letter 'B'`);
+  console.log(`The string "${word}" does NOT contain the letter ${letter}`);
 }
 
 // Exercise 6: Check if a client will be allowed in a karting competition.
@@ -138,11 +138,11 @@ console.log('\nExercise 7');
 
 const words: string[] = ['phone', 'tablet', 'glass'];
 
-const mapCallBack = function (input: string): string {
+const mapCallback = function (input: string): string {
   return input.toUpperCase();
 };
 
-const upperWords: string[] = words.map(mapCallBack);
+const upperWords: string[] = words.map(mapCallback);
 
 console.log(...upperWords);
 
@@ -156,11 +156,11 @@ console.log('\nExercise 8');
 
 const allWords: string[] = ['phone', 'tablet', 'glass'];
 
-const filterCallBack = function (input: string): boolean {
+const filterCallback = function (input: string): boolean {
   return input.length > 5;
 };
 
-const longWords: string[] = allWords.filter(filterCallBack);
+const longWords: string[] = allWords.filter(filterCallback);
 
 console.log(...longWords);
 
@@ -174,7 +174,7 @@ console.log('\nExercise 9');
 
 const allNumbers: number[] = [2, 30, 100, 4000, 33];
 
-const reduceCallBack = function (acc: number, element: number): number {
+const reduceCallback = function (acc: number, element: number): number {
   console.log(`Current max: ${acc}. Current element: ${element}`);
   if (acc < element) {
     return element;
@@ -183,7 +183,7 @@ const reduceCallBack = function (acc: number, element: number): number {
   }
 };
 
-const maxNumber: number = allNumbers.reduce(reduceCallBack, allNumbers[0]);
+const maxNumber: number = allNumbers.reduce(reduceCallback, allNumbers[0]);
 
 console.log(`\nMax element: ${maxNumber}`);
 
@@ -217,7 +217,7 @@ const reduceSum = function (total: number, subTotal: number): number {
   return total + subTotal;
 };
 
-const totalSum: number = subTotals.reduce(reduceSum);
+const totalSum: number = subTotals.reduce(reduceSum, 0);
 
 console.log(totalSum);
 
