@@ -42,6 +42,43 @@ let a = 9;
 let b = 3;
 let c = 6;
 
+let smallest: number;
+let middle: number;
+let largest: number;
+
+if (a <= b && a <= c) {
+  smallest = a;
+  if (b <= c) {
+    middle = b;
+    largest = c;
+  } else {
+    middle = c;
+    largest = b;
+  }
+} else if (b <= a && b <= c) {
+  smallest = b;
+  if (a <= c) {
+    middle = a;
+    largest = c;
+  } else {
+    middle = c;
+    largest = a;
+  }
+} else {
+  smallest = c;
+  if (a <= b) {
+    middle = a;
+    largest = b;
+  } else {
+    middle = b;
+    largest = a;
+  }
+}
+
+console.log(`The numbers in ascending order are: ${smallest}, ${middle}, ${largest}`);
+
+// Alternative solution using an array and sort method
+
 let numbers: number[] = [a, b, c];
 numbers.sort((x, y) => x - y);
 console.log('The numbers in ascending order are:', numbers);
@@ -156,8 +193,8 @@ console.log('Total price of all items:', totalPrice);
 // Step 3: Store the result in a new array.
 // Step 4: Log the result.
 
-let numbersWhitDuplicates: number[] = [1, 2, 2, 3, 4, 4, 5];
-let uniqueNumbers: number[] = numbersWhitDuplicates.reduce((acc: number[], current) => {
+let numbersWithDuplicates: number[] = [1, 2, 2, 3, 4, 4, 5];
+let uniqueNumbers: number[] = numbersWithDuplicates.reduce((acc: number[], current) => {
   if (!acc.includes(current)) {
     acc.push(current);
   }

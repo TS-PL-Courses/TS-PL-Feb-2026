@@ -11,12 +11,12 @@
 
 let a: number = 18;
 let b: number = 42;
-console.log(`Begore swappig: a = ${a}, b = ${b}`);
+console.log(`Before swapping: a = ${a}, b = ${b}`);
 
 let temp: number = a;
 a = b;
 b = temp;
-console.log(`After swappig: a = ${a}, b = ${b}`);
+console.log(`After swapping: a = ${a}, b = ${b}`);
 
 // Exercise 2: Check if a number is even or odd
 // Step 1: Declare a variable and assign any number to it.
@@ -56,8 +56,8 @@ console.log(`Total cost is: $${totalCost}`);
 // Step 4: Log the temperature in Fahrenheit.
 
 let celsius: number = 35;
-let farenheit: number = (celsius * 9) / 5 + 32;
-console.log(`The temperature ${celsius}°C is equal to ${farenheit}°F`);
+let fahrenheit: number = (celsius * 9) / 5 + 32;
+console.log(`The temperature ${celsius}°C is equal to ${fahrenheit}°F`);
 
 // Part 2 — Booleans (boolean)
 
@@ -151,14 +151,14 @@ console.log(`Sum of bigints: ${bigIntSum}`);
 // Step 3: Use a loop to multiply all numbers in the array.
 // Step 4: Log the final product.
 
-let numbers: number[] = [20, 30, 40, 50];
+let numbers: number[] = [10, 20, 30, 40];
 let product: number = 1;
 for (let num of numbers) {
   product *= num;
 }
 console.log(`Product of the array: ${product}`);
 
-let numbers2: number[] = [20, 30, 40, 50];
+let numbers2: number[] = [10, 20, 30, 40];
 let product2: number = numbers2.reduce((acc, num) => acc * num, 1);
 console.log(`Product of the second array using reduce: ${product2}`);
 
