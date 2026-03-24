@@ -1,4 +1,4 @@
-//npx ts-node typescript/Homework-01/Arrays.ts
+//npx ts-node Arrays.ts
 // Part 5 — Array (array)
 
 // Exercise 12: Product of an array
@@ -11,9 +11,8 @@ let totalProduct: number = 1;
 for (const z of numbers) {
   totalProduct = totalProduct * z;
 }
-console.log("Numbers:", numbers);
-console.log("Total product:", totalProduct);
-
+console.log('Numbers:', numbers);
+console.log('Total product:', totalProduct);
 
 // Exercise 13: Array of student objects
 // Step 1: Create an array called students.
@@ -23,10 +22,10 @@ console.log("Total product:", totalProduct);
 // Step 5: Log each student's name.
 
 let students: { name: string; grade: number }[] = [
-  { name: "Alice", grade: 90 }, // пример 1
-  { name: "Bob", grade: 85 },   // пример 2
-  { name: "Борис", grade: 78 }, // добавяме още един за практика
+  { name: 'Alice', grade: 90 }, // пример 1
+  { name: 'Bob', grade: 85 }, // пример 2
+  { name: 'Борис', grade: 78 }, // добавяме още един за практика
 ];
 for (const student of students) {
-  console.log("Student name:", student.name);
+  console.log('Student name:', student.name);
 }

@@ -1,12 +1,12 @@
-// npx ts-node typescript/Homework-01/Booleans.ts
+// npx ts-node Booleans.ts
 // Exercise 6
 
 let isLoggedIn: boolean = false;
 
 if (isLoggedIn) {
-  console.log("Welcome!");
+  console.log('Welcome!');
 } else {
-  console.log("Please log in");
+  console.log('Please log in');
 }
 
 // Exercise 7
@@ -15,4 +15,4 @@ let isAdult: boolean = true;
 
 let canEnter: boolean = hasTicket && isAdult;
 
-console.log("Can enter:", canEnter);
+console.log('Can enter:', canEnter);
