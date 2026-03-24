@@ -1,5 +1,5 @@
 // Homework 02
-// npx ts-node homework-02.ts
+// npx ts-node homework/stateva/homewrok-02.ts
 // Part 1: Conditional Statements
 
 // Exercise 1: Use a boolean as an if/else condition
