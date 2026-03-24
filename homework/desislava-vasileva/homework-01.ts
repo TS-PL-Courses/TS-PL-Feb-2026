@@ -52,8 +52,8 @@ else
 
 //Excercise 2: Alternative approach - with boolean variable
 
-const isOdd: boolean = anyNumber % 1 === 0 && anyNumber % 2 === 0;
-if (isOdd)
+const isEven: boolean = anyNumber % 1 === 0 && anyNumber % 2 === 0;
+if (isEven)
     {
         console.log(`Alternative approach results:\nNumber ${anyNumber} is even`) ;
     }
