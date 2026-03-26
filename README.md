@@ -1,22 +1,25 @@
-
 # Istallation and Set Up
 
 ## Pre-condition:
+
 - install Ide (Visual Studio Code)
 - install nodeJS LTS (latest stable version) from `https://nodejs.org/en/download`
 - install GIT from `https://git-scm.com/install/windows`
 - how to set up GIT `https://git-scm.com/book/ms/v2/Getting-Started-First-Time-Git-Setup`
 
 ## Run the following commands in git-bash terminal to install poject packages:
+
 - `npm install` -> install all project packages
 - `npx ts-node -v` -> if it asks you to install ts-node Accept, try again and you should see a version in your console like 'v10.9.2'
 
 ## Set up VS Code User Settings with:
-- ctr+p (to open VS Code search menu)
+
+- ctr+p (to open VS Code search menu), cmd + Shift + P (Mac)
 - type: ">Open User Settings" and select the JSON option (search for command to execute which contains this text)
 - note!: after this you will have to set up your IDE's colour scheme again
 
 ## Copy the below settings and replace your JSON file with the JSON below:
+
 - makes git bash default terminal
 - configures formater as Prettier
 - configures auto format on Paste or Save
