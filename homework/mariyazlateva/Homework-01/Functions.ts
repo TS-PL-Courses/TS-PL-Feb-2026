@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 //npx ts-node Functions.ts
+=======
+//npx ts-node typescript/Homework-01/Functions.ts
+>>>>>>> Added homework
+=======
+//npx ts-node Functions.ts
+>>>>>>> Comments fixed hopefully
 // Part 6 — Functions (function)
 
 // Exercise 14: Function with union type
@@ -7,21 +15,36 @@
 // Step 3: Inside the function, log the id value.
 
 function printId(id: string | number): void {
+<<<<<<< HEAD
   console.log('ID value:', id);
+=======
+    console.log("ID value:", id);
+>>>>>>> Added homework
 }
+printId(123);
+printId("abc");
 
-// Exercise 15: Write code calculating the ammount of time a QA engineer needs to test a number of functionalities
-// Step 1: Declare a variables: QA name (string), number of functionalities (whole number), lets accpet time needed to test one functionality is 2 hours.
+// Exercise 15: Write code calculating the amount of time a QA engineer needs to test a number of functionalities
+// Step 1: Declare a variables: QA name (string), number of functionalities (whole number), let's accept time needed to test one functionality is 2 hours.
 // Step 2: Calculate the total time needed to test all functionalities.
 // Step 3: Log the QA name, number of functionalities and the total time needed to test all functionalities using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete {number of functionalities} project/s."
 
+<<<<<<< HEAD
 let qaName: string = 'Mariya';
 let functionalitiesCount: number = 6;
 const hoursPerFunctionality: number = 2;
 let totalHours: number = functionalitiesCount * hoursPerFunctionality;
 console.log(
   `The QA ${qaName} will need ${totalHours} hours to complete ${functionalitiesCount} project/s.`,
+=======
+let qaName: string = "Mariya";         
+let functionalitiesCount: number = 6;  
+const hoursPerFunctionality: number = 2; 
+let totalHours: number = functionalitiesCount * hoursPerFunctionality;
+console.log(
+  `The QA ${qaName} will need ${totalHours} hours to complete ${functionalitiesCount} project/s.`
+>>>>>>> Added homework
 );
 // Exercise 16: Union in objects
 // Step 1: Create a type for a user object.
@@ -36,6 +59,7 @@ type User = {
 };
 
 const user1: User = {
+<<<<<<< HEAD
   id: 1, // number
   name: 'IVan',
 };
@@ -45,3 +69,14 @@ const user2: User = {
 };
 console.log('User 1:', user1);
 console.log('User 2:', user2);
+=======
+  id: 1,        // number
+  name: "IVan",
+};
+const user2: User = {
+    id: "index1",
+    name: "Goro",
+}
+console.log("User 1:", user1);
+console.log("User 2:", user2)
+>>>>>>> Added homework
