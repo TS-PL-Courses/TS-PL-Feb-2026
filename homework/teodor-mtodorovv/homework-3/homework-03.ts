@@ -23,6 +23,9 @@ for (let i = 0; i < arrColors.length; i++) {
 }
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
+for (let i = 1; i <= 100; i++) {
+  console.log(i);
+}
 
 // Exercise 3: Write a script to construct the following pattern using a nested for loop:
 // *
