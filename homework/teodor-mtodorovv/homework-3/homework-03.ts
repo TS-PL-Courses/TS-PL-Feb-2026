@@ -51,12 +51,34 @@ for (let i = 0; i < phoneNumbers.length; i++) {
 
 // Exercise 5: Decide on an evening activity
 // Step 1: Declare 4 variables: name (string), hour (whole number), money (floating-point number), and whether the person is sick (boolean)
+let name: string = 'John';
+let hour: number = 23;
+let money: number = 25.1;
+let isSick: boolean = false;
+
 // Step 2: Write a conditional statement that decides on an evening activity based on the following rules:
 // - If the person is not sick and has at least 20 money, the activity is "go to the cinema"
 // - If the person is not sick and has less than 20 money, the activity is "go to the park"
 // - If the person is not sick, has more than 20 money, but it is late at night (hour is between 21 and 24), the activity is "watch a movie"
 // - If the person is sick, the activity is "stay at home and go to bed"
 // Step 3: Log the person's details and the decided activity
+let activity: string;
+
+if (isSick) {
+  activity = 'stay at home and go to bed';
+} else if (!isSick && money >= 20 && hour < 21) {
+  activity = 'go to the cinema';
+} else if (!isSick && money < 20) {
+  activity = `go to the park`;
+} else if (!isSick && money > 20 && hour >= 21 && hour <= 24) {
+  activity = `watch a movie`;
+} else {
+  activity = 'stay at home and go to bed';
+}
+
+console.log(
+  `Person details: \nname: ${name}\nmoney: $${money}\nhour: ${hour}\nis he sick?: ${isSick}\nActivity: ${activity} `,
+);
 
 // Exercise 6: Use an Enum, Object type, and Arrays
 // Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
