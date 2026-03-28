@@ -1,7 +1,5 @@
 //npx ts-node ConditionalStatements.ts
 
-import { text } from 'stream/consumers';
-
 // Part 1: Conditional Statements
 
 // Exercise 1: Use a boolean as an if/else condition
@@ -22,11 +20,14 @@ if (isMale) {
 // "The number {first number} is between {second number} and {third number}"
 // "The number {first number} is NOT between {second number} and {third number}"
 
-let firstNumber: number = 8;
-let secondNumber: number = 7;
-let thirdNumber: number = 7;
+let firstNumber: number = 7;
+let secondNumber: number = 8;
+let thirdNumber: number = 6;
 
-if (firstNumber > secondNumber && firstNumber < thirdNumber) {
+if (
+  (firstNumber > secondNumber && firstNumber < thirdNumber) ||
+  (firstNumber < secondNumber && firstNumber > thirdNumber)
+) {
   console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
 } else {
   console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
@@ -99,10 +100,11 @@ checkForB('Hello');
 // Exercise 6: Check if a client will be allowed in a karting competition.
 // Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
 let age: number = 21;
-let bestLap: number = 62.21;
+let bestLap: number = 59.21;
+let isAllowed = age >= 18 && age < 65 && bestLap < 60;
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time
 // less than 60 seconds, using if-else statements.
-if (age >= 18 && age < 65 && bestLap < 60) {
+if (isAllowed) {
   // Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
   console.log(`Client age:${age}`);
   console.log(`Best lap time: "${bestLap}`);
