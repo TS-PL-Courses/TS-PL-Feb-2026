@@ -157,11 +157,11 @@ console.log('\nExercise 8');
 // Hint: you can find hints at the end of this file
 // Call the function in order to verify it works
 
-// function sum_2_numbers(number_1: number, number_2: number) {
-//     const result = number_1 + number_2;
-// }
+function sum_2_numbers(number_1: number, number_2: number) {
+  return number_1 + number_2; // return was missing
+}
 
-// console.log(sum_2_numbers(2, 3));
+console.log(sum_2_numbers(2, 3));
 
 // Exercise 9:
 console.log('\nExercise 9');
