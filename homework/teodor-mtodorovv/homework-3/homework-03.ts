@@ -2,6 +2,7 @@
 // Homework 03 - Collections and Loops
 
 // Exercise 1: Loop over an array and log items only if the item's length is over 4 characters
+console.log('\nExercise 1');
 // Step 1: Declare an array with the colors: "red", "blue", "green", "yellow", "purple", "orange", "white", "black"
 const arrColors: string[] = [
   'red',
@@ -23,6 +24,7 @@ for (let i = 0; i < arrColors.length; i++) {
 }
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
+console.log('\nExercise 2');
 for (let i = 1; i <= 100; i++) {
   console.log(i);
 }
@@ -39,6 +41,7 @@ for (let i = 1; i <= 100; i++) {
 // *
 
 // Exercise 4: Phone number area code substitution
+console.log('\nExercise 4');
 // Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
 const phoneNumbers: string[] = ['0376829209', '04239982009', '0536829299'];
 // Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
@@ -50,6 +53,7 @@ for (let i = 0; i < phoneNumbers.length; i++) {
 }
 
 // Exercise 5: Decide on an evening activity
+console.log('\nExercise 5');
 // Step 1: Declare 4 variables: name (string), hour (whole number), money (floating-point number), and whether the person is sick (boolean)
 let name: string = 'John';
 let hour: number = 23;
@@ -81,6 +85,7 @@ console.log(
 );
 
 // Exercise 6: Use an Enum, Object type, and Arrays
+console.log('\nExercise 6');
 // Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
 enum AccountTypes {
   Current = 1,
@@ -128,6 +133,7 @@ for (let i = 0; i < arrClients.length; i++) {
 // Functions
 
 // Exercise 7:
+console.log('\nExercise 7');
 // Fix the following code to print the same message each time the function is called.
 // Hint: you can find hints at the end of this file
 // Call the function in order to verify it works
@@ -146,6 +152,7 @@ function add_item_in_form(
 add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 
 // Exercise 8:
+console.log('\nExercise 8');
 // Fix the errors in the code below:
 // Hint: you can find hints at the end of this file
 // Call the function in order to verify it works
@@ -157,6 +164,7 @@ add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 // console.log(sum_2_numbers(2, 3));
 
 // Exercise 9:
+console.log('\nExercise 9');
 // Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
 // Step 2: Use JSDoc to add a description to the function. Example:
 
@@ -174,17 +182,20 @@ add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 // Step 3: Call the function with and without a Middle Name to verify it works correctly
 
 // Exercise 10:
+console.log('\nExercise 10');
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
 // Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
 
 // Exercise 11:
+console.log('\nExercise 11');
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
 
 // Exercise 12:
+console.log('\nExercise 12');
 // Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
 // Hint: you can find hints at the end of this file
 // Example: Sample string: "Hello World"
