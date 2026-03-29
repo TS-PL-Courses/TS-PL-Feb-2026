@@ -4,7 +4,11 @@
 // Step 1: Declare 2 variables with numbers.
 // Step 2: Swap their values.
 // Step 3: Log the original values and the final values.
+<<<<<<< HEAD
 console.log("===============Exercise 1 : Variable swapping===============");
+=======
+console.log('===============Exercise 1 : Variable swapping===============');
+>>>>>>> 0d469db8e9bc7566b844edc9dea741cacf5ccb4c
 let a: number = 10;
 let b: number = 25;
 
@@ -22,7 +26,11 @@ console.log(`Final Values : a:${a} , b:${b}`);
 // Step 2: Declare a boolean variable and use a logical expression to check
 // if first variable is even.
 // Step 3: Log the result
+<<<<<<< HEAD
 console.log("\n=============== Exericise 2: Even or odd===============");
+=======
+console.log('\n=============== Exericise 2: Even or odd===============');
+>>>>>>> 0d469db8e9bc7566b844edc9dea741cacf5ccb4c
 const numToCheck: number = 6;
 const isEven: boolean = numToCheck % 2 === 0;
 console.log(`Number :${numToCheck}`);
@@ -32,7 +40,11 @@ console.log(`Is even : ${isEven}`);
 // Step 1: Declare a variable and assign any number to it.
 // Step 2: Declare a boolean variable and check if first variable is greater than 0.
 // Step 3: Log the result
+<<<<<<< HEAD
 console.log("\n=============== Exercise 3: Positive number ===============");
+=======
+console.log('\n=============== Exercise 3: Positive number ===============');
+>>>>>>> 0d469db8e9bc7566b844edc9dea741cacf5ccb4c
 const numberToVerify: number = -3;
 const isPositive: boolean = numberToVerify > 0;
 console.log(`Number :${numberToVerify}`);
@@ -41,9 +53,15 @@ console.log(`Is Positive: ${isPositive}`);
 // Step 1: Declare a variable and assign any string to it.
 // Step 2: Declare a boolean variable and check if first variable is an empty string.
 // Step 3: Log the result
+<<<<<<< HEAD
 console.log("\n=============== Exercise 4: Empty string ===============");
 const textCheck: string = "";
 const isEmpty: boolean = textCheck === "";
+=======
+console.log('\n=============== Exercise 4: Empty string ===============');
+const textCheck: string = '';
+const isEmpty: boolean = textCheck === '';
+>>>>>>> 0d469db8e9bc7566b844edc9dea741cacf5ccb4c
 console.log(`Text: ${textCheck}`);
 console.log(`Is empty : ${isEmpty}`);
 // Exercise 5: Determine if a string starts with the letter 'A'
@@ -51,8 +69,13 @@ console.log(`Is empty : ${isEmpty}`);
 // Step 2: Declare a boolean variable and check if first variable starts with 'A'.
 // Step 3: Log the result
 console.log("\n=============== Exercise 5: Starts with 'A' ===============");
+<<<<<<< HEAD
 const nameToCheck: string = "Krasir Petkov Petkov";
 const StartWithA: boolean = nameToCheck.startsWith("A");
+=======
+const nameToCheck: string = 'Krasir Petkov Petkov';
+const StartWithA: boolean = nameToCheck.startsWith('A');
+>>>>>>> 0d469db8e9bc7566b844edc9dea741cacf5ccb4c
 console.log(`Text: ${nameToCheck}`);
 console.log(`Start with A latter : ${StartWithA}`);
 // Exercise 6: Write code calculating the ammount of time a
@@ -65,6 +88,7 @@ console.log(`Start with A latter : ${StartWithA}`);
 //  all functionalities using string interpolation like:
 // "The QA {QA name} will need {total time needed} hours to complete
 //  {number of functionalities} project/s."
+<<<<<<< HEAD
 console.log(
   "\n=============== Exercise 6: QA time calculation ===============",
 );
@@ -271,3 +295,14 @@ console.log("\n=== Exercise 19: Union of two arrays ===");
 const union: number[] = Array.from(new Set([...arr1, ...arr2]));
 
 console.log(union); // [1, 2, 3, 4, 5]
+=======
+console.log('\n=============== Exercise 6: QA time calculation ===============');
+const qaName: string = 'Krasimir';
+const functionalitiesCount: number = 400;
+const hoursperFunctionalities: number = 2;
+
+const totalHourseNeeded: number = functionalitiesCount * hoursperFunctionalities;
+console.log(
+  `The QA ${qaNamee} will need ${totalHours} hours to complete ${functionalitiesCounts} project/s.`,
+);
+>>>>>>> 0d469db8e9bc7566b844edc9dea741cacf5ccb4c
