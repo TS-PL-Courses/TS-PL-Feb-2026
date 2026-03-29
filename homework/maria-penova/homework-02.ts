@@ -24,7 +24,10 @@ let thirdNumber: number = 10;
 
 // Step 2: Check if the first number is between the second and third numbers using if-else statements.
 // Step 3: Log the result like so:
-if (firstNumber > secondNumber && firstNumber < thirdNumber) {
+if (
+  (firstNumber > secondNumber && firstNumber < thirdNumber) ||
+  (firstNumber < secondNumber && firstNumber > thirdNumber)
+) {
   console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
 } else {
   console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
@@ -61,7 +64,7 @@ if (num1 <= num2 && num1 <= num3) {
 // Exercise 4: Check if a string has more than 10 characters
 
 // Step 1: Declare a variable and assign any string to it.
-let myString: string = "Hello, World!"; 
+let myString: string = 'Hello, World!';
 
 // Step 2: Check if the length of the variable is greater than 10 using if/else statements.
 // Step 3: Log the result.
@@ -69,24 +72,24 @@ if (myString.length > 10) {
   console.log(`The string "${myString}" has more than 10 characters.`);
 } else {
   console.log(`The string "${myString}" does NOT have more than 10 characters.`);
-}   
+}
 
 // Exercise 5: Check if a string contains the letter 'B'
 
 // Step 1: Declare a variable and assign a 3-character string to it.
-let shortString: string = "Bob";
-let anotherShortString: string = "Tom";
+let shortString: string = 'Bob';
+let anotherShortString: string = 'Tom';
 // Step 2: Check if the string contains the letter 'B' using if/else statements.
 // Step 3: Log the result like so:
 if (shortString.includes('B')) {
   console.log(`The string "${shortString}" contains the letter 'B'`);
 } else {
   console.log(`The string "${shortString}" does NOT contain the letter 'B'`);
-}  
+}
 
 if (anotherShortString.includes('B')) {
   console.log(`The string "${anotherShortString}" contains the letter 'B'`);
-} else {     
+} else {
   console.log(`The string "${anotherShortString}" does NOT contain the letter 'B'`);
 }
 
@@ -100,27 +103,32 @@ let anotherBestLapTime: number = 65.0;
 
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
 // Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
-if (clientAge >= 18 && clientAge < 65 && bestLapTime < 60) {
-  console.log(`Client age: ${clientAge}, Best lap time: ${bestLapTime} seconds. The client is allowed to compete.`);
+const isFirstAllowedToCompete: boolean = clientAge >= 18 && clientAge < 65 && bestLapTime < 60;
+const isSecondAllowedToCompete: boolean = anotherClientAge >= 18 && anotherClientAge < 65 && anotherBestLapTime < 60;
+
+if (isFirstAllowedToCompete) {
+  console.log(`Client age: ${clientAge}, Lap time: ${bestLapTime}. Result: Allowed to compete!`);
 } else {
-  console.log(`Client age: ${clientAge}, Best lap time: ${bestLapTime} seconds. The client is NOT allowed to compete.`);
-}       
-if (anotherClientAge >= 18 && anotherClientAge < 65 && anotherBestLapTime < 60) {
-  console.log(`Client age: ${anotherClientAge}, Best lap time: ${anotherBestLapTime} seconds. The client is allowed to compete.`);
+  console.log(`Client age: ${clientAge}, Lap time: ${bestLapTime}. Result: NOT allowed.`);
+}
+
+if (isSecondAllowedToCompete) {
+  console.log(`Client age: ${anotherClientAge}, Lap time: ${anotherBestLapTime}. Result: Allowed to compete!`);
 } else {
-  console.log(`Client age: ${anotherClientAge}, Best lap time: ${anotherBestLapTime} seconds. The client is NOT allowed to compete.`);
-}   
+  console.log(`Client age: ${anotherClientAge}, Lap time: ${anotherBestLapTime}. Result: NOT allowed.`);
+}
+
 // Part 2: Map, Filter, Reduce
 
 // Exercise 7: Convert Strings to Uppercase (map)
 
 // Step 1: Declare a variable and assign an array of strings to it.
-let fruits: string[] = ["apple", "banana", "cherry", "date"];
+let fruits: string[] = ['apple', 'banana', 'cherry', 'date'];
 
 // Step 2: Use the map() method to transform each string to uppercase.
 // Step 3: Store the result in a new variable.
-let uppercaseFruits: string[] = fruits.map((fruit) => {
-    return fruit.toUpperCase();
+let uppercaseFruits: string[] = fruits.map(fruit => {
+  return fruit.toUpperCase();
 });
 
 // Step 4: Log the result.
@@ -129,16 +137,16 @@ console.log(uppercaseFruits);
 // Exercise 8: Filter Long Words (filter)
 
 // Step 1: Declare a variable and assign an array of words to it.
-let words: string[] = ["short", "medium", "longer", "tiny", "lengthy"];
+let words: string[] = ['short', 'medium', 'longer', 'tiny', 'lengthy'];
 
 // Step 2: Use the filter() method to keep only words longer than 5 characters.
 // Step 3: Store the result in a new variable.
 let longWords: string[] = words.filter((word) => {
-    return word.length > 5;
+  return word.length > 5;
 });
 // Step 4: Log the result.
-console.log(longWords); 
-       
+console.log(longWords);
+
 // Exercise 9: Find Maximum Number (reduce)
 
 // Step 1: Declare a variable and assign an array of numbers to it.
@@ -147,90 +155,93 @@ let numbers: number[] = [3, 17, 2, 23, 56, 41];
 // Step 2: Use the reduce() method to find the largest number.
 // Step 3: Store the result in a variable.
 const maxNumber: number = numbers.reduce((max, current) => {
-    if (current > max) {
-        return current; 
-    } else {
-        return max;     
-    }
+  if (current > max) {
+    return current;
+  } else {
+    return max;
+  }
 }, numbers[0]);
 
 // Step 4: Log the result.
-console.log(maxNumber); 
+console.log(maxNumber);
 
 // Exercise 10: Calculate Total Price (map + reduce)
 
 // Step 1: Declare a type Item with name, price, and quantity.
 type Item = {
-    name: string;
-    price: number;
-    quantity: number;
+  name: string;
+  price: number;
+  quantity: number;
 };
 
 // Step 2: Create an array of items.
 const items: Item[] = [
-    { name: "Book", price: 12.99, quantity: 2 },
-    { name: "Pen", price: 1.5, quantity: 10 },
-    { name: "Notebook", price: 5.25, quantity: 3 },
-    { name: "Monitor", price: 300, quantity: 2 },
+  { name: 'Book', price: 12.99, quantity: 2 },
+  { name: 'Pen', price: 1.5, quantity: 10 },
+  { name: 'Notebook', price: 5.25, quantity: 3 },
+  { name: 'Monitor', price: 300, quantity: 2 },
 ];
 
 // Step 3: Use map() to calculate price × quantity for each item.
 const subTotals: number[] = items.map((item) => {
-    return item.price * item.quantity;
-}); 
+  return item.price * item.quantity;
+});
 
 // Step 4: Use reduce() to sum all values.
 const total: number = subTotals.reduce((sum, current) => sum + current, 0);
 
 // Step 5: Log the total.
-console.log("Sub-totals for each item:", subTotals);
+console.log('Sub-totals for each item:', subTotals);
 console.log(`Total price of the cart: $${total}`);
 
 // Exercise 11: Get Unique Values (reduce)
 
 // Step 1: Declare a variable and assign an array of numbers with duplicates.
-let numbersWithDuplicates: number[] = [1, 2, 2, 3, 2, 4, 4, 4 , 1, 5, 6, 6];  
+let numbersWithDuplicates: number[] = [1, 2, 2, 3, 2, 4, 4, 4, 1, 5, 6, 6];
 
 // Step 2: Use the reduce() method to return only unique values.
 // Step 3: Store the result in a new array.
-const uniqueNumbers: number[] = numbersWithDuplicates.reduce((accumulator: number[], currentValue: number) => {
+const uniqueNumbers: number[] = numbersWithDuplicates.reduce(
+  (accumulator: number[], currentValue: number) => {
     if (accumulator.includes(currentValue)) {
-        return accumulator;
+      return accumulator;
     } else {
-        accumulator.push(currentValue);
-        return accumulator;
+      accumulator.push(currentValue);
+      return accumulator;
     }
-}, []);
-        
+  },
+  [],
+);
+
 // Step 4: Log the result.
-console.log(uniqueNumbers); 
+console.log(uniqueNumbers);
 
 // Exercise 12: Filter + Transform Users (filter + map – advanced)
 
 // Step 1: Declare a type User with name and age.
 type User = {
-    name: string;
-    age: number;
-};  
+  name: string;
+  age: number;
+};
 
 // Step 2: Create an array of users.
 const users: User[] = [
-    { name: "Alice", age: 25 },
-    { name: "Bob", age: 16 },
-    { name: "Maria", age: 28 },
-    { name: "Ivan", age: 17 },
-    { name: "Elena", age: 35 },
-    { name: "Stefan", age: 15 },
-    { name: "Alex", age: 19 }   
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 16 },
+  { name: 'Maria', age: 28 },
+  { name: 'Ivan', age: 17 },
+  { name: 'Elena', age: 35 },
+  { name: 'Stefan', age: 15 },
+  { name: 'Alex', age: 19 },
 ];
-    
+
 // Step 3: Use filter() to keep only users over 18.
 const adults: User[] = users.filter((user) => {
-    if (user.age > 18) {
-        return true;
-    } else {
-        return false;
-    }
+  if (user.age > 18) {
+    return true;
+  } else {
+    return false;
+  }
 });
 
 // Step 4: Use map() to extract their names.
