@@ -167,19 +167,23 @@ console.log(sum_2_numbers(2, 3));
 console.log('\nExercise 9');
 // Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
 // Step 2: Use JSDoc to add a description to the function. Example:
-
 /**
- * Multiply two numbers
- * @param {number} a - the first number to be multiplied
- * @param {number} b - the second number to be multiplied
- * @returns {number} The product of a and b
+ * @param {string} firstName
+ * @param {string} [middleName]
+ * @param {string} lastName
  */
 
-// function multiply(a: number, b: number): number {
-//     return a * b;
-// }
+function fullName(firstName: string, lastName: string, middleName?: string): void {
+  if (middleName) {
+    console.log(`${firstName} ${middleName} ${lastName}`);
+  } else {
+    console.log(`${firstName} ${lastName}`);
+  }
+}
 
 // Step 3: Call the function with and without a Middle Name to verify it works correctly
+fullName('Ivan', 'Petrov', 'Ivanov');
+fullName('Ivan', 'Ivanov');
 
 // Exercise 10:
 console.log('\nExercise 10');
