@@ -132,12 +132,18 @@ for (let i = 0; i < arrClients.length; i++) {
 // Hint: you can find hints at the end of this file
 // Call the function in order to verify it works
 
-// function add_item_in_form(table_row: number, complain: string, client_name: string, driver_name: string, car_number: number) {
-//     console.log("Printing the row");
-//     console.log(table_row, complain, client_name, car_number, driver_name);
-// }
+function add_item_in_form(
+  table_row: number,
+  complain: string,
+  client_name: string,
+  driver_name: string,
+  car_number: number,
+) {
+  console.log('Printing the row');
+  console.log(table_row, complain, client_name, car_number, driver_name);
+}
 
-// add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko")
+add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 
 // Exercise 8:
 // Fix the errors in the code below:
