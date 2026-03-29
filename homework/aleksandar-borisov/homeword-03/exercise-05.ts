@@ -1,7 +1,7 @@
 const name: string = 'Pesho';
 const hour: number = 20;
 const money: number = 100;
-const isSick = true;
+const isSick: boolean = true;
 
 let activity: string = "";
 

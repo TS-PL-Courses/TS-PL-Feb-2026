@@ -13,8 +13,8 @@ type Client = {
   accountType: AccountType;
 };
 
-const arr: Client[] = [clientData1, clientData2, clientData3];
+const clients: Client[] = [clientData1, clientData2, clientData3];
 
-for (const element of arr) {
-  console.log(element.name, element.accountType);
+for (const client of clients) {
+  console.log(client.name, client.accountType);
 }
