@@ -82,12 +82,48 @@ console.log(
 
 // Exercise 6: Use an Enum, Object type, and Arrays
 // Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
+enum AccountTypes {
+  Current = 1,
+  FlexSave = 4,
+  Deposit = 2,
+}
 // Step 2: Declare 3 objects with client data containing their name and their card account types as enum values:
 // {
 //   name: "John Doe",
 //   accountType: reference the enum here and assign the account a value,
 // }
+
+type Clients = {
+  name: string;
+  accountType: AccountTypes;
+};
+
+const firstClient = {
+  name: 'Ivan Petrov',
+  accountType: AccountTypes.Current,
+};
+
+const secondClient = {
+  name: 'Ivanka Ivanova',
+  accountType: AccountTypes.FlexSave,
+};
+
+const thirdClient = {
+  name: 'Peter Dimitrov',
+  accountType: AccountTypes.Deposit,
+};
+
 // Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
+const arrClients: Clients[] = [firstClient, secondClient, thirdClient];
+
+for (let i = 0; i < arrClients.length; i++) {
+  const clients = arrClients[i];
+  console.log(
+    `Client name: ${clients.name}` +
+      ` , ` +
+      `Account type: ${clients.accountType} (${AccountTypes[clients.accountType]})`,
+  );
+}
 
 // Functions
 
