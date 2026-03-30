@@ -159,6 +159,19 @@ console.log(text);
 
 console.log('\n Exercise 7');
 
+function add_item_in_form(
+  table_row: number,
+  complain: string,
+  client_name: string,
+  driver_name: string,
+  car_number: number,
+) {
+  console.log('Printing the row');
+  console.log(table_row, complain, client_name, driver_name, car_number);
+}
+
+add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
+
 // Exercise 8:
 // Fix the errors in the code below:
 // Hint: you can find hints at the end of this file
@@ -169,6 +182,15 @@ console.log('\n Exercise 7');
 // }
 
 // console.log(sum_2_numbers(2, 3));
+
+console.log('\n Exercise 8');
+
+function sum_2_numbers(number_1: number, number_2: number) {
+  const result = number_1 + number_2;
+  return result;
+}
+
+console.log(sum_2_numbers(2, 3));
 
 // Exercise 9:
 // Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
@@ -187,16 +209,73 @@ console.log('\n Exercise 7');
 
 // Step 3: Call the function with and without a Middle Name to verify it works correctly
 
+console.log('\n Exercise 9');
+/**
+ * Print person's name
+ * @param {string} firstName - the first name to be printed
+ * @param {string} lastName - the last name to be printed
+ * @param {string} [middleName] - the middle name to be printed (Optional)
+ * @returns {string} The first, last and middle name
+ */
+
+function person(firstName: string, lastName: string, middleName?: string): string {
+  return [firstName, middleName, lastName].filter(Boolean).join(' ');
+}
+
+console.log(person('Ivan', 'Ivanov', 'Georgiev'));
+
 // Exercise 10:
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
-// Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
+// Step 4: Conguments - first name, last name, or age"sole log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
+
+console.log('\n Exercise 10');
+/**
+ * Return concatenated strings
+ * @param {string} firstName - [firstName = 'Nikoleta] - optional
+ * @param {string} lastName [lastName = 'Nedelkova']- optional
+ * @param {number} age [age=37] - optional
+ * @returns {string} Concatenated strings: first name, last name, and age
+ */
+
+function concatenatedStrings(
+  firstName: string = 'Nikoleta',
+  lastName: string = 'Nedelkova',
+  age: number = 37,
+) {
+  let missingArguments = false;
+  if (arguments.length < 3) missingArguments = true;
+  if (missingArguments) {
+    console.log('Missing one or all arguments - first name, last name, or age');
+  }
+  return `${firstName}, ${lastName}, ${age}`;
+}
+
+console.log(concatenatedStrings());
+console.log(concatenatedStrings('Ivan'));
+console.log(concatenatedStrings('Ivan', 'Ivanov', 32));
+console.log(concatenatedStrings('Ivanov'));
 
 // Exercise 11:
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
+
+console.log('\n Exercise 11');
+
+/**
+ * Prints a message about the programming language
+ * @param {string} programmingLanguage - Programming language you like
+ * @param {string} compliment - A compliment about the programming language
+ * @returns {string} Message about the programming language
+ */
+
+function programming(programmingLanguage: string, compliment: string) {
+  console.log(`I love ${programmingLanguage} because ${compliment}`);
+}
+programming('Typescript', "it's nice.");
+programming('Java', "it's readable.");
 
 // Exercise 12:
 // Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
@@ -206,6 +285,26 @@ console.log('\n Exercise 7');
 // Number of uppercase characters: 2
 // Number of lowercase characters: 8
 
+console.log('\n Exercise 12');
+
+function caseCalculator(text: string): string {
+  let lowerCases: number = 0;
+  let upperCases: number = 0;
+
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === text[i].toLowerCase() && text[i] !== text[i].toUpperCase()) {
+      lowerCases++;
+    } else if (text[i] === text[i].toUpperCase() && text[i] !== text[i].toLowerCase()) {
+      upperCases++;
+    }
+  }
+  return (
+    `Number of the lowercae characters: ${lowerCases}` +
+    '\n' +
+    `Number of the uppercase characters: ${upperCases}`
+  );
+}
+console.log(caseCalculator('HeLL0@! WorLd@'));
 // Exercise 7 Hints:
 // The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
 
