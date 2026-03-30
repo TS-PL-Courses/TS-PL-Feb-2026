@@ -189,7 +189,24 @@ fullName('Ivan', 'Ivanov');
 console.log('\nExercise 10');
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
 // Step 2: Use JSDoc to add a description to the function
+/**
+ * @param {string} firstName - The person’s first name.
+ * @param {string} lastName - The person’s last name.
+ * @param {number} age - The person’s age.
+ * @returns {string}
+ */
 // Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
+function personInfo(firstName?: string, lastName?: string, age?: number): string {
+  if (firstName === undefined || lastName === undefined || age === undefined) {
+    return 'Missing one or all arguments - first name, last name, or age';
+  }
+  return `${firstName}, ${lastName}, ${age} `;
+}
+
+console.log(personInfo('Ivan', 'Petrov', 23));
+console.log(personInfo('Ivan', 'Petrov'));
+console.log(personInfo());
+
 // Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
 
 // Exercise 11:
