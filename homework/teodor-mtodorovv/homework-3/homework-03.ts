@@ -213,7 +213,18 @@ console.log(personInfo());
 console.log('\nExercise 11');
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
 // Step 2: Use JSDoc to add a description to the function
+/**
+ * @param {string} programmingLanguage - The language.
+ * @param {string} compliment - The compliment.
+ */
 // Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
+function loveLanguage(programmingLanguage: string, compliment: string): void {
+  console.log(`I love ${programmingLanguage} because ${compliment}`);
+}
+
+loveLanguage('TypeScript', 'it`s a new for me');
+loveLanguage('Java', 'i`m kinda familiar with');
+loveLanguage('Python', 'it is easy to learn');
 
 // Exercise 12:
 console.log('\nExercise 12');
