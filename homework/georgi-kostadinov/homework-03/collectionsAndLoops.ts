@@ -2,7 +2,7 @@
 // Part 1: Collections and Loops
 // ==============================
 
-// Exercise 1: Collections and Loops
+// Exercise 1: Loop over an array and log items only if the item's length is over 4 characters
 
 const colors: string[] = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'white', 'black'];
 
