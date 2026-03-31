@@ -104,7 +104,8 @@ let anotherBestLapTime: number = 65.0;
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
 // Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
 const isFirstAllowedToCompete: boolean = clientAge >= 18 && clientAge < 65 && bestLapTime < 60;
-const isSecondAllowedToCompete: boolean = anotherClientAge >= 18 && anotherClientAge < 65 && anotherBestLapTime < 60;
+const isSecondAllowedToCompete: boolean =
+  anotherClientAge >= 18 && anotherClientAge < 65 && anotherBestLapTime < 60;
 
 if (isFirstAllowedToCompete) {
   console.log(`Client age: ${clientAge}, Lap time: ${bestLapTime}. Result: Allowed to compete!`);
@@ -113,9 +114,13 @@ if (isFirstAllowedToCompete) {
 }
 
 if (isSecondAllowedToCompete) {
-  console.log(`Client age: ${anotherClientAge}, Lap time: ${anotherBestLapTime}. Result: Allowed to compete!`);
+  console.log(
+    `Client age: ${anotherClientAge}, Lap time: ${anotherBestLapTime}. Result: Allowed to compete!`,
+  );
 } else {
-  console.log(`Client age: ${anotherClientAge}, Lap time: ${anotherBestLapTime}. Result: NOT allowed.`);
+  console.log(
+    `Client age: ${anotherClientAge}, Lap time: ${anotherBestLapTime}. Result: NOT allowed.`,
+  );
 }
 
 // Part 2: Map, Filter, Reduce
@@ -127,7 +132,7 @@ let fruits: string[] = ['apple', 'banana', 'cherry', 'date'];
 
 // Step 2: Use the map() method to transform each string to uppercase.
 // Step 3: Store the result in a new variable.
-let uppercaseFruits: string[] = fruits.map(fruit => {
+let uppercaseFruits: string[] = fruits.map((fruit) => {
   return fruit.toUpperCase();
 });
 

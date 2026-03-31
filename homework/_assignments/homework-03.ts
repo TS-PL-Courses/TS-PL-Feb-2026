@@ -1,4 +1,6 @@
-// Homework 03 - Collections and Loops
+// Homework 03
+
+// Part 1: Collections and Loops
 
 // Exercise 1: Loop over an array and log items only if the item's length is over 4 characters
 // Step 1: Declare an array with the colors: "red", "blue", "green", "yellow", "purple", "orange", "white", "black"
@@ -41,7 +43,7 @@
 // }
 // Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
 
-// Functions
+// Part 2: Functions
 
 // Exercise 7:
 // Fix the following code to print the same message each time the function is called.
