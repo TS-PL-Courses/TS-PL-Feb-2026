@@ -1,4 +1,4 @@
-// npx ts-node typescript/special-types/enum.ts
+// npx ts-node typescript/collections/enum.ts
 
 // enum is a special "class" that represents a group of constants (unchangeable variables).
 
