@@ -125,6 +125,30 @@ callFetchUser();
 // Step 7: Print the success message if resolved.
 // Step 8: Print the error message if rejected.
 
+function fetchWithError(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = Math.random() > 0.5;
+
+      if (success) {
+        resolve('Success!');
+      } else {
+        reject('Something went wrong!');
+      }
+    }, 1000);
+  });
+}
+
+async function callFetchWithError() {
+  try {
+    const result = await fetchWithError();
+    console.log(result);
+  } catch (err) {
+    console.log(err);
+  }
+}
+callFetchWithError();
+
 // Exercise 11 - Sequential Async Tasks
 // Step 1: Create a function named "stepOne" that returns a Promise<string>.
 // Step 2: Inside it, use setTimeout to resolve "Step 1 done" after 1000 ms.
@@ -136,3 +160,23 @@ callFetchUser();
 // Step 8: Use await to call "stepTwo" and store the result.
 // Step 9: Print the result.
 // Step 10: Call the "runSteps" function.
+
+function stepOne(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('Step 1 done'), 1000);
+  });
+}
+
+function stepTwo(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve('Step 2 done'), 1000);
+  });
+}
+
+async function runSteps() {
+  const stepOneResult = await stepOne();
+  console.log(stepOneResult);
+  const stepTwoResult = await stepTwo();
+  console.log(stepTwoResult);
+}
+runSteps();
