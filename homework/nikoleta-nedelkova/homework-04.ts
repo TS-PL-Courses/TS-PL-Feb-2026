@@ -15,6 +15,30 @@ import { resolve } from 'path';
 // Step 4: Call the method changeName() and pass a new name as a parameter.
 // Step 5: Call the method getName() and print the result to the console.
 
+class Employee {
+  name: string;
+  age: number;
+  position: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  getName(): string {
+    return this.name;
+  }
+
+  changeName(newName: string): void {
+    this.name = newName;
+  }
+}
+
+const employee1 = new Employee('Nikoleta');
+
+console.log(employee1.getName());
+employee1.changeName('Ivana');
+console.log(employee1.getName());
+
 // Exercise 2 - User ID System (Interface Basics)
 // Step 1: Define an interface named "WithID" with a property id: number.
 // Step 2: Define an interface named "User" that inherits from the "WithID" interface and adds properties name: string, age: number.
