@@ -91,7 +91,7 @@ const sumCallback = function (acc: string, num: string) {
 
 // REDUCE: calculate the sum of all numbers in the array
 // acc starts at 0 (initial value)
-// each iteration adds the current number to the accumulator
+// each iteration adds the current number to the accumulatorfun
 const sum = numbersArr.reduce((acc, num) => acc + num, 0);
 
 const stringsArr: string[] = ['1', '2', '3', '4', '5', '6'];
