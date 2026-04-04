@@ -45,6 +45,16 @@ console.log(employee1.getName());
 // Step 3: Create an object of the interface User and assign values to all properties.
 // Step 4: Print the object to the console.
 
+interface WithID {
+  id: number;
+}
+interface User extends WithID {
+  name: string;
+  age: number;
+}
+const user: User = { id: 1, name: 'Nikoleta', age: 37 };
+console.log(user);
+
 // Exercise 3 - Car Rental Service (Encapsulation)
 // Step 1: Define a class named "CarRental" with properties: carType, costPerDay, and methods setCostPerDay, getCostPerDay, rentCar, and a constructor that sets the two properties.
 // Step 2: carType should be visible outside the class, but costPerDay should be private.
@@ -54,6 +64,44 @@ console.log(employee1.getName());
 // Step 4: Print the car rental details in the console by calling the method rentCar() for each object with a different number of days rented.
 // Example output: "Renting a Hatchback for 3 days will cost: $150"
 // Step 5: Change the costPerDay for one of the car types and print the new rental details in the console.
+
+class CarRental {
+  readonly carType: string;
+  private costPerDay: number;
+
+  constructor(carType: string, costPerDay: number) {
+    ((this.carType = carType), (this.costPerDay = costPerDay));
+  }
+
+  setCostPerDay(newCostPerDay: number): void {
+    if (newCostPerDay > 0) {
+      this.costPerDay = newCostPerDay;
+    } else {
+      console.log('Invalid price');
+    }
+  }
+  getCostPerDay(): number {
+    return this.costPerDay;
+  }
+
+  rentCar(days: number): string {
+    const totalPrice = days * this.costPerDay;
+    return `Renting a ${this.carType} for ${days} days will cost ${totalPrice} eur.`;
+  }
+}
+
+const carType1 = new CarRental('Hatchback', 15);
+const carType2 = new CarRental('Sedan', 20);
+const carType3 = new CarRental('SUV', 25);
+
+console.log(carType1.rentCar(9));
+console.log(carType2.rentCar(5));
+console.log(carType3.rentCar(3));
+
+carType1.setCostPerDay(30);
+console.log(
+  `The new price per day of the ${carType1.carType} is ${carType1.getCostPerDay()} eur. ${carType1.rentCar(9)}`,
+);
 
 // Exercise 4 - Furniture Factory (Inheritance)
 // Step 1: Create a class called "Chair" that inherits from the base class "Furniture".
