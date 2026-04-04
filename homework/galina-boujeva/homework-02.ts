@@ -23,9 +23,13 @@ if (isMale) {
 // "The number {first number} is NOT between {second number} and {third number}"
 
 const firstNumber: number = 20;
-const secondNumber: number = 5;
-const thirdNumber: number = 15;
-if (firstNumber > secondNumber && firstNumber < thirdNumber) {
+const secondNumber: number = 25;
+const thirdNumber: number = 2;
+
+if (
+  (firstNumber > secondNumber && firstNumber < thirdNumber) ||
+  (firstNumber > thirdNumber && firstNumber < secondNumber)
+) {
   console.log(`The number ${firstNumber} is between ${secondNumber} and ${thirdNumber}`);
 } else {
   console.log(`The number ${firstNumber} is NOT between ${secondNumber} and ${thirdNumber}`);
