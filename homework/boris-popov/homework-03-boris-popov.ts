@@ -171,7 +171,11 @@ console.log('-----Exercise 10-----');
  * @param {number} age - The person's age
  * @returns {string} A formatted string with the person's information
  */
-function getPersonInfo(firstName: string = 'Unknown', lastName: string = 'Unknown', age: number = 0): string {
+function getPersonInfo(
+  firstName: string = 'Unknown',
+  lastName: string = 'Unknown',
+  age: number = 0,
+): string {
   if (firstName === 'Unknown' || lastName === 'Unknown' || age === 0) {
     return 'Missing one or all arguments - first name, last name, or age';
   }
@@ -184,9 +188,18 @@ console.log(getPersonInfo('Georgi'));
 console.log(getPersonInfo());
 
 // Exercise 11:
-// Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
-// Step 2: Use JSDoc to add a description to the function
-// Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
+console.log('-----Exercise 11-----');
+/**
+ * Prints a message about loving a programming language.
+ * @param {string} programmingLanguage - The programming language you love
+ * @param {string} compliment - The compliment for the programming language
+ */
+function message(programmingLanguage: string, compliment: string) {
+  console.log(`I love ${programmingLanguage} because ${compliment}`);
+}
+message('TypeScript', "I'm currently learning it");
+message('C#', 'it is widely used');
+message('Python', 'it has a simple syntax');
 
 // Exercise 12:
 // Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
