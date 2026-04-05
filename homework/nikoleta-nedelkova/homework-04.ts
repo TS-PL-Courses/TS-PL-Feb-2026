@@ -112,6 +112,33 @@ console.log(
 // Step 6: Create another object of the class "Chair" with a different type of furniture and print the type of furniture and number of legs in the console.
 // Example output: "Chair 1: Type - Teakwood, Legs - 4"
 
+class Furniture {
+  type: string = 'Teakwood';
+}
+
+class Chair extends Furniture {
+  private chairLegs: number;
+
+  constructor(chairLegs: number) {
+    super();
+    this.chairLegs = chairLegs;
+  }
+
+  changeChairType(type: string): void {
+    this.type = type;
+  }
+
+  getChairLegs() {
+    return this.chairLegs;
+  }
+}
+const chairType1 = new Chair(4);
+console.log(`Chair 1: Type - ${chairType1.type}, Legs - ${chairType1.getChairLegs()}`);
+
+const chairType2 = new Chair(6);
+chairType2.changeChairType('Plastic');
+console.log(`Chair 2: Type - ${chairType2.type}, Legs - ${chairType2.getChairLegs()}`);
+
 // Exercise 5 - Music Instruments (Abstraction)
 // Step 1: Create an abstract class called "Instrument" with a method "playMusic".
 // Step 2: Create two subclasses, "Guitar" and "Piano", that inherit from the base class "Instrument".
