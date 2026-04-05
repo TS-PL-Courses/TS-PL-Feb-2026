@@ -163,10 +163,25 @@ printFullName('Ivan', 'Petrov', 'Georgiev');
 printFullName('Georgi', 'Asparuhov');
 
 // Exercise 10:
-// Step 1: Define a function that returns concatenated strings: first name, last name, and age
-// Step 2: Use JSDoc to add a description to the function
-// Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
-// Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
+console.log('-----Exercise 10-----');
+/**
+ * Returns information about a person.
+ * @param {string} firstName - The person's first name
+ * @param {string} lastName - The person's last name
+ * @param {number} age - The person's age
+ * @returns {string} A formatted string with the person's information
+ */
+function getPersonInfo(firstName: string = 'Unknown', lastName: string = 'Unknown', age: number = 0): string {
+  if (firstName === 'Unknown' || lastName === 'Unknown' || age === 0) {
+    return 'Missing one or all arguments - first name, last name, or age';
+  }
+  return `${firstName} ${lastName}, Age: ${age}`;
+}
+
+console.log(getPersonInfo('Georgi', 'Georgiev', 30));
+console.log(getPersonInfo('Georgi', 'Georgiev'));
+console.log(getPersonInfo('Georgi'));
+console.log(getPersonInfo());
 
 // Exercise 11:
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
