@@ -184,6 +184,42 @@ console.log(piano.playMusic());
 
 console.log('\n Exersice 6');
 
+class Mammal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  eat(): string {
+    return `${this.name} eats food`;
+  }
+}
+
+class Carnivore extends Mammal {
+  constructor(name: string) {
+    super(name);
+  }
+  override eat() {
+    return `${this.name} is a carnivore and eats meat.`;
+  }
+}
+
+class Herbivore extends Mammal {
+  constructor(name: string) {
+    super(name);
+  }
+  override eat() {
+    return `${this.name} is a herbivore and eats plants.`;
+  }
+}
+
+const carnivore = new Carnivore('Bear');
+const herbivore = new Herbivore('Sheep');
+
+console.log(carnivore.eat());
+console.log(herbivore.eat());
+
 // Part 2: Asynchronous Operations and Error Handling
 
 // Exercise 7 - Basic Promise with setTimeout
@@ -201,8 +237,6 @@ function waitTwoSeconds(): Promise<string> {
   });
 }
 
-//waitTwoSeconds().then((message) => console.log(message));
-
 // Exercise 8 - Using async/await
 // Step 1: Use the "waitTwoSeconds" function from Exercise 1.
 // Step 2: Create an async function named "runTask".
@@ -215,8 +249,6 @@ async function runTask() {
   const result = await waitTwoSeconds();
   console.log(`The result after await wait: ${result}`);
 }
-
-//runTask();
 
 // Exercise 9 - Simulating API Call
 // Step 1: Create a function named "fetchUser".
@@ -239,8 +271,6 @@ async function callFetchUser() {
   const result = await fetchUser();
   console.log('The user is:', result.name);
 }
-
-//callFetchUser();
 
 // Exercise 10 - Error Handling with async/await
 // Step 1: Create a function named "fetchWithError".
@@ -276,7 +306,6 @@ async function callFetchWithError() {
     console.log(err);
   }
 }
-//callFetchWithError();
 
 // Exercise 11 - Sequential Async Tasks
 // Step 1: Create a function named "stepOne" that returns a Promise<string>.
@@ -308,7 +337,6 @@ async function runSteps() {
   const stepTwoResult = await stepTwo();
   console.log(stepTwoResult);
 }
-//runSteps();
 
 async function runAllExercises() {
   console.log('\n Exercise 7');
