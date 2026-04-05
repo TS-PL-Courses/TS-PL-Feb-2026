@@ -44,6 +44,18 @@ for (let i = totalRows - 1; i >= 1; i--) {
 }
 
 // Exercise 4: Phone number area code substitution
+console.log('-----Exercise 4: Phone number area code substitution-----');
+let phoneNumbers: string[] = ['0376829209', '04239982009', '0536829299'];
+for (let i = 0; i < phoneNumbers.length; i++) {
+  const originalNumber = phoneNumbers[i];
+  let newNumber = originalNumber;
+
+  if (originalNumber[0] === '0') {
+    newNumber = '+359' + originalNumber.substring(1);
+  }
+
+  console.log(`Original: ${originalNumber}, New: ${newNumber}`);
+}
 // Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
 // Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
 // Step 3: Log the original and the new phone numbers in the console
