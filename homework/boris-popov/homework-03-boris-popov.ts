@@ -15,17 +15,33 @@ for (let i = 0; i < colors.length; i++) {
 }
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
+console.log(
+  '-----Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop-----',
+);
+for (let i = 1; i <= 100; i++) {
+  console.log(i);
+}
 
 // Exercise 3: Write a script to construct the following pattern using a nested for loop:
-// *
-// * *
-// * * *
-// * * * *
-// * * * * *
-// * * * *
-// * * *
-// * *
-// *
+console.log(
+  '-----Exercise 3: Write a script to construct the following pattern using a nested for loop-----',
+);
+const totalRows = 5;
+for (let i = 1; i <= totalRows; i++) {
+  let row: string = '';
+  for (let j = 1; j <= i; j++) {
+    row += '* ';
+  }
+  console.log(row.trim());
+}
+
+for (let i = totalRows - 1; i >= 1; i--) {
+  let row: string = '';
+  for (let j = 1; j <= i; j++) {
+    row += '* ';
+  }
+  console.log(row.trim());
+}
 
 // Exercise 4: Phone number area code substitution
 // Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
