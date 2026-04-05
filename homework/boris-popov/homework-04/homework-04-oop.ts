@@ -1,17 +1,30 @@
 // Homework 04
+// npx ts-node homework/boris-popov/homework-04/homework-04-oop.ts
 
 // Part 1: OOP
 
 // Exercise 1 - Employee Info System (Class Basics)
-// Step 1: Define a class named "Employee":
-// Properties - name: string, age: number, position: string
-// Constructor - requires a parameter name: string
-// Methods - getName(): string
-// Methods - changeName(newName: string): void
-// Step 2: Create an object of the class Employee.
-// Step 3: Call the method getName() and print the result to the console.
-// Step 4: Call the method changeName() and pass a new name as a parameter.
-// Step 5: Call the method getName() and print the result to the console.
+console.log('-----Exercise 1 - Employee Info System (Class Basics)-----');
+class Employee {
+  name: string;
+  age: number;
+  position: string;
+  constructor(name: string) {
+    this.name = name;
+    this.age = 0;
+    this.position = '';
+  }
+  getName(): string {
+    return this.name;
+  }
+  changeName(newName: string): void {
+    this.name = newName;
+  }
+}
+const employee1 = new Employee('Ivan');
+console.log('Initial name:', employee1.getName());
+employee1.changeName('Petar');
+console.log('Updated name:', employee1.getName());
 
 // Exercise 2 - User ID System (Interface Basics)
 // Step 1: Define an interface named "WithID" with a property id: number.

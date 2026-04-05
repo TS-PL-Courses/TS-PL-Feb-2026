@@ -1,4 +1,5 @@
 // Homework 04
+// npx ts-node homework/boris-popov/homework-04/homework-04-async.ts
 
 // Part 2: Asynchronous Operations and Error Handling
 
