@@ -145,6 +145,27 @@ console.log(`Chair 2: Type - ${chairType2.type}, Legs - ${chairType2.getChairLeg
 // Step 3: Implement the "playMusic" method in both subclasses to log a message indicating which instrument is playing music.
 // Step 4: Create an object of each subclass and call the "playMusic" method to see the different outputs.
 
+abstract class Instrument {
+  public abstract playMusic(): string;
+}
+
+class Guitar extends Instrument {
+  playMusic(): string {
+    return 'Guirtar is playing music';
+  }
+}
+
+class Piano extends Instrument {
+  playMusic(): string {
+    return 'Piano is playing music';
+  }
+}
+
+const guitar = new Guitar();
+console.log(guitar.playMusic());
+const piano = new Piano();
+console.log(piano.playMusic());
+
 // Exercise 6 - Animal Kingdom (Polymorphism)
 // Step 1: Create a base class called "Mammal" with:
 // Constructor that takes a name parameter and assigns it to a property called name.
