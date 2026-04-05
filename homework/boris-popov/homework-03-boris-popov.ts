@@ -130,6 +130,7 @@ function add_item_in_form(
 add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 
 // Exercise 8:
+console.log('-----Exercise 8-----');
 // Fix the errors in the code below:
 // Hint: you can find hints at the end of this file
 // Call the function in order to verify it works
@@ -142,21 +143,24 @@ function sum_2_numbers(number_1: number, number_2: number) {
 console.log(sum_2_numbers(2, 3));
 
 // Exercise 9:
-// Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
-// Step 2: Use JSDoc to add a description to the function. Example:
-
+console.log('-----Exercise 9-----');
 /**
- * Multiply two numbers
- * @param {number} a - the first number to be multiplied
- * @param {number} b - the second number to be multiplied
- * @returns {number} The product of a and b
+ * Prints the full name of a person.
+ * If a middle name is provided, it is included between the first and last name.
+ *
+ * @param {string} firstName - The person's first name
+ * @param {string} lastName - The person's last name
+ * @param {string} middleName - The person's middle name (optional)
  */
-
-// function multiply(a: number, b: number): number {
-//     return a * b;
-// }
-
-// Step 3: Call the function with and without a Middle Name to verify it works correctly
+function printFullName(firstName: string, lastName: string, middleName?: string) {
+  if (middleName) {
+    console.log(`Full Name: ${firstName} ${middleName} ${lastName}`);
+  } else {
+    console.log(`Full Name: ${firstName} ${lastName}`);
+  }
+}
+printFullName('Ivan', 'Petrov', 'Georgiev');
+printFullName('Georgi', 'Asparuhov');
 
 // Exercise 10:
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
