@@ -85,7 +85,7 @@ console.log('-----Exercise 4 - Furniture Factory (Inheritance)-----');
 class Furniture {
   public type: string;
 
-  constructor(type: string = "Teakwood") {
+  constructor(type: string = 'Teakwood') {
     this.type = type;
   }
 }
@@ -94,7 +94,7 @@ class Chair extends Furniture {
   private legs: number;
 
   constructor(type?: string) {
-    super(type); 
+    super(type);
     this.legs = 4;
   }
 
@@ -106,14 +106,32 @@ class Chair extends Furniture {
 const chair1 = new Chair();
 console.log(`Chair 1: Type - ${chair1.type}, Legs - ${chair1.getLegs()}`);
 
-const chair2 = new Chair("Oakwood");
+const chair2 = new Chair('Oakwood');
 console.log(`Chair 2: Type - ${chair2.type}, Legs - ${chair2.getLegs()}`);
 
 // Exercise 5 - Music Instruments (Abstraction)
-// Step 1: Create an abstract class called "Instrument" with a method "playMusic".
-// Step 2: Create two subclasses, "Guitar" and "Piano", that inherit from the base class "Instrument".
-// Step 3: Implement the "playMusic" method in both subclasses to log a message indicating which instrument is playing music.
-// Step 4: Create an object of each subclass and call the "playMusic" method to see the different outputs.
+console.log('-----Exercise 5 - Music Instruments (Abstraction)-----');
+abstract class Instrument {
+  abstract playMusic(): void;
+}
+
+class Guitar extends Instrument {
+  playMusic(): void {
+    console.log('Guitar is playing music');
+  }
+}
+
+class Piano extends Instrument {
+  playMusic(): void {
+    console.log('Piano is playing music');
+  }
+}
+
+const guitar = new Guitar();
+const piano = new Piano();
+
+guitar.playMusic();
+piano.playMusic();
 
 // Exercise 6 - Animal Kingdom (Polymorphism)
 // Step 1: Create a base class called "Mammal" with:
