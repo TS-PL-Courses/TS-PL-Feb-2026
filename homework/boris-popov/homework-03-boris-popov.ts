@@ -134,11 +134,12 @@ add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 // Hint: you can find hints at the end of this file
 // Call the function in order to verify it works
 
-// function sum_2_numbers(number_1: number, number_2: number) {
-//     const result = number_1 + number_2;
-// }
+function sum_2_numbers(number_1: number, number_2: number) {
+  let result = number_1 + number_2;
+  return result;
+}
 
-// console.log(sum_2_numbers(2, 3));
+console.log(sum_2_numbers(2, 3));
 
 // Exercise 9:
 // Step 1: Define a function that prints in the console a person's First Name, Middle Name, and Last Name, where the Middle Name is optional
