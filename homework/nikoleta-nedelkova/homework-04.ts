@@ -1,7 +1,4 @@
 // Homework 04
-
-import { resolve } from 'path';
-
 // Part 1: OOP
 
 // Exercise 1 - Employee Info System (Class Basics)
@@ -14,6 +11,8 @@ import { resolve } from 'path';
 // Step 3: Call the method getName() and print the result to the console.
 // Step 4: Call the method changeName() and pass a new name as a parameter.
 // Step 5: Call the method getName() and print the result to the console.
+
+console.log('\n Exersice 1');
 
 class Employee {
   name: string;
@@ -45,6 +44,8 @@ console.log(employee1.getName());
 // Step 3: Create an object of the interface User and assign values to all properties.
 // Step 4: Print the object to the console.
 
+console.log('\n Exersice 2');
+
 interface WithID {
   id: number;
 }
@@ -64,6 +65,8 @@ console.log(user);
 // Step 4: Print the car rental details in the console by calling the method rentCar() for each object with a different number of days rented.
 // Example output: "Renting a Hatchback for 3 days will cost: $150"
 // Step 5: Change the costPerDay for one of the car types and print the new rental details in the console.
+
+console.log('\n Exersice 3');
 
 class CarRental {
   readonly carType: string;
@@ -112,6 +115,8 @@ console.log(
 // Step 6: Create another object of the class "Chair" with a different type of furniture and print the type of furniture and number of legs in the console.
 // Example output: "Chair 1: Type - Teakwood, Legs - 4"
 
+console.log('\n Exersice 4');
+
 class Furniture {
   type: string = 'Teakwood';
 }
@@ -145,6 +150,8 @@ console.log(`Chair 2: Type - ${chairType2.type}, Legs - ${chairType2.getChairLeg
 // Step 3: Implement the "playMusic" method in both subclasses to log a message indicating which instrument is playing music.
 // Step 4: Create an object of each subclass and call the "playMusic" method to see the different outputs.
 
+console.log('\n Exersice 5');
+
 abstract class Instrument {
   public abstract playMusic(): string;
 }
@@ -175,6 +182,8 @@ console.log(piano.playMusic());
 // For example: "{name} is a carnivore and eats meat" or "{name} is a herbivore and eats plants".
 // Step 4: Create an object of each subclass and call the "eat" method to see the different outputs.
 
+console.log('\n Exersice 6');
+
 // Part 2: Asynchronous Operations and Error Handling
 
 // Exercise 7 - Basic Promise with setTimeout
@@ -192,7 +201,7 @@ function waitTwoSeconds(): Promise<string> {
   });
 }
 
-waitTwoSeconds().then((message) => console.log(message));
+//waitTwoSeconds().then((message) => console.log(message));
 
 // Exercise 8 - Using async/await
 // Step 1: Use the "waitTwoSeconds" function from Exercise 1.
@@ -207,7 +216,7 @@ async function runTask() {
   console.log(`The result after await wait: ${result}`);
 }
 
-runTask();
+//runTask();
 
 // Exercise 9 - Simulating API Call
 // Step 1: Create a function named "fetchUser".
@@ -231,7 +240,7 @@ async function callFetchUser() {
   console.log('The user is:', result.name);
 }
 
-callFetchUser();
+//callFetchUser();
 
 // Exercise 10 - Error Handling with async/await
 // Step 1: Create a function named "fetchWithError".
@@ -267,7 +276,7 @@ async function callFetchWithError() {
     console.log(err);
   }
 }
-callFetchWithError();
+//callFetchWithError();
 
 // Exercise 11 - Sequential Async Tasks
 // Step 1: Create a function named "stepOne" that returns a Promise<string>.
@@ -299,4 +308,25 @@ async function runSteps() {
   const stepTwoResult = await stepTwo();
   console.log(stepTwoResult);
 }
-runSteps();
+//runSteps();
+
+async function runAllExercises() {
+  console.log('\n Exercise 7');
+  await waitTwoSeconds().then((message) => {
+    console.log(message);
+  });
+
+  console.log('\n Exercise 8');
+  await runTask();
+
+  console.log('\n Exercise 9');
+  await callFetchUser();
+
+  console.log('\n Exercise 10');
+  await callFetchWithError();
+
+  console.log('\n Exercise 11');
+  await runSteps();
+}
+
+runAllExercises();
