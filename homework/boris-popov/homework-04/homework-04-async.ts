@@ -4,11 +4,18 @@
 // Part 2: Asynchronous Operations and Error Handling
 
 // Exercise 7 - Basic Promise with setTimeout
-// Step 1: Create a function named "waitTwoSeconds".
-// Step 2: Make the function return a Promise<string>.
-// Step 3: Inside the Promise, use setTimeout to delay for 2000 milliseconds.
-// Step 4: After the delay, resolve the Promise with the message "Done waiting!".
-// Step 5: Call the function and log the result using .then().
+console.log('-----Exercise 7 - Basic Promise with setTimeout-----');
+function waitTwoSeconds(): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Done waiting!');
+    }, 2000);
+  });
+}
+
+waitTwoSeconds().then((message) => {
+  console.log(message);
+});
 
 // Exercise 8 - Using async/await
 // Step 1: Use the "waitTwoSeconds" function from Exercise 1.
