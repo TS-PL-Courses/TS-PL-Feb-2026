@@ -56,18 +56,29 @@ for (let i = 0; i < phoneNumbers.length; i++) {
 
   console.log(`Original: ${originalNumber}, New: ${newNumber}`);
 }
-// Step 1: Declare an array with string phone number values: "0376829209", "04239982009", "0536829299"
-// Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
-// Step 3: Log the original and the new phone numbers in the console
 
 // Exercise 5: Decide on an evening activity
-// Step 1: Declare 4 variables: name (string), hour (whole number), money (floating-point number), and whether the person is sick (boolean)
-// Step 2: Write a conditional statement that decides on an evening activity based on the following rules:
-// - If the person is not sick and has at least 20 money, the activity is "go to the cinema"
-// - If the person is not sick and has less than 20 money, the activity is "go to the park"
-// - If the person is not sick, has more than 20 money, but it is late at night (hour is between 21 and 24), the activity is "watch a movie"
-// - If the person is sick, the activity is "stay at home and go to bed"
-// Step 3: Log the person's details and the decided activity
+console.log('-----Exercise 5: Decide on an evening activity-----');
+let name: string = 'John';
+let hour: number = 20;
+let money: number = 25.5;
+let isSick: boolean = false;
+let activity: string;
+
+if (isSick) {
+  activity = 'stay at home and go to bed';
+} else {
+  if (money > 20 && hour >= 21 && hour <= 24) {
+    activity = 'watch a movie';
+  } else if (money >= 20) {
+    activity = 'go to the cinema';
+  } else {
+    activity = 'go to the park';
+  }
+}
+console.log(
+  `Name: ${name}, Hour: ${hour}, Money: ${money}, Is Sick: ${isSick}, Activity: ${activity}`,
+);
 
 // Exercise 6: Use an Enum, Object type, and Arrays
 // Step 1: Declare an enum of account types with the following values: "Current" = 1, "FlexSave" = 4, "Deposit" = 2
