@@ -202,22 +202,26 @@ message('C#', 'it is widely used');
 message('Python', 'it has a simple syntax');
 
 // Exercise 12:
-// Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
-// Hint: you can find hints at the end of this file
-// Example: Sample string: "Hello World"
-// Expected Output:
-// Number of uppercase characters: 2
-// Number of lowercase characters: 8
-
-// Exercise 7 Hints:
-// The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
-
-// Exercise 8 Hints:
-// 1. Missing closing bracket in the console log statement
-// 2. A return statement is missing inside the function
-
-// Exercise 12 Hints:
-// 1. Use a for loop to iterate through the string
-// 2. Use 2 variables to count the number of uppercase and lowercase letters
-// 3. Use an if statement to check if a character is uppercase or lowercase and increment the respective counter
-// 4. Use a collection as a return value to return both counts
+console.log('-----Exercise 12-----');
+/**
+ * Counts the number of uppercase and lowercase letters in a string
+ * @param {string} input - The input string
+ * @returns {{ uppercase: number; lowercase: number }} Object with counts
+ */
+function countUpperAndLowerCase(input: string): { uppercase: number; lowercase: number } {
+  let uppercase: number = 0;
+  let lowercase: number = 0;
+  for (let i = 0; i < input.length; i++) {
+    const char = input[i];
+    if (char >= 'A' && char <= 'Z') {
+      uppercase++;
+    } else if (char >= 'a' && char <= 'z') {
+      lowercase++;
+    }
+  }
+  return { uppercase, lowercase };
+}
+let sampleString: string = 'Hello World is a very Popular Phrase Used In Programming';
+const counts = countUpperAndLowerCase(sampleString);
+console.log(`Number of uppercase characters: ${counts.uppercase}`);
+console.log(`Number of lowercase characters: ${counts.lowercase}`);
