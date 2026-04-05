@@ -81,13 +81,33 @@ car1.setCostPerDay(60);
 car1.rentCar(3);
 
 // Exercise 4 - Furniture Factory (Inheritance)
-// Step 1: Create a class called "Chair" that inherits from the base class "Furniture".
-// Step 2: "Teakwood" should be the default type of furniture used by all furniture.
-// Step 3: Create an option to change the type of furniture for each object created from the class "Chair".
-// Step 4: The number of legs of a chair should be a property that cannot be altered outside the class.
-// Step 5: Create an object of the class "Chair" and print the type of furniture and number of legs in the console.
-// Step 6: Create another object of the class "Chair" with a different type of furniture and print the type of furniture and number of legs in the console.
-// Example output: "Chair 1: Type - Teakwood, Legs - 4"
+console.log('-----Exercise 4 - Furniture Factory (Inheritance)-----');
+class Furniture {
+  public type: string;
+
+  constructor(type: string = "Teakwood") {
+    this.type = type;
+  }
+}
+
+class Chair extends Furniture {
+  private legs: number;
+
+  constructor(type?: string) {
+    super(type); 
+    this.legs = 4;
+  }
+
+  public getLegs(): number {
+    return this.legs;
+  }
+}
+
+const chair1 = new Chair();
+console.log(`Chair 1: Type - ${chair1.type}, Legs - ${chair1.getLegs()}`);
+
+const chair2 = new Chair("Oakwood");
+console.log(`Chair 2: Type - ${chair2.type}, Legs - ${chair2.getLegs()}`);
 
 // Exercise 5 - Music Instruments (Abstraction)
 // Step 1: Create an abstract class called "Instrument" with a method "playMusic".
