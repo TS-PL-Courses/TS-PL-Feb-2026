@@ -18,12 +18,12 @@ waitTwoSeconds().then((message) => {
 });
 
 // Exercise 8 - Using async/await
-// Step 1: Use the "waitTwoSeconds" function from Exercise 1.
-// Step 2: Create an async function named "runTask".
-// Step 3: Inside the function, use await to wait for "waitTwoSeconds".
-// Step 4: Store the result in a variable.
-// Step 5: Print the result to the console.
-// Step 6: Call the "runTask" function.
+console.log('-----Exercise 8 - Using async/await-----');
+async function runTask(): Promise<void> {
+  const result = await waitTwoSeconds();
+  console.log(result);
+}
+runTask();
 
 // Exercise 9 - Simulating API Call
 // Step 1: Create a function named "fetchUser".
