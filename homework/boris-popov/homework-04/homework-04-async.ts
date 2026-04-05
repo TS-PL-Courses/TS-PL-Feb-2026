@@ -14,14 +14,14 @@ function waitTwoSeconds(): Promise<string> {
 }
 
 waitTwoSeconds().then((message) => {
-  console.log(message);
+  console.log('Ex7: ' + message);
 });
 
 // Exercise 8 - Using async/await
 console.log('-----Exercise 8 - Using async/await-----');
 async function runTask(): Promise<void> {
   const result = await waitTwoSeconds();
-  console.log(result);
+  console.log('Ex8: ' + result);
 }
 runTask();
 
@@ -37,21 +37,35 @@ function fetchUser(): Promise<{ id: number; name: string }> {
 
 async function getUser() {
   const user = await fetchUser();
-  console.log(user.name);
+  console.log('Ex9: ' + user.name);
 }
 getUser();
 
 // Exercise 10 - Error Handling with async/await
-// Step 1: Create a function named "fetchWithError".
-// Step 2: Make it return a Promise<string>.
-// Step 3: Use setTimeout with a delay of 1000 milliseconds.
-// Step 4: Inside setTimeout, randomly decide:
-//         - Resolve with "Success!" OR
-//         - Reject with "Something went wrong".
-// Step 5: Create an async function to call "fetchWithError".
-// Step 6: Use try/catch to handle the result.
-// Step 7: Print the success message if resolved.
-// Step 8: Print the error message if rejected.
+console.log('-----Exercise 10 - Error Handling with async/await-----');
+function fetchWithError(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const success = Math.random() > 0.5;
+      if (success) {
+        resolve('Success!');
+      } else {
+        reject('Something went wrong');
+      }
+    }, 1000);
+  });
+}
+
+async function runFetch() {
+  try {
+    const message = await fetchWithError();
+    console.log('Ex10: ' + message);
+  } catch (error) {
+    console.log('Ex10: ' + error);
+  }
+}
+
+runFetch();
 
 // Exercise 11 - Sequential Async Tasks
 // Step 1: Create a function named "stepOne" that returns a Promise<string>.
