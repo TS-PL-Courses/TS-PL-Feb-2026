@@ -134,10 +134,34 @@ guitar.playMusic();
 piano.playMusic();
 
 // Exercise 6 - Animal Kingdom (Polymorphism)
-// Step 1: Create a base class called "Mammal" with:
-// Constructor that takes a name parameter and assigns it to a property called name.
-// Method "eat" that logs "{name} eats food".
-// Step 2: Create two subclasses, "Carnivore" and "Herbivore", that inherit from the base class "Mammal".
-// Step 3: Override the "eat" method in both subclasses to log a different message for each subclass.
-// For example: "{name} is a carnivore and eats meat" or "{name} is a herbivore and eats plants".
-// Step 4: Create an object of each subclass and call the "eat" method to see the different outputs.
+console.log('-----Exercise 6 - Animal Kingdom (Polymorphism)-----');
+class Mammal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  eat(): void {
+    console.log(`${this.name} eats food`);
+  }
+}
+
+class Carnivore extends Mammal {
+  override eat(): void {
+    console.log(`${this.name} is a carnivore and eats meat`);
+  }
+}
+class Herbivore extends Mammal {
+  override eat(): void {
+    console.log(`${this.name} is a herbivore and eats plants`);
+  }
+}
+
+let rabbit = new Mammal('Rabbit');
+let tiger = new Carnivore('Tiger');
+let cow = new Herbivore('Cow');
+
+rabbit.eat();
+tiger.eat();
+cow.eat();
