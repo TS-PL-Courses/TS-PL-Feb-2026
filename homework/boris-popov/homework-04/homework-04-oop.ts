@@ -27,10 +27,23 @@ employee1.changeName('Petar');
 console.log('Updated name:', employee1.getName());
 
 // Exercise 2 - User ID System (Interface Basics)
-// Step 1: Define an interface named "WithID" with a property id: number.
-// Step 2: Define an interface named "User" that inherits from the "WithID" interface and adds properties name: string, age: number.
-// Step 3: Create an object of the interface User and assign values to all properties.
-// Step 4: Print the object to the console.
+console.log('-----Exercise 2 - User ID System (Interface Basics)-----');
+interface WithID {
+  id: number;
+}
+
+interface User extends WithID {
+  name: string;
+  age: number;
+}
+
+const user1: User = {
+  id: 1,
+  name: 'Ivan',
+  age: 25,
+};
+
+console.log(user1);
 
 // Exercise 3 - Car Rental Service (Encapsulation)
 // Step 1: Define a class named "CarRental" with properties: carType, costPerDay, and methods setCostPerDay, getCostPerDay, rentCar, and a constructor that sets the two properties.
