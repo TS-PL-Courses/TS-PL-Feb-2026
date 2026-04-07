@@ -6,18 +6,28 @@ class Employee {
   age: number;
   position: string;
 
-  constructor(name: string) {
+  constructor(name: string, age: number, position: string) {
     this.name = name;
+    this.age = age;
+    this.position = position;
   }
   getName(): string {
     return this.name;
+  }
+  getAge(): number {
+    return this.age;
+  }
+  getPosition(): string {
+    return this.position;
   }
   changeName(newName: string): void {
     this.name = newName;
   }
 }
-let employee1 = new Employee('Jane Doe');
+let employee1 = new Employee('Jane Doe', 30, 'Software Engineer');
 console.log(`Employee old name:` + employee1.getName());
+console.log(`Employee age:` + employee1.getAge());
+console.log(`Employee position:` + employee1.getPosition());
 employee1.changeName('Johnny Bravo');
 console.log(`Employee new name:` + employee1.getName());
 
