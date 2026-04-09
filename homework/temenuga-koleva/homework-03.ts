@@ -184,8 +184,8 @@ function printFullName(firstName: string, lastName: string, middleName?: string)
     }
 }
 
-printFullName("John", "Doe", "Michael");
-printFullName("Jane", "Smith");
+printFullName("Ivan", "Petrov", "Antonov");
+printFullName("Ani", "Ivanova");
 
 // Exercise 10:
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
@@ -210,8 +210,8 @@ function concatenateNames(firstName?: string, lastName?: string, age?: number): 
     return `${firstName} ${lastName}, Age: ${age}`;
 }
 
-console.log(concatenateNames("John", "Doe", 30));
-console.log(concatenateNames("Jane", "Smith"));
+console.log(concatenateNames("Ivan", "Petrov", 30));
+console.log(concatenateNames("Ani", "Ivanova"));
 console.log(concatenateNames());
 
 // Exercise 11:
