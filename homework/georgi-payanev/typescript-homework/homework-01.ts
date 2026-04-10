@@ -33,11 +33,7 @@ console.log('\nExercise 2:');
 const number: number = 5;
 const isEven = number % 2 === 0;
 
-if (isEven) {
-  console.log('The number' + ' ' + number + ' ' + 'is even.');
-} else {
-  console.log('The number' + ' ' + number + ' ' + 'is odd.');
-}
+console.log(`The number ${number} is ${isEven ? 'even' : 'odd'}.`);
 
 // Exercise 3: Verify if a number is positive
 // Step 1: Declare a variable and assign any number to it.
@@ -50,9 +46,9 @@ const value: number = -1;
 const isPositive: boolean = value >= 0;
 
 if (isPositive) {
-  console.log('The number' + ' ' + value + ' ' + 'is positive.');
+  console.log(`The number ${value} is positive.`);
 } else {
-  console.log('The number' + ' ' + value + ' ' + 'is negative.');
+  console.log(`The number ${value} is negative.`);
 }
 
 // Exercise 4: Total cost calculation
@@ -134,9 +130,9 @@ console.log(isEmpty);
 console.log('\nExercise 9:');
 
 let string: string = 'Anastas';
-let isStatingWithA: boolean = string.charAt(0) === 'A';
+let isStartingWithA: boolean = string.charAt(0) === 'A';
 
-console.log(isStatingWithA);
+console.log(isStartingWithA);
 
 // Exercise 10: String operations
 // Step 1: Create a string variable message with the value "TypeScript is fun".
