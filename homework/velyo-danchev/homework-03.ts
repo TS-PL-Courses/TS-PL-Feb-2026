@@ -18,7 +18,7 @@ for (const color of colors) {
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
 
-for (let i = 1; i < 100; i++) {
+for (let i = 1; i <= 100; i++) {
   console.log(i);
 }
 
@@ -185,11 +185,12 @@ console.log(sum_2_numbers(2, 3));
 // Step 2: Use JSDoc to add a description to the function. Example:
 // Step 3: Call the function with and without a Middle Name to verify it works correctly
 
-function personNames(firstName: string, lastName: string, middleName?: string): string {
-  return `Person name is: ${firstName} ${lastName}${middleName ? ` ${middleName}` : ''}.`;
+function personNames(firstName: string, middleName: string | undefined, lastName: string): string {
+  return `Person name is: ${firstName}${middleName ? ` ${middleName}` : ''} ${lastName}.`;
 }
 
-console.log(personNames('Evstatii', 'Omarov'));
+console.log(personNames('Evstatii', 'Omarov', 'Kardashinov'));
+console.log(personNames('Evstatii', undefined, 'Kardashinov'));
 
 /**
  * Creates a formatted string containing a person's full name.
