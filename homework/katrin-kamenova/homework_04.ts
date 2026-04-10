@@ -42,7 +42,7 @@ interface User extends WithID {
   age: number;
 }
 
-let user1 = {
+let user1: User = {
   id: 1,
   name: 'Keanu Reeves',
   age: 35,
@@ -96,7 +96,6 @@ class Chair extends Furniture {
 
   constructor(furnitureType: string, chairLegs: number) {
     super(furnitureType);
-    this.furnitureType = furnitureType;
     this.chairLegs = chairLegs;
   }
   getLegs(): number {
@@ -117,7 +116,7 @@ console.log(`Chair 2: Type - ${chair2.furnitureType}, Number of legs: ${chair2.g
 
 console.log(`\nExercise 5 - Music Instruments (Abstraction)`);
 abstract class Instrument {
-  playMusic() {}
+  playMusic(): void {}
 }
 
 class Guitar extends Instrument {
