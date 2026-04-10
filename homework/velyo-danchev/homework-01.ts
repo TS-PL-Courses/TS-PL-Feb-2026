@@ -15,8 +15,8 @@ let originalTwo: number = numberTwo;
 
 [numberOne, numberTwo] = [numberTwo, numberOne];
 
-console.log(`The originals are: ${originalOne} and ${originalTwo}`);
-console.log(`The swapped are ${numberTwo} and ${numberOne}`);
+console.log(`The original numbers are: ${originalOne} and ${originalTwo}`);
+console.log(`Swapping numberTwo ${numberTwo} with numberOne ${numberOne}`);
 console.log(`After swapping: numberOne = ${numberOne}, numberTwo = ${numberTwo}`);
 
 //-------------------------------------------------------------------------------//
@@ -152,8 +152,8 @@ checkForEmptyString('Hello');
 // Step 2: Declare a boolean variable and check if the first variable starts with 'A'.
 // Step 3: Log the result.
 
-const startsWithA = (theWordTwo: string): void => {
-  const trimmed = theWordTwo.trim();
+const startsWithA = (word: string): void => {
+  const trimmed = word.trim();
   console.log(
     trimmed.toUpperCase().startsWith('A')
       ? 'The word starts with "A".'
@@ -259,12 +259,12 @@ printId(7);
 
 
 const testingTimeEstimation = (
-  QAname: string,
+  qaName: string,
   functionalitiesNumber: number,
   time = 2,
 ): string => {
   const totalTime: number = functionalitiesNumber * time;
-  return `The QA ${QAname}, will need ${totalTime} hours to comple the ${functionalitiesNumber} project/s.`;
+  return `The QA ${qaName}, will need ${totalTime} hours to complete the ${functionalitiesNumber} project/s.`;
 };
 
 console.log(testingTimeEstimation("Velyo", 7));
