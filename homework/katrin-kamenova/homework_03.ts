@@ -9,7 +9,7 @@ for (let i = 0; i < arrayOfColours.length; i++) {
 }
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
-let n: number = 0;
+let n: number = 1;
 while (n <= 100) {
   console.log('The number is:' + n);
   n++;
@@ -35,7 +35,9 @@ for (let i = 4; i >= 1; i--) {
 const phoneNumbers: string[] = ['0376829209', '04239982009', '0536829299'];
 console.log('Original phone numbers: ' + phoneNumbers);
 for (let i = 0; i < phoneNumbers.length; i++) {
-  phoneNumbers[i] = phoneNumbers[i].replace('0', '+359');
+  if (phoneNumbers[i].startsWith('0')) {
+    phoneNumbers[i] = phoneNumbers[i].replace('0', '+359');
+  }
 }
 console.log('New phone numbers: ' + phoneNumbers);
 
@@ -48,13 +50,13 @@ let isSick: boolean = false; //try with true as well to see the different output
 let activity: string;
 
 if (isSick) {
-  activity = `Stay at home and go to bed`;
+  activity = 'Stay at home and go to bed';
 } else if (money >= 20 && hour < 21) {
-  activity = `Go to the cinema`;
-} else if (money > 20 && hour >= 21 && hour <= 24) {
-  activity = `Watch a movie`;
-} else if (money < 20) {
-  activity = `Go to the park`;
+  activity = 'Go to the cinema';
+} else if (money >= 20 && hour >= 21) {
+  activity = 'Watch a movie';
+} else {
+  activity = 'Go to the park';
 }
 console.log(`Name: ${name}, Hour: ${hour}, Money: ${money}, Is Sick: ${isSick}`);
 console.log(`Decided Activity: ${activity}`);
@@ -127,7 +129,7 @@ console.log(names('Johnny', 'Bravo', 'Middlename'));
  */
 
 function concatStrings(firstName: string, lastName: string, age: number) {
-  if (firstName || lastName || age === undefined) {
+  if (!firstName || !lastName || !age === undefined) {
     throw new Error('Missing one or all arguments - first name, last name or age');
   }
   return `${firstName} ${lastName} ${age}`;
