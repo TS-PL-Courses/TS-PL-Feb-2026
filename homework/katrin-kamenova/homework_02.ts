@@ -17,6 +17,9 @@ let num3: number = 10;
 
 if (num1 > num2 && num1 < num3) {
   console.log(`The number ${num1} is between ${num2} and ${num3}`);
+  if (num2 < num3) {
+    console.log(`The number ${num2} is between ${num1} and ${num3}`);
+  }
 } else {
   console.log(`The number ${num1} is NOT between ${num2} and ${num3}`);
 }
@@ -59,6 +62,9 @@ let str1: string = 'Banana';
 
 if (str1.includes('B')) {
   console.log(`The string: '${str1}' contains the letter 'B'`);
+  str1.toLowerCase().includes('b')
+    ? console.log(`The string: '${str1}' contains the letter 'b'`)
+    : console.log(`The string: '${str1}' does NOT contain the letter 'b'`);
 } else {
   console.log(`The string: '${str1}' does NOT contain the letter 'B'`);
 }
