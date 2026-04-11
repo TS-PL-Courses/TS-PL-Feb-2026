@@ -193,6 +193,43 @@ newInstrument2.playMusic();
 // For example: "{name} is a carnivore and eats meat" or "{name} is a herbivore and eats plants".
 // Step 4: Create an object of each subclass and call the "eat" method to see the different outputs.
 
+class Mammal {
+  public name: string;
+  public constructor(name: string) {
+    this.name = name;
+  }
+
+  public eat(): void {
+    console.log(`${this.name} eats food`);
+  }
+}
+
+class Carnivore extends Mammal {
+  public constructor(name: string) {
+    super(name);
+  }
+
+  public override eat(): void {
+    console.log(`${this.name} is a carnivore and eats meat`);
+  }
+}
+
+class Herbivore extends Mammal {
+  public constructor(name: string) {
+    super(name);
+  }
+
+  public override eat(): void {
+    console.log(`${this.name} is a herbivore and eats plants`);
+  }
+}
+
+const fox = new Carnivore('Fox');
+const cow = new Herbivore('Cow');
+
+fox.eat();
+cow.eat();
+
 // Part 2: Asynchronous Operations and Error Handling
 
 // Exercise 7 - Basic Promise with setTimeout
