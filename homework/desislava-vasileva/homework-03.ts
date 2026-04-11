@@ -53,14 +53,13 @@ for (i = 1; i <= max; i++) {
   console.log(temp);
   temp = '';
 }
-if (i >= max) {
-  for (i = max - 1; i >= 1; i--) {
-    for (let j: number = 1; j <= i; j++) {
-      temp += ` ${symbol}`;
-    }
-    console.log(temp);
-    temp = '';
+
+for (i = max - 1; i >= 1; i--) {
+  for (let j: number = 1; j <= i; j++) {
+    temp += ` ${symbol}`;
   }
+  console.log(temp);
+  temp = '';
 }
 
 // Exercise 4: Phone number area code substitution
@@ -93,15 +92,29 @@ console.log(phones);
 console.log('\nEXCERCISE5\n');
 type Person = { name: string; hour: number; money: number; sick: boolean };
 
+//variant 1
 function activity(person: Person) {
-  if (!person.sick && person.money >= 20) {
+  if (!person.sick && person.money > 20 && person.hour >= 21 && person.hour <= 24) {
+    return console.log(`${person.name} will watch a movie`);
+  } else if (!person.sick && person.money >= 20) {
     return console.log(`${person.name} will go to the cinema`);
   } else if (!person.sick && person.money < 20) {
     return console.log(`${person.name} will go to the park`);
-  } else if (!person.sick && person.money > 20 && person.hour >= 21 && person.hour <= 24) {
-    return console.log(`${person.name} will watch a movie`);
   } else if (person.sick) {
     return console.log(`${person.name} will stay at home and go to bed`);
+  }
+}
+
+//variant 2
+function activity2(person: Person) {
+  if (person.sick) {
+    return console.log(`${person.name} will stay at home and go to bed`);
+  } else if (person.money > 20 && person.hour >= 21 && person.hour <= 24) {
+    return console.log(`${person.name} will watch a movie`);
+  } else if (person.money >= 20) {
+    return console.log(`${person.name} will go to the cinema`);
+  } else if (person.money < 20) {
+    return console.log(`${person.name} will go to the park`);
   }
 }
 
@@ -111,11 +124,11 @@ const people: Person[] = [
   { name: 'Тинтява', hour: 10, money: 58, sick: false },
   { name: 'Верка', hour: 8, money: 15, sick: false },
   { name: 'Линда', hour: 24, money: 35, sick: true },
-  { name: 'Крум', hour: 13, money: 62, sick: false },
+  { name: 'Крум', hour: 21, money: 100, sick: false },
 ];
 
 for (let i = 0; i < people.length; i++) {
-  activity(people[i]);
+  activity2(people[i]);
 }
 
 // Exercise 6: Use an Enum, Object type, and Arrays
@@ -221,15 +234,14 @@ console.log('\nEXCERCISE9\n');
  * @param {string} firstName
  * @param {string} lastName
  * @param {string} secondName optional
- * @returns {string} Concatinated all passed names, separated by space
+ * @returns {string} All names concatinated and separated by space
  */
 
 function fullName(firstName: string, lastName: string, secondName?: string): string {
-  let result: string = '';
   if (secondName !== undefined) {
-    return (result = firstName + ' ' + secondName + ' ' + lastName);
+    return firstName + ' ' + secondName + ' ' + lastName;
   } else {
-    return (result = firstName + ' ' + lastName);
+    return firstName + ' ' + lastName;
   }
 }
 
@@ -291,6 +303,8 @@ compliLang('Portuguese', "it's musical.");
 // Number of uppercase characters: 2
 // Number of lowercase characters: 8
 
+console.log('\nEXCERCISE12\n');
+
 function countCase(phrase: string): number[] {
   let phraseArray: string[] = [...phrase];
   let small: number = 0;
@@ -308,13 +322,16 @@ function countCase(phrase: string): number[] {
   return [small, capital];
 }
 
-const result = countCase('Чичо Мунчо');
-console.log(`Small letters: ${result[0]}; Capital letters: ${result[1]}`);
+const phrase: string = 'Чичо Мунчо';
+console.log(
+  `In the string '${phrase}' the small letters are ${countCase(phrase)[0]} and the capital letters - ${countCase(phrase)[1]}`,
+);
 console.log(
   `Small letters: ${countCase('Chicho Muncho')[0]}; Capital letters: ${countCase('Chicho Muncho')[1]}`,
 );
-console.log(countCase('Хфърчило'));
+console.log(countCase('Хвърчило'));
 console.log(countCase('10 hens, 2 goats and 2 sheeps'));
+console.log(countCase('4253425'));
 
 // Exercise 7 Hints:
 // The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
