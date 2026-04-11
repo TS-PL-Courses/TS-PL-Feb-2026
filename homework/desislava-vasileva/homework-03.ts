@@ -5,8 +5,17 @@
 // Step 2: Use a for loop to iterate over the array and check if the length of each item is greater than 4 characters
 // Step 3: Log the item if the condition is met
 
-console.log('\nEXCERCISE1\n');
-const colors: string[] = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'white', 'black'];
+console.log("\nEXCERCISE1\n");
+const colors: string[] = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "purple",
+  "orange",
+  "white",
+  "black",
+];
 colors.forEach((a) => {
   if (a.length > 4) {
     console.log(a);
@@ -15,7 +24,7 @@ colors.forEach((a) => {
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
 
-console.log('\nEXCERCISE2\n');
+console.log("\nEXCERCISE2\n");
 for (let i: number = 1; i <= 100; i++) {
   console.log(i);
 }
@@ -31,7 +40,7 @@ for (let i: number = 1; i <= 100; i++) {
 // * *
 // *
 
-console.log('\nEXCERCISE3\n');
+console.log("\nEXCERCISE3\n");
 /*
 for (let i: number = 1; i <= 5; i++) {
   for (let j: number = 1; j <= i; j++) {
@@ -40,10 +49,10 @@ for (let i: number = 1; i <= 5; i++) {
 }
   **/
 
-const symbol: string = '*';
+const symbol: string = "*";
 const min = 1;
 const max = 5;
-let temp: string = '';
+let temp: string = "";
 let i: number = 1;
 
 for (i = 1; i <= max; i++) {
@@ -51,16 +60,15 @@ for (i = 1; i <= max; i++) {
     temp += ` ${symbol}`;
   }
   console.log(temp);
-  temp = '';
+  temp = "";
 }
-if (i >= max) {
-  for (i = max - 1; i >= 1; i--) {
-    for (let j: number = 1; j <= i; j++) {
-      temp += ` ${symbol}`;
-    }
-    console.log(temp);
-    temp = '';
+
+for (i = max - 1; i >= 1; i--) {
+  for (let j: number = 1; j <= i; j++) {
+    temp += ` ${symbol}`;
   }
+  console.log(temp);
+  temp = "";
 }
 
 // Exercise 4: Phone number area code substitution
@@ -68,13 +76,13 @@ if (i >= max) {
 // Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
 // Step 3: Log the original and the new phone numbers in the console
 
-console.log('\nEXCERCISE4\n');
-const phones: string[] = ['0376829209', '04239982009', '0536829299'];
+console.log("\nEXCERCISE4\n");
+const phones: string[] = ["0376829209", "04239982009", "0536829299"];
 let temp1: string[] = [];
-let temp2: string = '';
+let temp2: string = "";
 for (let i = 0; i < phones.length; i++) {
   temp1 = [...phones[i]];
-  temp1[0] = '+359';
+  temp1[0] = "+359";
   temp2 = temp1.reduce((a, b) => a + b);
   phones[i] = temp2;
 }
@@ -90,32 +98,51 @@ console.log(phones);
 // - If the person is sick, the activity is "stay at home and go to bed"
 // Step 3: Log the person's details and the decided activity
 
-console.log('\nEXCERCISE5\n');
+console.log("\nEXCERCISE5\n");
 type Person = { name: string; hour: number; money: number; sick: boolean };
 
+//variant 1
 function activity(person: Person) {
-  if (!person.sick && person.money >= 20) {
+  if (
+    !person.sick &&
+    person.money > 20 &&
+    person.hour >= 21 &&
+    person.hour <= 24
+  ) {
+    return console.log(`${person.name} will watch a movie`);
+  } else if (!person.sick && person.money >= 20) {
     return console.log(`${person.name} will go to the cinema`);
   } else if (!person.sick && person.money < 20) {
     return console.log(`${person.name} will go to the park`);
-  } else if (!person.sick && person.money > 20 && person.hour >= 21 && person.hour <= 24) {
-    return console.log(`${person.name} will watch a movie`);
   } else if (person.sick) {
     return console.log(`${person.name} will stay at home and go to bed`);
   }
 }
 
+//variant 2
+function activity2(person: Person) {
+  if (person.sick) {
+    return console.log(`${person.name} will stay at home and go to bed`);
+  } else if (person.money > 20 && person.hour >= 21 && person.hour <= 24) {
+    return console.log(`${person.name} will watch a movie`);
+  } else if (person.money >= 20) {
+    return console.log(`${person.name} will go to the cinema`);
+  } else if (person.money < 20) {
+    return console.log(`${person.name} will go to the park`);
+  }
+}
+
 const people: Person[] = [
-  { name: 'Гошо', hour: 16, money: 20, sick: false },
-  { name: 'Пешо', hour: 12, money: 100, sick: false },
-  { name: 'Тинтява', hour: 10, money: 58, sick: false },
-  { name: 'Верка', hour: 8, money: 15, sick: false },
-  { name: 'Линда', hour: 24, money: 35, sick: true },
-  { name: 'Крум', hour: 13, money: 62, sick: false },
+  { name: "Гошо", hour: 16, money: 20, sick: false },
+  { name: "Пешо", hour: 12, money: 100, sick: false },
+  { name: "Тинтява", hour: 10, money: 58, sick: false },
+  { name: "Верка", hour: 8, money: 15, sick: false },
+  { name: "Линда", hour: 24, money: 35, sick: true },
+  { name: "Крум", hour: 21, money: 100, sick: false },
 ];
 
 for (let i = 0; i < people.length; i++) {
-  activity(people[i]);
+  activity2(people[i]);
 }
 
 // Exercise 6: Use an Enum, Object type, and Arrays
@@ -127,7 +154,7 @@ for (let i = 0; i < people.length; i++) {
 // }
 // Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
 
-console.log('\nEXCERCISE6\n');
+console.log("\nEXCERCISE6\n");
 
 enum accountTypes {
   Current = 1,
@@ -137,14 +164,14 @@ enum accountTypes {
 
 type client = { name: string; accountType: accountTypes };
 const clients: client[] = [
-  { name: 'Апостол', accountType: accountTypes.Current },
-  { name: 'Борис', accountType: accountTypes.Deposit },
-  { name: 'Пурко', accountType: accountTypes.FlexSave },
-  { name: 'Мехмед', accountType: accountTypes.Current },
-  { name: 'Сидар', accountType: accountTypes.Deposit },
+  { name: "Апостол", accountType: accountTypes.Current },
+  { name: "Борис", accountType: accountTypes.Deposit },
+  { name: "Пурко", accountType: accountTypes.FlexSave },
+  { name: "Мехмед", accountType: accountTypes.Current },
+  { name: "Сидар", accountType: accountTypes.Deposit },
 ];
 for (let i: number = 0; i < clients.length; i++) {
-  console.log(clients[i].name, ', account type: ', clients[i].accountType);
+  console.log(clients[i].name, ", account type: ", clients[i].accountType);
 }
 
 // Functions
@@ -161,7 +188,7 @@ for (let i: number = 0; i < clients.length; i++) {
 
 // add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko")
 
-console.log('\nEXCERCISE7\n');
+console.log("\nEXCERCISE7\n");
 
 function add_item_in_form(
   table_row: number,
@@ -170,11 +197,11 @@ function add_item_in_form(
   driver_name: string,
   car_number: number,
 ) {
-  console.log('Printing the row');
+  console.log("Printing the row");
   console.log(table_row, complain, client_name, car_number, driver_name);
 }
 
-add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
+add_item_in_form(2556, "Driver smoked", "Ivan", "Petko", 2523);
 
 // Exercise 8:
 // Fix the errors in the code below:
@@ -187,7 +214,7 @@ add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 
 // console.log(sum_2_numbers(2, 3));
 
-console.log('\nEXCERCISE8\n');
+console.log("\nEXCERCISE8\n");
 
 function sum_2_numbers(number_1: number, number_2: number) {
   const result = number_1 + number_2;
@@ -214,27 +241,30 @@ console.log(sum_2_numbers(2, 3));
 
 // Step 3: Call the function with and without a Middle Name to verify it works correctly
 
-console.log('\nEXCERCISE9\n');
+console.log("\nEXCERCISE9\n");
 
 /**
  *
  * @param {string} firstName
  * @param {string} lastName
  * @param {string} secondName optional
- * @returns {string} Concatinated all passed names, separated by space
+ * @returns {string} All names concatinated and separated by space
  */
 
-function fullName(firstName: string, lastName: string, secondName?: string): string {
-  let result: string = '';
+function fullName(
+  firstName: string,
+  lastName: string,
+  secondName?: string,
+): string {
   if (secondName !== undefined) {
-    return (result = firstName + ' ' + secondName + ' ' + lastName);
+    return firstName + " " + secondName + " " + lastName;
   } else {
-    return (result = firstName + ' ' + lastName);
+    return firstName + " " + lastName;
   }
 }
 
-console.log(fullName('Малинка', 'Кожухарова', 'Видинова'));
-console.log(fullName('Тотьо', 'Тотев'));
+console.log(fullName("Малинка", "Кожухарова", "Видинова"));
+console.log(fullName("Тотьо", "Тотев"));
 
 // Exercise 10:
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
@@ -242,7 +272,7 @@ console.log(fullName('Тотьо', 'Тотев'));
 // Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
 // Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
 
-console.log('\nEXCERCISE10\n');
+console.log("\nEXCERCISE10\n");
 
 /**
  *
@@ -250,24 +280,34 @@ console.log('\nEXCERCISE10\n');
  * @returns the object properties which are passed
  */
 
-function personDetails(person: { firstName?: string; lastName?: string; age?: number }) {
-  if (person.firstName !== undefined && person.lastName !== undefined && person.age !== undefined) {
-    return person.firstName + ' ' + person.lastName + ' age, ' + person.age;
+function personDetails(person: {
+  firstName?: string;
+  lastName?: string;
+  age?: number;
+}) {
+  if (
+    person.firstName !== undefined &&
+    person.lastName !== undefined &&
+    person.age !== undefined
+  ) {
+    return person.firstName + " " + person.lastName + " age, " + person.age;
   } else {
-    return 'Missing one or all arguments - first name, last name, or age';
+    return "Missing one or all arguments - first name, last name, or age";
   }
 }
 
-console.log(personDetails({ firstName: 'Илонка', lastName: 'Малинова', age: 18 }));
+console.log(
+  personDetails({ firstName: "Илонка", lastName: "Малинова", age: 18 }),
+);
 console.log(personDetails({}));
-console.log(personDetails({ firstName: 'Илонка', age: 18 }));
+console.log(personDetails({ firstName: "Илонка", age: 18 }));
 
 // Exercise 11:
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
 
-console.log('\nEXCERCISE11\n');
+console.log("\nEXCERCISE11\n");
 
 /**
  *
@@ -280,8 +320,8 @@ function compliLang(language: string, compliment: string) {
   console.log(`I love ${language} because ${compliment}`);
 }
 
-compliLang('typescript', "it's logical.");
-compliLang('Portuguese', "it's musical.");
+compliLang("typescript", "it's logical.");
+compliLang("Portuguese", "it's musical.");
 
 // Exercise 12:
 // Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
@@ -291,7 +331,7 @@ compliLang('Portuguese', "it's musical.");
 // Number of uppercase characters: 2
 // Number of lowercase characters: 8
 
-console.log('\nEXCERCISE12\n');
+console.log("\nEXCERCISE12\n");
 
 function countCase(phrase: string): number[] {
   let phraseArray: string[] = [...phrase];
@@ -310,13 +350,16 @@ function countCase(phrase: string): number[] {
   return [small, capital];
 }
 
-const result = countCase('Чичо Мунчо');
-console.log(`Small letters: ${result[0]}; Capital letters: ${result[1]}`);
+const phrase: string = "Чичо Мунчо";
 console.log(
-  `Small letters: ${countCase('Chicho Muncho')[0]}; Capital letters: ${countCase('Chicho Muncho')[1]}`,
+  `In the string '${phrase}' the small letters are ${countCase(phrase)[0]} and the capital letters - ${countCase(phrase)[1]}`,
 );
-console.log(countCase('Хфърчило'));
-console.log(countCase('10 hens, 2 goats and 2 sheeps'));
+console.log(
+  `Small letters: ${countCase("Chicho Muncho")[0]}; Capital letters: ${countCase("Chicho Muncho")[1]}`,
+);
+console.log(countCase("Хвърчило"));
+console.log(countCase("10 hens, 2 goats and 2 sheeps"));
+console.log(countCase("4253425"));
 
 // Exercise 7 Hints:
 // The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
