@@ -83,8 +83,6 @@ if (textLen > 10) {
 // "The string {string} contains the letter 'B'"
 // "The string {string} does NOT contain the letter 'B'"
 
-let myString1: string = 'Bee';
-let myString2: string = 'abc';
 function checkContainsB(input: string) {
   if (input.includes('B')) {
     console.log(`5) The text ${input} conatins the letter 'B'`);
@@ -92,20 +90,13 @@ function checkContainsB(input: string) {
     console.log(`5) The text ${input} does NOT conatin the letter 'B'`);
   }
 }
-checkContainsB(myString1);
-checkContainsB(myString2);
+checkContainsB('Bee');
+checkContainsB('abc');
 
 // Exercise 6: Check if a client will be allowed in a karting competition.
 // Step 1: Declare 2 number variables for the client's age (whole number) and best lap time (floating-point number).
 // Step 2: Check if the client is older than or equal to 18 and younger than 65 (exclusive), and has a best lap time less than 60 seconds, using if-else statements.
 // Step 3: Log the client's age, best lap time, and whether the client is allowed to compete or not.
-
-let age1: number = 22;
-let bestTime1: number = 58.15;
-let age2: number = 27;
-let bestTime2: number = 75.05;
-let age3: number = 65;
-let bestTime3: number = 55.02;
 
 function checkIsEligable(age: number, time: number) {
   if (age <= 0 || time <= 0) {
@@ -120,10 +111,10 @@ function checkIsEligable(age: number, time: number) {
     );
   }
 }
-checkIsEligable(age1, bestTime1); //This client is 22 years old, best lap time: 58.15 seconds and IS allowed to compete
-checkIsEligable(age2, bestTime2); //This client is 27 years old, best lap time: 75.05 seconds and IS NOT allowed to compete
-checkIsEligable(age3, bestTime3); //This client is 65 years old, best lap time: 55.02 seconds and IS NOT allowed to compete
-checkIsEligable(-5, bestTime3); //Invalid input data
+checkIsEligable(22, 58.15); //This client is 22 years old, best lap time: 58.15 seconds and IS allowed to compete
+checkIsEligable(27, 75.05); //This client is 27 years old, best lap time: 75.05 seconds and IS NOT allowed to compete
+checkIsEligable(65, 55.02); //This client is 65 years old, best lap time: 55.02 seconds and IS NOT allowed to compete
+checkIsEligable(-5, 55.02); //Invalid input data
 
 // Exercise 7: Convert Strings to Uppercase (map)
 // Step 1: Declare a variable and assign an array of strings to it.
