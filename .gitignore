@@ -7,3 +7,9 @@
 # Playwright
 /test-results/
 /playwright-report/
+
+# Playwright
+node_modules/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
