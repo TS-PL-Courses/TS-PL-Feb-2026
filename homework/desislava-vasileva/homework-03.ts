@@ -5,8 +5,22 @@
 // Step 2: Use a for loop to iterate over the array and check if the length of each item is greater than 4 characters
 // Step 3: Log the item if the condition is met
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE1\n');
 const colors: string[] = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'white', 'black'];
+=======
+console.log("\nEXCERCISE1\n");
+const colors: string[] = [
+  "red",
+  "blue",
+  "green",
+  "yellow",
+  "purple",
+  "orange",
+  "white",
+  "black",
+];
+>>>>>>> main
 colors.forEach((a) => {
   if (a.length > 4) {
     console.log(a);
@@ -15,7 +29,11 @@ colors.forEach((a) => {
 
 // Exercise 2: Write a script to log all numbers from 1 to 100 in the console using a loop
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE2\n');
+=======
+console.log("\nEXCERCISE2\n");
+>>>>>>> main
 for (let i: number = 1; i <= 100; i++) {
   console.log(i);
 }
@@ -31,7 +49,11 @@ for (let i: number = 1; i <= 100; i++) {
 // * *
 // *
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE3\n');
+=======
+console.log("\nEXCERCISE3\n");
+>>>>>>> main
 /*
 for (let i: number = 1; i <= 5; i++) {
   for (let j: number = 1; j <= i; j++) {
@@ -40,10 +62,17 @@ for (let i: number = 1; i <= 5; i++) {
 }
   **/
 
+<<<<<<< HEAD
 const symbol: string = '*';
 const min = 1;
 const max = 5;
 let temp: string = '';
+=======
+const symbol: string = "*";
+const min = 1;
+const max = 5;
+let temp: string = "";
+>>>>>>> main
 let i: number = 1;
 
 for (i = 1; i <= max; i++) {
@@ -51,7 +80,11 @@ for (i = 1; i <= max; i++) {
     temp += ` ${symbol}`;
   }
   console.log(temp);
+<<<<<<< HEAD
   temp = '';
+=======
+  temp = "";
+>>>>>>> main
 }
 
 for (i = max - 1; i >= 1; i--) {
@@ -59,7 +92,11 @@ for (i = max - 1; i >= 1; i--) {
     temp += ` ${symbol}`;
   }
   console.log(temp);
+<<<<<<< HEAD
   temp = '';
+=======
+  temp = "";
+>>>>>>> main
 }
 
 // Exercise 4: Phone number area code substitution
@@ -67,6 +104,7 @@ for (i = max - 1; i >= 1; i--) {
 // Step 2: Use a for loop to iterate over the array and replace the "0" at the beginning with "+359"
 // Step 3: Log the original and the new phone numbers in the console
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE4\n');
 const phones: string[] = ['0376829209', '04239982009', '0536829299'];
 let temp1: string[] = [];
@@ -74,6 +112,15 @@ let temp2: string = '';
 for (let i = 0; i < phones.length; i++) {
   temp1 = [...phones[i]];
   temp1[0] = '+359';
+=======
+console.log("\nEXCERCISE4\n");
+const phones: string[] = ["0376829209", "04239982009", "0536829299"];
+let temp1: string[] = [];
+let temp2: string = "";
+for (let i = 0; i < phones.length; i++) {
+  temp1 = [...phones[i]];
+  temp1[0] = "+359";
+>>>>>>> main
   temp2 = temp1.reduce((a, b) => a + b);
   phones[i] = temp2;
 }
@@ -89,12 +136,25 @@ console.log(phones);
 // - If the person is sick, the activity is "stay at home and go to bed"
 // Step 3: Log the person's details and the decided activity
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE5\n');
+=======
+console.log("\nEXCERCISE5\n");
+>>>>>>> main
 type Person = { name: string; hour: number; money: number; sick: boolean };
 
 //variant 1
 function activity(person: Person) {
+<<<<<<< HEAD
   if (!person.sick && person.money > 20 && person.hour >= 21 && person.hour <= 24) {
+=======
+  if (
+    !person.sick &&
+    person.money > 20 &&
+    person.hour >= 21 &&
+    person.hour <= 24
+  ) {
+>>>>>>> main
     return console.log(`${person.name} will watch a movie`);
   } else if (!person.sick && person.money >= 20) {
     return console.log(`${person.name} will go to the cinema`);
@@ -119,12 +179,21 @@ function activity2(person: Person) {
 }
 
 const people: Person[] = [
+<<<<<<< HEAD
   { name: 'Гошо', hour: 16, money: 20, sick: false },
   { name: 'Пешо', hour: 12, money: 100, sick: false },
   { name: 'Тинтява', hour: 10, money: 58, sick: false },
   { name: 'Верка', hour: 8, money: 15, sick: false },
   { name: 'Линда', hour: 24, money: 35, sick: true },
   { name: 'Крум', hour: 21, money: 100, sick: false },
+=======
+  { name: "Гошо", hour: 16, money: 20, sick: false },
+  { name: "Пешо", hour: 12, money: 100, sick: false },
+  { name: "Тинтява", hour: 10, money: 58, sick: false },
+  { name: "Верка", hour: 8, money: 15, sick: false },
+  { name: "Линда", hour: 24, money: 35, sick: true },
+  { name: "Крум", hour: 21, money: 100, sick: false },
+>>>>>>> main
 ];
 
 for (let i = 0; i < people.length; i++) {
@@ -140,7 +209,11 @@ for (let i = 0; i < people.length; i++) {
 // }
 // Step 3: Add the objects to an array and use a for loop to iterate over the array and log the name and account type of each client in the console
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE6\n');
+=======
+console.log("\nEXCERCISE6\n");
+>>>>>>> main
 
 enum accountTypes {
   Current = 1,
@@ -150,6 +223,7 @@ enum accountTypes {
 
 type client = { name: string; accountType: accountTypes };
 const clients: client[] = [
+<<<<<<< HEAD
   { name: 'Апостол', accountType: accountTypes.Current },
   { name: 'Борис', accountType: accountTypes.Deposit },
   { name: 'Пурко', accountType: accountTypes.FlexSave },
@@ -158,6 +232,16 @@ const clients: client[] = [
 ];
 for (let i: number = 0; i < clients.length; i++) {
   console.log(clients[i].name, ', account type: ', clients[i].accountType);
+=======
+  { name: "Апостол", accountType: accountTypes.Current },
+  { name: "Борис", accountType: accountTypes.Deposit },
+  { name: "Пурко", accountType: accountTypes.FlexSave },
+  { name: "Мехмед", accountType: accountTypes.Current },
+  { name: "Сидар", accountType: accountTypes.Deposit },
+];
+for (let i: number = 0; i < clients.length; i++) {
+  console.log(clients[i].name, ", account type: ", clients[i].accountType);
+>>>>>>> main
 }
 
 // Functions
@@ -174,7 +258,11 @@ for (let i: number = 0; i < clients.length; i++) {
 
 // add_item_in_form(2556, "Driver smoked", "Ivan", 2523, "Petko")
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE7\n');
+=======
+console.log("\nEXCERCISE7\n");
+>>>>>>> main
 
 function add_item_in_form(
   table_row: number,
@@ -183,11 +271,19 @@ function add_item_in_form(
   driver_name: string,
   car_number: number,
 ) {
+<<<<<<< HEAD
   console.log('Printing the row');
   console.log(table_row, complain, client_name, car_number, driver_name);
 }
 
 add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
+=======
+  console.log("Printing the row");
+  console.log(table_row, complain, client_name, car_number, driver_name);
+}
+
+add_item_in_form(2556, "Driver smoked", "Ivan", "Petko", 2523);
+>>>>>>> main
 
 // Exercise 8:
 // Fix the errors in the code below:
@@ -200,7 +296,11 @@ add_item_in_form(2556, 'Driver smoked', 'Ivan', 'Petko', 2523);
 
 // console.log(sum_2_numbers(2, 3));
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE8\n');
+=======
+console.log("\nEXCERCISE8\n");
+>>>>>>> main
 
 function sum_2_numbers(number_1: number, number_2: number) {
   const result = number_1 + number_2;
@@ -227,7 +327,11 @@ console.log(sum_2_numbers(2, 3));
 
 // Step 3: Call the function with and without a Middle Name to verify it works correctly
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE9\n');
+=======
+console.log("\nEXCERCISE9\n");
+>>>>>>> main
 
 /**
  *
@@ -237,6 +341,7 @@ console.log('\nEXCERCISE9\n');
  * @returns {string} All names concatinated and separated by space
  */
 
+<<<<<<< HEAD
 function fullName(firstName: string, lastName: string, secondName?: string): string {
   if (secondName !== undefined) {
     return firstName + ' ' + secondName + ' ' + lastName;
@@ -247,6 +352,22 @@ function fullName(firstName: string, lastName: string, secondName?: string): str
 
 console.log(fullName('Малинка', 'Кожухарова', 'Видинова'));
 console.log(fullName('Тотьо', 'Тотев'));
+=======
+function fullName(
+  firstName: string,
+  lastName: string,
+  secondName?: string,
+): string {
+  if (secondName !== undefined) {
+    return firstName + " " + secondName + " " + lastName;
+  } else {
+    return firstName + " " + lastName;
+  }
+}
+
+console.log(fullName("Малинка", "Кожухарова", "Видинова"));
+console.log(fullName("Тотьо", "Тотев"));
+>>>>>>> main
 
 // Exercise 10:
 // Step 1: Define a function that returns concatenated strings: first name, last name, and age
@@ -254,7 +375,11 @@ console.log(fullName('Тотьо', 'Тотев'));
 // Step 3: If the function is not called with arguments, it should return default values and the message: "Missing one or all arguments - first name, last name, or age"
 // Step 4: Console log calls of the function once with all arguments and a few times with missing arguments to verify it works correctly
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE10\n');
+=======
+console.log("\nEXCERCISE10\n");
+>>>>>>> main
 
 /**
  *
@@ -262,6 +387,7 @@ console.log('\nEXCERCISE10\n');
  * @returns the object properties which are passed
  */
 
+<<<<<<< HEAD
 function personDetails(person: { firstName?: string; lastName?: string; age?: number }) {
   if (person.firstName !== undefined && person.lastName !== undefined && person.age !== undefined) {
     return person.firstName + ' ' + person.lastName + ' age, ' + person.age;
@@ -273,13 +399,40 @@ function personDetails(person: { firstName?: string; lastName?: string; age?: nu
 console.log(personDetails({ firstName: 'Илонка', lastName: 'Малинова', age: 18 }));
 console.log(personDetails({}));
 console.log(personDetails({ firstName: 'Илонка', age: 18 }));
+=======
+function personDetails(person: {
+  firstName?: string;
+  lastName?: string;
+  age?: number;
+}) {
+  if (
+    person.firstName !== undefined &&
+    person.lastName !== undefined &&
+    person.age !== undefined
+  ) {
+    return person.firstName + " " + person.lastName + " age, " + person.age;
+  } else {
+    return "Missing one or all arguments - first name, last name, or age";
+  }
+}
+
+console.log(
+  personDetails({ firstName: "Илонка", lastName: "Малинова", age: 18 }),
+);
+console.log(personDetails({}));
+console.log(personDetails({ firstName: "Илонка", age: 18 }));
+>>>>>>> main
 
 // Exercise 11:
 // Step 1: Define a function that accepts 2 named parameters: programming language and compliment, and prints in the console a message: "I love {programming language} because {compliment}"
 // Step 2: Use JSDoc to add a description to the function
 // Step 3: Console log calls of the function a few times with different arguments to verify it works correctly
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE11\n');
+=======
+console.log("\nEXCERCISE11\n");
+>>>>>>> main
 
 /**
  *
@@ -292,8 +445,13 @@ function compliLang(language: string, compliment: string) {
   console.log(`I love ${language} because ${compliment}`);
 }
 
+<<<<<<< HEAD
 compliLang('typescript', "it's logical.");
 compliLang('Portuguese', "it's musical.");
+=======
+compliLang("typescript", "it's logical.");
+compliLang("Portuguese", "it's musical.");
+>>>>>>> main
 
 // Exercise 12:
 // Step 1: Define a function that accepts a string and calculates the number of uppercase and lowercase letters
@@ -303,7 +461,11 @@ compliLang('Portuguese', "it's musical.");
 // Number of uppercase characters: 2
 // Number of lowercase characters: 8
 
+<<<<<<< HEAD
 console.log('\nEXCERCISE12\n');
+=======
+console.log("\nEXCERCISE12\n");
+>>>>>>> main
 
 function countCase(phrase: string): number[] {
   let phraseArray: string[] = [...phrase];
@@ -322,16 +484,28 @@ function countCase(phrase: string): number[] {
   return [small, capital];
 }
 
+<<<<<<< HEAD
 const phrase: string = 'Чичо Мунчо';
+=======
+const phrase: string = "Чичо Мунчо";
+>>>>>>> main
 console.log(
   `In the string '${phrase}' the small letters are ${countCase(phrase)[0]} and the capital letters - ${countCase(phrase)[1]}`,
 );
 console.log(
+<<<<<<< HEAD
   `Small letters: ${countCase('Chicho Muncho')[0]}; Capital letters: ${countCase('Chicho Muncho')[1]}`,
 );
 console.log(countCase('Хвърчило'));
 console.log(countCase('10 hens, 2 goats and 2 sheeps'));
 console.log(countCase('4253425'));
+=======
+  `Small letters: ${countCase("Chicho Muncho")[0]}; Capital letters: ${countCase("Chicho Muncho")[1]}`,
+);
+console.log(countCase("Хвърчило"));
+console.log(countCase("10 hens, 2 goats and 2 sheeps"));
+console.log(countCase("4253425"));
+>>>>>>> main
 
 // Exercise 7 Hints:
 // The order of the arguments in the "add_item_in_form" function call or the order of the parameters in the function should be fixed
