@@ -15,22 +15,22 @@
 
 class Employee { 
     name: string;
-    age: number;
-    position: string;
+    age?: number;
+    position?: string;
     
 
-    constructor(name: string, age: number, position: string){
+    constructor(name: string, age?: number, position?: string){
         this.name = name;
-        this.age = age;
-        this.position = position;
+        this.age = 0;
+        this.position = '';
     }
 
     getName(): string {
         return this.name;
     }
 
-    changeName(newName: string): void {
-        this.name = newName;
+    changeName(newName: string): string {
+        return this.name = newName;
     }
 
 }
@@ -222,14 +222,12 @@ animalThree.eat();
 function waitTwoSeconds() {
     return new Promise<string>((resolve) => {
         setTimeout(() =>{
-            resolve('Task finished!')
+            resolve('Done waiting!')
         }, 2000)      
     })
 };
 
-//waitTwoSeconds().then((result) =>{
-//    console.log(result)
-//});
+waitTwoSeconds();
 
 //-------------------------------------------------------------------------------//
 
@@ -247,7 +245,7 @@ async function runTask() {
     console.log(result);
 };
 
-
+runTask();
 
 //-------------------------------------------------------------------------------//
 
@@ -276,7 +274,7 @@ async function receivedUser() {
 
 }
 
-
+receivedUser();
 
 //-------------------------------------------------------------------------------//
 
