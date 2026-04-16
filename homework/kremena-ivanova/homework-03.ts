@@ -79,7 +79,7 @@ function decideActivity(isSick: boolean, hour: number, money: number): void {
   } else {
     activity = 'go to the park';
   }
-  console.log(`I will ${activity}.`);
+  console.log(`5) I will ${activity}.`);
 }
 decideActivity(true, 15, 50); //I will stay at home and go to bed.
 decideActivity(false, 22, 5000); //I will watch a movie.
@@ -189,7 +189,7 @@ console.log(`8) The sum of these two numbers is: ${sumTwoNums(2, 3)}`);
  */
 
 function printName(first: string, last: string, middle?: string): void {
-  if (middle) {
+  if (middle && middle.trim() !== '') {
     console.log(`9) ${first} ${middle} ${last}`);
   } else {
     console.log(`9) ${first} ${last}`);

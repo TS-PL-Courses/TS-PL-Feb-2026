@@ -122,8 +122,8 @@ checkIsEligable(-5, 55.02); //Invalid input data
 // Step 3: Store the result in a new variable.
 // Step 4: Log the result.
 
-let arrMyList: string[] = ['Elena', 'Maria', 'Peter', 'Martin'];
-let listCaps: string[] = arrMyList.map((x: string) => x.toUpperCase());
+let names: string[] = ['Elena', 'Maria', 'Peter', 'Martin'];
+let listCaps: string[] = names.map((x: string) => x.toUpperCase());
 console.log(`7) List in uppercase: [${listCaps.join(', ')}]`); //List in uppercase: [ELENA, MARIA, PETER, MARTIN]
 
 // Exercise 8: Filter Long Words (filter)
@@ -132,8 +132,8 @@ console.log(`7) List in uppercase: [${listCaps.join(', ')}]`); //List in upperca
 // Step 3: Store the result in a new variable.
 // Step 4: Log the result.
 
-let arrFruits: string[] = ['pineapple', 'lemon', 'orange', 'kiwi', 'strawberry', 'grapefruit'];
-let longNames: string[] = arrFruits.filter((x: string) => x.length > 5);
+let fruits: string[] = ['pineapple', 'lemon', 'orange', 'kiwi', 'strawberry', 'grapefruit'];
+let longNames: string[] = fruits.filter((x: string) => x.length > 5);
 console.log(`8) Fruits with names longer than 5 letters: [${longNames.join(', ')}]`);
 //Fruits with name longer than 5 letters: [pineapple, orange, strawberry, grapefruit]
 
@@ -143,8 +143,8 @@ console.log(`8) Fruits with names longer than 5 letters: [${longNames.join(', ')
 // Step 3: Store the result in a variable.
 // Step 4: Log the result.
 
-let arrNums: number[] = [1, 1000, 7, 0, 200, 23.5, -7];
-let maxNumber: number = arrNums.reduce((acc: number, curr: number) => {
+let numbers: number[] = [1, 1000, 7, 0, 200, 23.5, -7];
+let maxNumber: number = numbers.reduce((acc: number, curr: number) => {
   return acc > curr ? acc : curr;
 });
 console.log(`9) Largest number: ${maxNumber}`);
