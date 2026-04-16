@@ -12,7 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: './tests/',
+  testDir: './',
 
   // Give failing tests 3 retry attempts
   // retries: 3,
