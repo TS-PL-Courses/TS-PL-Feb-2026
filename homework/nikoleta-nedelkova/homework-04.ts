@@ -73,6 +73,7 @@ class CarRental {
   private costPerDay: number;
 
   constructor(carType: string, costPerDay: number) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     ((this.carType = carType), (this.costPerDay = costPerDay));
   }
 
