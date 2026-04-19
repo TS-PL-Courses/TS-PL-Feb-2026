@@ -119,7 +119,7 @@ checkText('');
 // Step 3: Log the result.
 
 function checkIfStartsWithA(input: string): void {
-  if (input.toLowerCase().startsWith('a')) {
+  if (input.startsWith('A')) {
     console.log(`9) Yes, the word ${input} starts with "A".`);
   } else {
     console.log(`9) No, the word ${input} does not start with "A".`);
@@ -263,7 +263,7 @@ let difference: number[] = [
   ...arr1.filter((num: number) => !arr2.includes(num)),
   ...arr2.filter((num: number) => !arr1.includes(num)),
 ];
-console.log(`18) The different numbers are: [${difference}]`);
+console.log(`18) The unique numbers are: [${difference}]`);
 
 // Exercise 19: Find the union of two arrays
 // Step 1: Create an array arr1 with values [1, 2, 3, 4].
