@@ -1,4 +1,4 @@
-// npx ts-node homework/petar-petrov/homework-03.ts
+// npx ts-node homework/petar-petrov/typescript-homeworks/homework-03.ts
 
 // Homework 03 - Collections and Loops
 
