@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('test', async ({ page }) => {
+test('Navigate to Lecture 11 of "Automation Testing with Playwright and TypeScript" course', async ({
+  page,
+}) => {
   // go to https://pragmatic.bg/
   await page.goto('https://pragmatic.bg/');
 
