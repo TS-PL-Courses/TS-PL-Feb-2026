@@ -43,4 +43,19 @@ async function demo() {
   console.log('1 seconds delay');
 }
 
-demo();
+async function demo2() {
+  await delay(3000);
+  console.log('3 seconds delay');
+
+  await delay(2000);
+  console.log('2 seconds delay');
+
+  await delay(1000);
+  console.log('1 seconds delay');
+}
+
+demo2();
+
+setTimeout(() => {
+  console.log('Async operation');
+}, 3000);
