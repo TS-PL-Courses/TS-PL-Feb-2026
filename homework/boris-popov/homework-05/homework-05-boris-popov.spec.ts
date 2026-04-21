@@ -1,7 +1,3 @@
-// you can execute the new scenario "*.spec.ts" file by scenario name with this command: `npx playwright test -g "Scenario Name"` by changing "Scenario Name" to your scenario's name
-
-// bonus: you can add some assertions to check page titles after each navigation (see lecture 11 example of this assertion)
-
 import { test, expect } from '@playwright/test';
 
 test('Lecture 11 link can be opened', async ({ page }) => {
