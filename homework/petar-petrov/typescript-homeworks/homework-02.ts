@@ -1,4 +1,4 @@
-// npx ts-node homework/petar-petrov/homework-02.ts
+// npx ts-node homework/petar-petrov/typescript-homeworks/homework-02.ts
 
 // Homework 02
 
