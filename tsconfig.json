@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "noImplicitOverride": true,
     "paths": {
-      "@tests/*": ["playwright/*"],
+      "@tests/*": ["./playwright/*"],
       "@lib/*": ["./lib/*"],
       "@resources/*": ["./resources/*"],
       "@fixtures": ["./fixtures.ts"],
