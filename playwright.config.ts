@@ -12,40 +12,41 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
+  // folder containing spec files
   testDir: './',
 
   // Give failing tests 3 retry attempts
-  // retries: 3,
+  // retries: 1,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { open: 'failure' }]],
 
   /* Output directory for test artifacts */
-  // outputDir: './test-results/',  // this is default folder
+  outputDir: './test-results/',  // this is default folder
 
   /* Set up regex to recognize files with tests by their name */
-  // testMatch: '.*(test|spec)\.(js|ts)', // default is contain 'spec' and end with '.ts'
+  // testMatch: '.*(test|spec).(js|ts)', // default is contain 'spec' and end with '.ts'
 
   /* Maximum time one test can run for */
-  // timeout: 1 * 30 * 1000, // default is 30 sec. This equals 30 sec.
+  timeout: 30 * 1000, // default is 30 sec. This equals 30 sec.
 
   /* Maximum time to wait for an assertion */
-  // expect: { timeout: 5 * 1000 }, // default is 5 sec. This equals 5 sec.
+  expect: { timeout: 5 * 1000 }, // default is 5 sec. This equals 5 sec.
 
   /* Run tests in files in parallel */
-  // fullyParallel: true,
+  fullyParallel: true,
 
   /* Set number of parallel workers */
-  // workers: 10,
+  // workers: 1,
 
   /* Fail the build on CI if you accidentally left test.only in the source code. */
-  // forbidOnly: !!process.env.CI,
+  forbidOnly: !!process.env.CI,
 
   /* Retry on CI only */
-  // retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 0,
 
   /* Opt out of parallel tests on CI. */
-  // workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 4,
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -79,7 +80,7 @@ export default defineConfig({
 
     /* Activates slow motion exectution in headed mode */
     launchOptions: {
-      slowMo: 0,
+      slowMo: 1000,
     },
   },
 
