@@ -2,6 +2,7 @@
 // put all groups of actions into a test.step
 // use soft assertions, unless we are assrting a navigation has taken place
 // try to add meaningful comments to all assertions
+// you can find test execution command examples in the Readme.md file in project's main folder
 // you can add -ui mode debug your tests during execution
 // after execution view html report with command: 'npx playwright show-report' (if any tests failed report will open automaticaly)
 // a trace artifact will be added to the report if any test has failed, you can use as well to debug your tests
