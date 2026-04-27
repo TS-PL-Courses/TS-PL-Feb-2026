@@ -16,41 +16,41 @@ test('Assertions Example', async ({ page }) => {
   // await page.expect
 
   // Non Retrying Assertions:
-    expect(true).toBeTruthy();
-    expect(false).toBeTruthy();
-    expect(1).toBe(1);
-    expect('success').toBe('success');
-    expect('Playwright').toContain('Play');
+  expect(true).toBeTruthy();
+  expect(false).toBeTruthy();
+  expect(1).toBe(1);
+  expect('success').toBe('success');
+  expect('Playwright').toContain('Play');
 
-    // Polling
-    await expect.poll(
-      async () => {
-        return true;
-      },
-      {
-        timeout: 6000,
-        intervals: [1500, 3000, 4500, 6000],
-      },
-    );
+  // Polling
+  await expect.poll(
+    async () => {
+      return true;
+    },
+    {
+      timeout: 6000,
+      intervals: [1500, 3000, 4500, 6000],
+    },
+  );
 
   // Auto-retrying (Web-First) assertions:
 
   // custom time out
-    await expect(page.getByRole('heading', { name: 'Нова Фактура' })).toBeVisible({
-      timeout: 7 * 1000,
-    });
+  await expect(page.getByRole('heading', { name: 'Нова Фактура' })).toBeVisible({
+    timeout: 7 * 1000,
+  });
 
   // element text assertions:
-    await expect(page.locator('//*[@id="headline2"]/h2')).toHaveText('Нова фактура'); // complete text
-    await expect(page.locator('//*[@id="headline2"]/h2')).toContainText('Нова'); // part of the text
-    await expect(page.locator('.universalSearchInputIcon')).toBeEmpty(); // has no text
+  await expect(page.locator('//*[@id="headline2"]/h2')).toHaveText('Нова фактура'); // complete text
+  await expect(page.locator('//*[@id="headline2"]/h2')).toContainText('Нова'); // part of the text
+  await expect(page.locator('.universalSearchInputIcon')).toBeEmpty(); // has no text
 
   // dropdown has value check currently selcted value:
-    await page.locator('#invoice-item-2-price_quantity_unit').selectOption('2');
-    await expect(page.locator('#invoice-item-2-price_quantity_unit')).toHaveValue('2'); // check single selected values
+  await page.locator('#invoice-item-2-price_quantity_unit').selectOption('2');
+  await expect(page.locator('#invoice-item-2-price_quantity_unit')).toHaveValue('2'); // check single selected values
 
-    await page.locator('#invoice-item-2-price_quantity_unit').selectOption(['2', '4', '89']);
-    await expect(page.locator('#invoice-item-2-price_quantity_unit')).toHaveValues(['2', '4', '89']); // check multiple selected values
+  await page.locator('#invoice-item-2-price_quantity_unit').selectOption(['2', '4', '89']);
+  await expect(page.locator('#invoice-item-2-price_quantity_unit')).toHaveValues(['2', '4', '89']); // check multiple selected values
 
   // check element state:
   await expect(page.locator('#headline2')).toBeVisible();
