@@ -13,25 +13,25 @@
 
 // Good luck and happy hacking!
 
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('Recorded scenario', async ({ page }) => {
-  await page.goto('https://pragmatic.bg/');
+test("Recorded scenario", async ({ page }) => {
+  await page.goto("https://pragmatic.bg/");
   await expect(page).toHaveTitle(
-    'Pragmatic LLC – Курсове по Програмиране, C#, QA(Тестване), ASP.NET, Java, PHP, Бази Данни',
+    "Pragmatic LLC – Курсове по Програмиране, C#, QA(Тестване), ASP.NET, Java, PHP, Бази Данни",
   );
-  await page.getByRole('link', { name: 'Курсове', exact: true }).hover();
+  await page.getByRole("link", { name: "Курсове", exact: true }).hover();
 
   await page
-    .locator('#menu-item-9220')
-    .getByRole('link', { name: 'Автоматизирано Тестване с' })
+    .locator("#menu-item-9220")
+    .getByRole("link", { name: "Автоматизирано Тестване с" })
     .click();
 
   await expect(page).toHaveTitle(
-    'Автоматизирано Тестване с Playwright и TypeScript – Pragmatic LLC',
+    "Автоматизирано Тестване с Playwright и TypeScript – Pragmatic LLC",
   );
 
-  await page.getByRole('link', { name: 'Въведение в Playwright' }).click();
+  await page.getByRole("link", { name: "Въведение в Playwright" }).click();
 
-  await expect(page).toHaveTitle('Въведение в Playwright – Pragmatic LLC');
+  await expect(page).toHaveTitle("Въведение в Playwright – Pragmatic LLC");
 });

@@ -13,7 +13,7 @@
 // Step 4: Call the method changeName() and pass a new name as a parameter.
 // Step 5: Call the method getName() and print the result to the console.
 
-console.log('\nEXCERCISE1\n');
+console.log("\nEXCERCISE1\n");
 
 class Employee {
   name: string;
@@ -33,12 +33,12 @@ class Employee {
   }
 }
 
-const worker = new Employee('John', 20, 'driver');
-const worker1 = new Employee('Минка');
-const worker2 = new Employee('Сийка', 0);
+const worker = new Employee("John", 20, "driver");
+const worker1 = new Employee("Минка");
+const worker2 = new Employee("Сийка", 0);
 console.log(worker.getName());
 
-worker.changeName('Johny');
+worker.changeName("Johny");
 console.log(worker.getName());
 console.log(worker);
 console.log(worker1.getName());
@@ -50,7 +50,7 @@ console.log(worker2.age);
 // Step 3: Create an object of the interface User and assign values to all properties.
 // Step 4: Print the object to the console.
 
-console.log('\nEXERCISE2\n');
+console.log("\nEXERCISE2\n");
 interface WithID {
   id: number;
 }
@@ -60,7 +60,7 @@ interface User extends WithID {
   age: number;
 }
 
-const user: User = { id: 234, name: 'Дарий', age: 101 };
+const user: User = { id: 234, name: "Дарий", age: 101 };
 console.log(user);
 
 // Exercise 3 - Car Rental Service (Encapsulation)
@@ -73,7 +73,7 @@ console.log(user);
 // Example output: "{Renting a Hatchback for 3 days will cost: $150}"
 // Step 5: Change the costPerDay for one of the car types and print the new rental details in the console.
 
-console.log('\nEXERCISE3\n');
+console.log("\nEXERCISE3\n");
 class CarRental {
   public readonly carType: string;
   private costPerDay: number;
@@ -93,9 +93,9 @@ class CarRental {
   }
 }
 
-const car1: CarRental = new CarRental('AUDI', 20);
-const car2: CarRental = new CarRental('VW', 15);
-const car3: CarRental = new CarRental('OPEL', 10);
+const car1: CarRental = new CarRental("AUDI", 20);
+const car2: CarRental = new CarRental("VW", 15);
+const car3: CarRental = new CarRental("OPEL", 10);
 
 console.log(car1.rentCar(5));
 console.log(car2.rentCar(10));
@@ -113,10 +113,10 @@ console.log(car1.rentCar(5));
 // Step 6: Create another object of the class "Chair" with a different type of furniture and print the type of furniture and number of legs in the console.
 // Example output: "Chair 1: Type - Teakwood, Legs - 4"
 
-console.log('\nEXERCISE4\n');
+console.log("\nEXERCISE4\n");
 
 class Furniture {
-  constructor(public furnitureType: string = 'Teakwood') {}
+  constructor(public furnitureType: string = "Teakwood") {}
 }
 
 class Chair extends Furniture {
@@ -133,10 +133,14 @@ class Chair extends Furniture {
   }
 }
 
-let chair1: Chair = new Chair(3, 'Oak');
-console.log(`Type of chair: ${chair1.furnitureType}, number of legs: ${chair1.legsNumber}`);
+let chair1: Chair = new Chair(3, "Oak");
+console.log(
+  `Type of chair: ${chair1.furnitureType}, number of legs: ${chair1.legsNumber}`,
+);
 let chair2: Chair = new Chair(0);
-console.log(`Type of chair: ${chair2.furnitureType}, number of legs: ${chair2.legsNumber}`);
+console.log(
+  `Type of chair: ${chair2.furnitureType}, number of legs: ${chair2.legsNumber}`,
+);
 
 // Exercise 5 - Music Instruments (Abstraction)
 // Step 1: Create an abstract class called "Instrument" with a method "playMusic".
@@ -144,13 +148,13 @@ console.log(`Type of chair: ${chair2.furnitureType}, number of legs: ${chair2.le
 // Step 3: Implement the "playMusic" method in both subclasses to log a message indicating which instrument is playing music.
 // Step 4: Create an object of each subclass and call the "playMusic" method to see the different outputs.
 
-console.log('\nEXERCISE5\n');
+console.log("\nEXERCISE5\n");
 abstract class Instrument {
   public abstract playMusic(): string;
 }
 
 class Guitar extends Instrument {
-  instrument: string = 'Guitar';
+  instrument: string = "Guitar";
   constructor() {
     super();
   }
@@ -159,7 +163,7 @@ class Guitar extends Instrument {
   }
 }
 class Piano extends Instrument {
-  instrument: string = 'Piano';
+  instrument: string = "Piano";
   constructor() {
     super();
   }
@@ -182,7 +186,7 @@ console.log(piano.playMusic());
 // For example: "{name} is a carnivore and eats meat" or "{name} is a herbivore and eats plants".
 // Step 4: Create an object of each subclass and call the "eat" method to see the different outputs.
 
-console.log('\nEXERCISE6\n');
+console.log("\nEXERCISE6\n");
 class Mammal {
   name: string;
   constructor(name: string) {
@@ -210,11 +214,11 @@ class Carnivore extends Mammal {
   }
 }
 
-const mammal: Mammal = new Mammal('Cow');
+const mammal: Mammal = new Mammal("Cow");
 mammal.eat();
-const tiger: Carnivore = new Carnivore('Tiger');
+const tiger: Carnivore = new Carnivore("Tiger");
 tiger.eat();
-const sheep: Herbivore = new Herbivore('Sheep');
+const sheep: Herbivore = new Herbivore("Sheep");
 sheep.eat();
 
 // Part 2: Asynchronous Operations and Error Handling
@@ -227,7 +231,9 @@ sheep.eat();
 // Step 5: Call the function and log the result using .then().
 
 function waitTwoSeconds() {
-  return new Promise<string>((resolve) => setTimeout(() => resolve('Done waiting!'), 2000));
+  return new Promise<string>((resolve) =>
+    setTimeout(() => resolve("Done waiting!"), 2000),
+  );
 }
 waitTwoSeconds().then((result) => {
   console.log(`\nEXERCISE7\n${result}`);
@@ -257,7 +263,9 @@ runTask();
 // Step 7: Print the user's name to the console.
 
 function fetchUser(): Promise<{ id: number; name: string }> {
-  return new Promise((resolve) => setTimeout(() => resolve({ id: 1, name: 'Alice' }), 1500));
+  return new Promise((resolve) =>
+    setTimeout(() => resolve({ id: 1, name: "Alice" }), 1500),
+  );
 }
 
 async function printUser() {
@@ -282,9 +290,9 @@ function fetchWithError() {
     setTimeout(() => {
       const isSuccess: boolean = Math.random() > 0.5;
       if (isSuccess) {
-        resolve('Success!');
+        resolve("Success!");
       } else {
-        reject('Something went wrong!');
+        reject("Something went wrong!");
       }
     }, 1500),
   );
@@ -306,11 +314,15 @@ fetchWithError()
 // Step 10: Call the "runSteps" function.
 
 function stepOne(): Promise<string> {
-  return new Promise<string>((resolve) => setTimeout(() => resolve('Step 1 done'), 1000));
+  return new Promise<string>((resolve) =>
+    setTimeout(() => resolve("Step 1 done"), 1000),
+  );
 }
 
 function stepTwo(): Promise<string> {
-  return new Promise<string>((resolve) => setTimeout(() => resolve('Step 2 done'), 1000));
+  return new Promise<string>((resolve) =>
+    setTimeout(() => resolve("Step 2 done"), 1000),
+  );
 }
 
 async function runSteps() {
