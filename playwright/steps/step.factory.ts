@@ -1,23 +1,33 @@
-import { test as baseTest } from "@playwright/test";
+import { test as baseTest } from '@playwright/test';
 
-import SharedSteps from "./Shared.steps";
-import LandingSteps from "./Landing.steps";
-import DocumentsSteps from "./Documents.steps";
+import SharedSteps from './Shared.steps';
+import LandingSteps from './Landing.steps';
+import DocumentsSteps from './Documents.steps';
+import NewInvoiceSteps from './NewInvoice.steps';
+import PlanSteps from './Plan.steps';
 
 type MyFixtures = {
-    sharedSteps: SharedSteps;
-    landintSteps: LandingSteps;
-    documentSteps: DocumentsSteps;
-}
+  sharedSteps: SharedSteps;
+  landingSteps: LandingSteps;
+  documentSteps: DocumentsSteps;
+  newInvoiceSteps: NewInvoiceSteps;
+  planSteps: PlanSteps;
+};
 
 export const test = baseTest.extend<MyFixtures>({
   sharedSteps: async ({ page, context }, use) => {
     await use(new SharedSteps(page, context));
   },
-  landintSteps: async ({ page, context }, use) => {
+  landingSteps: async ({ page, context }, use) => {
     await use(new LandingSteps(page, context));
   },
   documentSteps: async ({ page, context }, use) => {
     await use(new DocumentsSteps(page, context));
+  },
+  newInvoiceSteps: async ({ page, context }, use) => {
+    await use(new NewInvoiceSteps(page, context));
+  },
+  planSteps: async ({ page, context }, use) => {
+    await use(new PlanSteps(page, context));
   },
 });
