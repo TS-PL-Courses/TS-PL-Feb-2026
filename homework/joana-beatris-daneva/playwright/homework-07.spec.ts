@@ -21,91 +21,114 @@
 // click on "Списък с Клиенти", verify navigation
 // check the checkbox next to the newly created client (using dynamic arrow method locator), click the delete button, accept the message box (not a pop up this time), verify success message
 
+//Scenario 1: Payment Plan Details Verification
+
 import { test } from '@tests/steps/step.factory';
 import { Credentials } from '@tests/resourses/enums/Credentials';
-import { expect } from '@playwright/test';
 
-type BusinessPlan = {
-  index: number;
-  name: string;
-
-  costs: string[];
-
-  clientCount: number;
-  invoicesCount: number;
-  employeesCount: number;
-
-  otherBenefits: string[];
-};
-
-const businessPlans: BusinessPlan[] = [
-  {
-    index: 0,
-    name: 'Корпоративен',
-    costs: ['по договаряне'],
-    clientCount: 10,
-    invoicesCount: 100,
-    employeesCount: 5,
-    otherBenefits: ['Logo', 'Signature'],
-  },
-  {
-    index: 1,
-    name: 'Бизнес',
-    costs: ['28 €/месец', '54.76 лв./месец'],
-    clientCount: 5,
-    invoicesCount: 50,
-    employeesCount: 5,
-    otherBenefits: ['Logo', 'Signature'],
-  },
-  {
-    index: 2,
-    name: 'Малък бизнес',
-    costs: ['8 €/месец', '15.65 лв./месец'],
-    clientCount: 5,
-    invoicesCount: 50,
-    employeesCount: 5,
-    otherBenefits: ['Logo', 'Signature'],
-  },
-];
-
-// test data parametrization for multiple scenarios:
 [
-  // scenario 1:
   {
-    scenario: 'Scenario 1: Corporate plan Details Verification',
+    scenario: 'Scenario 1: Case 1: Corporate Payment Plan Details Verification',
     email: Credentials.EMIAL,
     password: Credentials.PASSWORD,
     usingEnterKey: false,
+    name: 'Корпоративен',
+    costs: ['по договаряне'],
+    clientCount: 'неограничени',
+    invoicesCount: 'неограничени',
+    employeesCount: 'неограничени',
+    otherBenefits: ['REST API за достъп', 'допълнително архивиране', 'приоритетен support'],
   },
-  // pass the test data params forward to the test function:
-].forEach(({ email, password, usingEnterKey, scenario }) => {
-  test(
-    `Scenario: ${scenario}`, // test scenario title + param 'scenario' to make the title unique for each scenario
-    {
-      tag: ['@ui', '@login', '@positive'], // tags for scenario categorization
-      annotation: [
-        // annotations for better reporting:
-        { type: 'Test Managmetn Id', description: '12312312' },
-        { type: 'username', description: email },
-        { type: 'password', description: password },
-      ],
-    }, // inject fixtures here to be able to use their steps in the test body:
-    async ({ sharedSteps, landintSteps, newInvoiceSteps }) => {
-      // finally actual test body containing calls to test step definitions executing our code:
-      await sharedSteps.navigateToSite('https://st2016.inv.bg/login/');
-      await sharedSteps.login(email, password, usingEnterKey);
+  {
+    scenario: 'Scenario 1: Case 2: Business Payment Plan Details Verification',
+    email: Credentials.EMIAL,
+    password: Credentials.PASSWORD,
+    usingEnterKey: false,
+    name: 'Бизнес',
+    costs: ['28 €/месец', '54.76 лв./месец'],
+    clientCount: '1000 клиента',
+    invoicesCount: '1000 фактури/месец',
+    employeesCount: '25 служителя',
+    otherBenefits: ['с Ваше лого', 'с електронен подпис'],
+  },
+  {
+    scenario: 'Scenario 1: Case 3: Small Business Payment Plan Details Verification',
+    email: Credentials.EMIAL,
+    password: Credentials.PASSWORD,
+    usingEnterKey: false,
+    name: 'Малък бизнес',
+    costs: ['8 €/месец', '15.65 лв./месец'],
+    clientCount: '150 клиента',
+    invoicesCount: '150 фактури/месец',
+    employeesCount: '10 служителя',
+    otherBenefits: ['с Ваше лого', 'с електронен подпис'],
+  },
+  {
+    scenario: 'Scenario 1: Case 4: Personal Payment Plan Details Verification',
+    email: Credentials.EMIAL,
+    password: Credentials.PASSWORD,
+    usingEnterKey: false,
+    name: 'Персонален',
+    costs: ['4 €/месец', '7.82 лв./месец'],
+    clientCount: '15 клиента',
+    invoicesCount: '15 фактури/месец',
+    employeesCount: '1 служителя',
+    otherBenefits: ['с Ваше лого'],
+  },
+  {
+    scenario: 'Scenario 1: Case 5: Free Payment Plan Details Verification',
+    email: Credentials.EMIAL,
+    password: Credentials.PASSWORD,
+    usingEnterKey: false,
+    name: 'Безплатен',
+    costs: ['0 €/месец', '0 лв./месец'],
+    clientCount: '5 клиента',
+    invoicesCount: '5 фактури/месец',
+    employeesCount: '1 служителя',
+    otherBenefits: [],
+  },
+].forEach(
+  ({
+    email,
+    password,
+    usingEnterKey,
+    scenario,
+    name,
+    costs,
+    clientCount,
+    invoicesCount,
+    employeesCount,
+    otherBenefits,
+  }) => {
+    test(
+      `${scenario}`,
+      {
+        tag: ['@ui', '@login', '@positive'],
+        annotation: [
+          { type: 'username', description: email },
+          { type: 'password', description: password },
+        ],
+      },
+      async ({ sharedSteps, landintSteps, newInvoiceSteps }) => {
+        await sharedSteps.navigateToSite('https://st2016.inv.bg/login/');
+        await sharedSteps.login(email, password, usingEnterKey);
 
-      await landintSteps.navigateToNewInvoicePage();
+        await landintSteps.navigateToNewInvoicePage();
 
-      await newInvoiceSteps.navigateToNewPlanPage();
+        await newInvoiceSteps.navigateToNewPlanPage();
 
-      businessPlans.forEach(async (businessPlan) => {
-        await newInvoiceSteps.verifyBusinessPlanName(businessPlan.name);
+        await newInvoiceSteps.verifyPlanName(name);
 
-        businessPlan.costs.forEach(async (cost) => {
-          await newInvoiceSteps.verifyBusinessPlanCosts(cost);
+        costs.forEach(async (cost) => {
+          await newInvoiceSteps.verifyPlanCosts(cost);
         });
-      });
-    },
-  );
-});
+
+        await newInvoiceSteps.verifyBenefits(name, employeesCount, invoicesCount, clientCount);
+
+        await otherBenefits.forEach(async (benefit) => {
+          await newInvoiceSteps.verifyOtherBenefits(name, benefit);
+        });
+      },
+    );
+  },
+);
