@@ -4,6 +4,7 @@ import LoginPage from '@tests/pages/Login.page';
 import LandingPage from '@tests/pages/Landing.page';
 import DocumentsPage from './Documents.page';
 import NewInvoicePage from './NewInvoice.page';
+import ClientsPage from './Clients.page';
 
 export default class PageFactory {
   public readonly page: Page;
@@ -13,6 +14,7 @@ export default class PageFactory {
   public readonly landingPage: LandingPage;
   public readonly documentPage: DocumentsPage;
   public readonly newInvoicePage: NewInvoicePage;
+  public readonly clientsPage: ClientsPage;
 
   constructor(page: Page, context: BrowserContext) {
     // Page Setup
@@ -23,5 +25,6 @@ export default class PageFactory {
     this.landingPage = new LandingPage(page, context);
     this.documentPage = new DocumentsPage(page, context);
     this.newInvoicePage = new NewInvoicePage(page, context);
+    this.clientsPage = new ClientsPage(page, context);
   }
 }
