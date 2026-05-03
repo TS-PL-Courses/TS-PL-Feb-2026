@@ -1,6 +1,5 @@
 import PageFactory from '@tests/pages/Page.factory';
 import { test, expect, Page, BrowserContext } from '@playwright/test';
-import PlanPage from '@tests/pages/Plan.page';
 
 type PlanExpected = {
   planName: string;
