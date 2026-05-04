@@ -37,19 +37,18 @@ export default class PlanSteps extends PageFactory {
       }
       await expect(
         card,
-        `Plan "${expected.planName}" should show correct number of clients`,
+        `Plan "${expected.planName}" should show clients: "${expected.clients}"`,
       ).toContainText(expected.clients);
 
       await expect(
         card,
-        `Plan "${expected.planName}" should show correct number of invoices`,
+        `Plan "${expected.planName}"should show invoices: "${expected.invoices}"`,
       ).toContainText(expected.invoices);
 
       await expect(
         card,
-        `Plan "${expected.planName}" should show correct number of employees`,
+        `Plan "${expected.planName}"should show employees: "${expected.employees}"`,
       ).toContainText(expected.employees);
-
       for (const feature of expected.features) {
         await expect(
           this.planPage.PLAN_FEATURE(expected.planName, feature),
