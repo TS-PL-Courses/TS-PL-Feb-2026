@@ -5,6 +5,8 @@ import LandingSteps from './Landing.steps';
 import DocumentsSteps from './Documents.steps';
 import NewInvoiceSteps from './NewInvoice.steps';
 import PlanSteps from './Plan.steps';
+import ClientsSteps from './Clients.steps';
+import AddClientSteps from './AddClient.steps';
 
 type MyFixtures = {
   sharedSteps: SharedSteps;
@@ -12,6 +14,8 @@ type MyFixtures = {
   documentSteps: DocumentsSteps;
   newInvoiceSteps: NewInvoiceSteps;
   planSteps: PlanSteps;
+  clientsSteps: ClientsSteps;
+  addClientSteps: AddClientSteps;
 };
 
 export const test = baseTest.extend<MyFixtures>({
@@ -29,5 +33,11 @@ export const test = baseTest.extend<MyFixtures>({
   },
   planSteps: async ({ page, context }, use) => {
     await use(new PlanSteps(page, context));
+  },
+  clientsSteps: async ({ page, context }, use) => {
+    await use(new ClientsSteps(page, context));
+  },
+  addClientSteps: async ({ page, context }, use) => {
+    await use(new AddClientSteps(page, context));
   },
 });
