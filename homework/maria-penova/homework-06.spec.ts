@@ -38,6 +38,9 @@ test.describe('Homework 6 - Locators and Test Steps', () => {
         
         await test.step('Navigate to Rahul Shetty Academy', async () => {
             await page.goto('https://rahulshettyacademy.com/AutomationPractice/');
+            await expect(
+                page.locator('//h1[contains(text(), "Practice Page")]'), 
+                'Verify page loaded successfully').toBeVisible();
             await expect(page).toHaveURL(/AutomationPractice/);
         });
 
@@ -50,7 +53,7 @@ test.describe('Homework 6 - Locators and Test Steps', () => {
         await test.step('Autocomplete suggestions', async () => {
             const countryInput = page.locator('#autocomplete');
             await countryInput.fill('Bulgaria');
-            await page.locator('.ui-menu-item div').first().click();
+            await page.locator('#ui-id-1').click();
             await expect.soft(countryInput, 'Input value should be Bulgaria').toHaveValue('Bulgaria');
         });
 
@@ -106,7 +109,7 @@ test('Scenario 2: Using Playwright getBy* locators', async ({ page }) => {
 
         await test.step('Group 1: getByRole navigation', async () => {
             await page.getByRole('link', { name: 'Home' }).first().click();
-            await expect(page).toHaveURL(/testautomationpractice/);
+            await expect(page).toHaveURL('https://testautomationpractice.blogspot.com/');
             await page.goBack(); 
             await page.waitForLoadState('networkidle');        });
 
@@ -141,7 +144,7 @@ test('Scenario 2: Using Playwright getBy* locators', async ({ page }) => {
         await test.step('Group 7: getByTestId() Locators', async () => {
         const userName = page.getByTestId('profile-name');
         await expect.soft(userName).toContainText('John');
-        const productB = page.getByTestId('product-name').nth(1);
+        const productB = page.getByTestId('product-name').filter({ hasText: 'Product B' });
         await expect.soft(productB).toContainText('Product B');
         });
     });
