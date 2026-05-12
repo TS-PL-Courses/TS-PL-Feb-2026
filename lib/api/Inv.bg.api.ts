@@ -1,4 +1,6 @@
-import { APIRequestContext, APIResponse, test } from '@playwright/test';
+import { APIRequestContext, APIResponse } from '@playwright/test';
+import Logger from '@lib/tools/Logger';
+import { ItemDetails } from '@lib/resourses/enums/Interfaces';
 
 export default class InvBgApi {
   readonly request: APIRequestContext;
@@ -36,28 +38,13 @@ export default class InvBgApi {
     };
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Enpoint', {
-      body: 'POST: ' + url,
-      contentType: 'application/json',
-    });
-    await test.info().attach('Request headers', {
-      body: JSON.stringify(headers, null, 2),
-      contentType: 'application/json',
-    });
-    await test.info().attach('Request body', {
-      body: JSON.stringify(body, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails('POST', url, headers, body);
 
     // Make the POST request to aquire the token
     const response: APIResponse = await this.request.post(url, { headers: headers, data: body });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logResponseDetails(response);
 
     return response;
   }
@@ -71,74 +58,148 @@ export default class InvBgApi {
     const url: string = this.baseUrl + '/items';
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Enpoint', {
-      body: 'GET: ' + url,
-      contentType: 'application/json',
-    });
-    await test.info().attach('Request headers', {
-      body: JSON.stringify(this.headers, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails('GET', url, { ...this.headers, Authorization: `Bearer ******` });
 
     // Make the GET request to show item list
+    const response: APIResponse = await this.request.get(url, {
+      headers: this.headers,
+    });
+
+    // Log the response details
+    await Logger.logResponseDetails(response);
+
+    return response;
+  }
+
+  /**
+   * Sends a GET item request and return item details
+   * @returns {Promise<APIResponse>}
+   */
+  async getItem(id: number): Promise<APIResponse> {
+    // Prepare the data for the request
+    const url: string = this.baseUrl + `/items/${id}`;
+
+    // Log the request details and hide sensitive information in logs
+    await Logger.logRequestDetails('GET', url, {
+      ...this.headers,
+      Authorization: `Bearer ******`,
+    });
+
+    // Make the GET request to show item details
     const response: APIResponse = await this.request.get(url, { headers: this.headers });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logResponseDetails(response);
 
     return response;
   }
 
   /**
    * Creates a new Item
+   * @type {ItemDetails} itemDetails - The details of the item to be created, including name, price, currency, price for quantity, quantity unit, limited status, catalog number, outside ID, English name, and tags.
    * @returns {Promise<APIResponse>}
    */
-  async createItem(): Promise<APIResponse> {
+  async createItem({
+    name,
+    price,
+    currency,
+    price_for_quantity,
+    quantity_unit,
+    is_limited,
+    catalog_number,
+    outside_id,
+    name_en,
+    tags,
+  }: ItemDetails): Promise<APIResponse> {
     // Prepare the data for the request
     const url: string = this.baseUrl + '/items';
     const body = {
-      name: '',
-      price: 0.25,
-      currency: 'BGN',
-      price_for_quantity: 1,
-      quantity_unit: 'кг.',
-      is_limited: false,
-      catalog_number: '46',
-      outside_id: 46,
-      name_en: 'Chewing Gum Turbo',
-      tags: ['tag_1', 'tag_2'],
+      name: name,
+      price: price,
+      currency: currency,
+      price_for_quantity: price_for_quantity,
+      quantity_unit: quantity_unit,
+      is_limited: is_limited,
+      catalog_number: catalog_number,
+      outside_id: outside_id,
+      name_en: name_en,
+      tags: tags,
     };
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Enpoint', {
-      body: 'POST: ' + url,
-      contentType: 'application/json',
-    });
-    await test.info().attach('Request headers', {
-      body: JSON.stringify(this.headers, null, 2),
-      contentType: 'application/json',
-    });
-    await test.info().attach('Request body', {
-      body: JSON.stringify(body, null, 2),
-      contentType: 'application/json',
-    });
+    await Logger.logRequestDetails(
+      'POST',
+      url,
+      {
+        ...this.headers,
+        Authorization: `Bearer ******`,
+      },
+      body,
+    );
 
-    // Make the GET request to show item list
+    // Make the POST request to create the item
     const response: APIResponse = await this.request.post(url, {
       headers: this.headers,
       data: body,
     });
 
     // Log the response details
-    const responseBody = await response.json();
-    await test.info().attach('Response Body', {
-      body: JSON.stringify(responseBody, null, 2),
-      contentType: 'application/json',
+    await Logger.logResponseDetails(response);
+
+    return response;
+  }
+
+  /**
+   * Sends an PATCH item request to update item details
+   * @returns {Promise<APIResponse>}
+   */
+  async patchItem(
+    id: number,
+    {
+      name,
+      price,
+      currency,
+      price_for_quantity,
+      quantity_unit,
+      is_limited,
+      catalog_number,
+      outside_id,
+      name_en,
+      tags,
+    }: ItemDetails,
+  ): Promise<APIResponse> {
+    // Prepare the data for the request
+    const url: string = this.baseUrl + `/items/${id}`;
+
+    const body = {
+      name: name,
+      price: price,
+      currency: currency,
+      price_for_quantity: price_for_quantity,
+      quantity_unit: quantity_unit,
+      is_limited: is_limited,
+      catalog_number: catalog_number,
+      outside_id: outside_id,
+      name_en: name_en,
+      tags: tags,
+    };
+
+    // Log the request details and hide sensitive information in logs
+    await Logger.logRequestDetails(
+      'PATCH',
+      url,
+      { ...this.headers, Authorization: `Bearer ******` },
+      body,
+    );
+
+    // Make the PATCH to update the item details:
+    const response: APIResponse = await this.request.patch(url, {
+      headers: this.headers,
+      data: body,
     });
+
+    // Log the response details in case of error to facilitate debugging
+    await Logger.logResponseDetails(response);
 
     return response;
   }
@@ -152,17 +213,16 @@ export default class InvBgApi {
     const url: string = this.baseUrl + `/items/${id}`;
 
     // Log the request details and hide sensitive information in logs
-    await test.info().attach('Request Enpoint', {
-      body: 'DELETE: ' + url,
-      contentType: 'application/json',
-    });
-    await test.info().attach('Request headers', {
-      body: JSON.stringify(this.headers, null, 2),
-      contentType: 'application/json',
+    await Logger.logRequestDetails('DELETE', url, {
+      ...this.headers,
+      Authorization: `Bearer ******`,
     });
 
-    // Make the GET request to show item list
+    // Make the DELETE request to delete the item
     const response: APIResponse = await this.request.delete(url, { headers: this.headers });
+
+    // Log the response details in case of error to facilitate debugging
+    await Logger.logResponseDetails(response);
 
     return response;
   }
