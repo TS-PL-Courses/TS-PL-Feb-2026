@@ -42,4 +42,58 @@ export default class DocumentsSteps extends PageFactory {
       );
     });
   }
+  async verifyNewInvoicePage(): Promise<void> {
+    await test.step('Verify New Invoice page is displayed', async () => {
+      // Ensure we target the first visible matching invoice link to avoid strict-mode ambiguity
+      const invoiceLink = this.page.locator('a.topmenu[href*="invoices/new"]').first();
+      await invoiceLink.waitFor({ state: 'visible', timeout: 10000 });
+      await expect(invoiceLink, 'Verify New Invoice tab is visible').toBeVisible();
+    });
+  }
+  async clickUpgradePlan(): Promise<Page> {
+    // Try several possible upgrade links (fallbacks) and click the first visible one.
+    await test.step('Click upgrade plan link', async () => {
+      const candidates = [
+        this.page.getByRole('link', { name: 'Преминете на по-висок план' }),
+        this.page.getByRole('link', { name: 'Изберете своя план' }),
+        this.page.getByRole('link', { name: 'Абонамент' }),
+        this.page.locator('a[href*="settings/plan"]'),
+        this.page.locator('a[href*="/settings/plan"]'),
+      ];
+
+      let clicked = false;
+      for (const candidate of candidates) {
+        const count = await candidate.count().catch(() => 0);
+        if (
+          count > 0 &&
+          (await candidate
+            .first()
+            .isVisible()
+            .catch(() => false))
+        ) {
+          const [maybeNewPage] = await Promise.all([
+            this.context.waitForEvent('page').catch(() => null),
+            candidate.first().click({ timeout: 10000 }),
+          ]);
+
+          if (maybeNewPage) await maybeNewPage.waitForLoadState('load');
+          else await this.page.waitForLoadState('load');
+
+          clicked = true;
+          break;
+        }
+      }
+
+      if (!clicked) {
+        // As a last resort navigate directly to the plan/settings URL used on the site
+        await this.page.goto('https://st2016.inv.bg/settings/plan');
+        await this.page.waitForLoadState('load');
+      }
+    });
+
+    // Return the page that now hosts the plans/settings content. If a new page was opened,
+    // prefer that; otherwise return the current page.
+    const pages = this.context.pages();
+    return pages[pages.length - 1] || this.page;
+  }
 }

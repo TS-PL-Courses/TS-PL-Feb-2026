@@ -3,6 +3,8 @@ import { step } from '@lib/tools/step.decorator';
 import InvBgApi from '@lib/api/Inv.bg.api';
 import { ItemDetails } from '@lib/resourses/enums/Interfaces';
 import jp from 'jsonpath';
+import * as fs from 'fs';
+import * as path from 'path';
 
 export default class ApiSteps {
   protected response: APIResponse;
@@ -124,6 +126,32 @@ export default class ApiSteps {
     const responseBody = await this.response.json();
     expect(responseBody.token, 'Verify token key exists in response body').toBeTruthy();
     process.env.TOKEN = responseBody.token;
+
+    // Save token to auth/user.json for Playwright storage state
+    const authDir = path.resolve(process.cwd(), 'auth');
+    if (!fs.existsSync(authDir)) {
+      fs.mkdirSync(authDir, { recursive: true });
+    }
+
+    const storageState = {
+      cookies: [],
+      origins: [
+        {
+          origin: 'https://st2016.inv.bg',
+          localStorage: [
+            {
+              name: 'token',
+              value: responseBody.token,
+            },
+          ],
+        },
+      ],
+    };
+
+    fs.writeFileSync(
+      path.join(authDir, 'user.json'),
+      JSON.stringify(storageState, null, 2),
+    );
   }
 
   /**

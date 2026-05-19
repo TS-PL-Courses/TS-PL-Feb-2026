@@ -11,6 +11,7 @@ export default class DocumentsPage extends BasePage {
   public readonly MESSAGE_BOX: Locator;
   public readonly DOCUMENT_CHECKBOX: (filename: string) => Locator;
   public readonly DELETE_FILE_BUTTON: Locator;
+  public readonly NEW_INVOICE_TAB: Locator;
 
   constructor(page: Page, context: BrowserContext) {
     super(page, context);
@@ -32,6 +33,8 @@ export default class DocumentsPage extends BasePage {
         })
         .getByRole('checkbox');
     this.DELETE_FILE_BUTTON = this.page.getByRole('link', { name: 'Изтрий' });
+    // Use a more specific selector and pick the first match to avoid strict-mode ambiguity
+    this.NEW_INVOICE_TAB = this.page.locator('a.topmenu[href*="invoices/new"]').first();
   }
 
   // this does the same as the arrow method above DOCUMENT_CHECKBOX
