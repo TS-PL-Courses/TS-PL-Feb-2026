@@ -1,7 +1,7 @@
 import { APIResponse, expect } from '@playwright/test';
 import { step } from '@lib/tools/step.decorator';
 import InvBgApi from '@lib/api/Inv.bg.api';
-import { ItemDetails } from '@lib/resourses/enums/Interfaces';
+import { ClientDetails, ItemDetails } from '@lib/resourses/enums/Interfaces';
 import jp from 'jsonpath';
 
 export default class ApiSteps {
@@ -150,5 +150,97 @@ export default class ApiSteps {
     const responseBody = await this.response.json();
     const actualValue = jp.query(responseBody, jsonPath)[0];
     expect(actualValue, 'Verify Element Value').toBe(expectedValue);
+  }
+
+  /**
+   * Creates a new Client
+   * @type {ItemDetails} itemDetails - The details of the item to be created, including name, price, currency, price for quantity, quantity unit, limited status, catalog number, outside ID, English name, and tags.
+   * @returns {Promise<void>}
+   */
+  @step('Create Client')
+  async postCreateClient({
+    name,
+    town,
+    address,
+    bulstat,
+    is_reg_vat,
+    vat_number,
+    mol,
+    is_person,
+    egn,
+    country,
+    code,
+    office,
+    delivery_address,
+    name_en,
+    town_en,
+    address_en,
+    mol_en,
+    country_en,
+    custom_properties,
+  }: ClientDetails): Promise<void> {
+    this.response = await this.invBgApi.createClient({
+      name,
+      town,
+      address,
+      bulstat,
+      is_reg_vat,
+      vat_number,
+      mol,
+      is_person,
+      egn,
+      country,
+      code,
+      office,
+      delivery_address,
+      name_en,
+      town_en,
+      address_en,
+      mol_en,
+      country_en,
+      custom_properties,
+    });
+  }
+
+  /**
+   * Sends a GET item request and return clientm details
+   * @returns {Promise<void>}
+   */
+  @step('Get client')
+  async getClient(clientId: number): Promise<void> {
+    this.response = await this.invBgApi.getClient(clientId);
+  }
+
+  /**
+   ** Verifies that the value of a specific element in the response body matches the expected value
+   * @type {string} jsonPath - JSONPath expression to locate the element in the response body
+   * @type {boolean} expectedValue - The expected value to verify against the actual value extracted from the response body
+   * @returns {Promise<void>}
+   */
+  @step('Verify Element Value in response body')
+  async verifyElementBooleanValue(jsonPath: string, expectedValue: boolean): Promise<void> {
+    const responseBody = await this.response.json();
+    const actualValue = jp.query(responseBody, jsonPath)[0];
+    expect(actualValue, 'Verify Element Value').toBe(expectedValue);
+  }
+
+  /**
+   * Sends an PATCH client request to update client details
+   * @type {number} clientId - The ID of the client to be updated
+   * @type {ClientDetails} clientDetails - The updated details of the client, including name, price, currency, price for quantity, quantity unit, limited status, catalog number, outside ID, English name, and tags.
+   * @returns {Promise<void>}
+   */
+  @step('Update Client')
+  async patchUpdateClient(clientId: number, clientDetails: ClientDetails): Promise<void> {
+    this.response = await this.invBgApi.patchClient(clientId, clientDetails);
+  }
+
+  /**
+   * Deletes a client
+   * @returns {Promise<void>}
+   */
+  @step('Delete Client')
+  async deleteClient(clientId: number): Promise<void> {
+    this.response = await this.invBgApi.deleteClient(clientId);
   }
 }
