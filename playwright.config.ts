@@ -122,7 +122,7 @@ export default defineConfig({
       testMatch: /generate\.token\.ts/,
       use: {},
     },
-    // { name: 'setup', testMatch: /.*\.setup\.ts/ },
+    { name: 'setup', testMatch: /.*\.setup\.ts/ },
     {
       name: 'Google Chrome',
       use: {
