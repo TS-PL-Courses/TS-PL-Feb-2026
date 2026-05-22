@@ -1,7 +1,7 @@
 import { APIResponse, expect } from '@playwright/test';
 import { step } from '@lib/tools/step.decorator';
 import InvBgApi from '@lib/api/Inv.bg.api';
-import { ItemDetails } from '@lib/resourses/enums/Interfaces';
+import { CreateClient, ItemDetails } from '@lib/resourses/enums/Interfaces';
 import jp from 'jsonpath';
 
 export default class ApiSteps {
@@ -150,5 +150,91 @@ export default class ApiSteps {
     const responseBody = await this.response.json();
     const actualValue = jp.query(responseBody, jsonPath)[0];
     expect(actualValue, 'Verify Element Value').toBe(expectedValue);
+  }
+
+  @step('Verify Element Value in response body')
+  async verifyElementBooleanValue(jsonPath: string, expectedValue: boolean): Promise<void> {
+    const responseBody = await this.response.json();
+    const actualValue = jp.query(responseBody, jsonPath)[0];
+    expect(actualValue, 'Verify Element Value').toBe(expectedValue);
+  }
+
+  /**
+   * Creates a new Client
+   * @type {CreateClient} createClient - The Client to be created, including name, town, address, bulstat, VAT registration status, VAT number, MOL, person status, EGN, country, code, office, delivery address, English name, English town, English address, English MOL, English country, and custom properties.
+   * @returns {Promise<void>}
+   */
+  @step('Create Client')
+  async postCreateClient({
+    name,
+    town,
+    address,
+    bulstat,
+    is_reg_vat,
+    vat_number,
+    mol,
+    is_person,
+    egn,
+    country,
+    code,
+    office,
+    delivery_address,
+    name_en,
+    town_en,
+    address_en,
+    mol_en,
+    country_en,
+    custom_properties: [{ key, value, use_in_invoices }],
+  }: CreateClient): Promise<void> {
+    this.response = await this.invBgApi.createClient({
+      name,
+      town,
+      address,
+      bulstat,
+      is_reg_vat,
+      vat_number,
+      mol,
+      is_person,
+      egn,
+      country,
+      code,
+      office,
+      delivery_address,
+      name_en,
+      town_en,
+      address_en,
+      mol_en,
+      country_en,
+      custom_properties: [{ key, value, use_in_invoices }],
+    });
+  }
+
+  /**
+   * Sends a GET item request and return client details
+   * @returns {Promise<void>}
+   */
+  @step('Get Client')
+  async getClient(id: number): Promise<void> {
+    this.response = await this.invBgApi.getClient(id);
+  }
+
+  /**
+   * Sends an PATCH client request to update client details
+   * @type {number} id - The ID of the client to be updated
+   * @type {CreateClient} createClient - The Client to be updated, including name, town, address, bulstat, VAT registration status, VAT number, MOL, person status, EGN, country, code, office, delivery address, English name, English town, English address, English MOL, English country, and custom properties.
+   * @returns {Promise<void>}
+   */
+  @step('Update Client')
+  async patchUpdateClient(id: number, createClient: CreateClient): Promise<void> {
+    this.response = await this.invBgApi.patchClient(id, createClient);
+  }
+
+  /**
+   * Deletes client
+   * @returns {Promise<void>}
+   */
+  @step('Delete Client')
+  async deleteClient(id: number): Promise<void> {
+    this.response = await this.invBgApi.deleteClient(id);
   }
 }

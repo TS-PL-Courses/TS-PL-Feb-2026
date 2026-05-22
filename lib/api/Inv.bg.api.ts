@@ -1,6 +1,6 @@
 import { APIRequestContext, APIResponse } from '@playwright/test';
 import Logger from '@lib/tools/Logger';
-import { ItemDetails } from '@lib/resourses/enums/Interfaces';
+import { CreateClient, ItemDetails } from '@lib/resourses/enums/Interfaces';
 
 export default class InvBgApi {
   readonly request: APIRequestContext;
@@ -211,6 +211,194 @@ export default class InvBgApi {
   async deleteItem(id: number): Promise<APIResponse> {
     // Prepare the data for the request
     const url: string = this.baseUrl + `/items/${id}`;
+
+    // Log the request details and hide sensitive information in logs
+    await Logger.logRequestDetails('DELETE', url, {
+      ...this.headers,
+      Authorization: `Bearer ******`,
+    });
+
+    // Make the DELETE request to delete the item
+    const response: APIResponse = await this.request.delete(url, { headers: this.headers });
+
+    // Log the response details in case of error to facilitate debugging
+    await Logger.logResponseDetails(response);
+
+    return response;
+  }
+
+  /**
+   * Creates a new Client
+   * @type {CreateClient} createClient - The client to be created, including name, town, address, bulstat, is_reg_vat, vat_number, mol, is_person, egn, country, code, office, delivery_address, name_en, town_en, address_en, country_en and custom_properties.
+   * @returns {Promise<APIResponse>}
+   */
+  async createClient({
+    name,
+    town,
+    address,
+    bulstat,
+    is_reg_vat,
+    vat_number,
+    mol,
+    is_person,
+    egn,
+    country,
+    code,
+    office,
+    delivery_address,
+    name_en,
+    town_en,
+    address_en,
+    country_en,
+    custom_properties: [{ key, value, use_in_invoices }],
+  }: CreateClient): Promise<APIResponse> {
+    // Prepare the data for the request
+    const url: string = this.baseUrl + '/clients';
+    const body = {
+      name,
+      town,
+      address,
+      bulstat,
+      is_reg_vat,
+      vat_number,
+      mol,
+      is_person,
+      egn,
+      country,
+      code,
+      office,
+      delivery_address,
+      name_en,
+      town_en,
+      address_en,
+      country_en,
+      custom_properties: [{ key, value, use_in_invoices }],
+    };
+
+    // Log the request details and hide sensitive information in logs
+    await Logger.logRequestDetails(
+      'POST',
+      url,
+      {
+        ...this.headers,
+        Authorization: `Bearer ******`,
+      },
+      body,
+    );
+
+    // Make the POST request to create the client
+    const response: APIResponse = await this.request.post(url, {
+      headers: this.headers,
+      data: body,
+    });
+
+    // Log the response details
+    await Logger.logResponseDetails(response);
+
+    return response;
+  }
+
+  /**
+   * Sends a GET client request and return client details
+   * @returns {Promise<APIResponse>}
+   */
+  async getClient(id: number): Promise<APIResponse> {
+    // Prepare the data for the request
+    const url: string = this.baseUrl + `/clients/${id}`;
+
+    // Log the request details and hide sensitive information in logs
+    await Logger.logRequestDetails('GET', url, {
+      ...this.headers,
+      Authorization: `Bearer ******`,
+    });
+
+    // Make the GET request to show client details
+    const response: APIResponse = await this.request.get(url, { headers: this.headers });
+
+    // Log the response details
+    await Logger.logResponseDetails(response);
+
+    return response;
+  }
+
+  /**
+   * Sends an PATCH client request to update client details
+   * @returns {Promise<APIResponse>}
+   */
+  async patchClient(
+    id: number,
+    {
+      name,
+      town,
+      address,
+      bulstat,
+      is_reg_vat,
+      vat_number,
+      mol,
+      is_person,
+      egn,
+      country,
+      code,
+      office,
+      delivery_address,
+      name_en,
+      town_en,
+      address_en,
+      country_en,
+      custom_properties: [{ key, value, use_in_invoices }],
+    }: CreateClient,
+  ): Promise<APIResponse> {
+    // Prepare the data for the request
+    const url: string = this.baseUrl + `/clients/${id}`;
+
+    const body = {
+      name,
+      town,
+      address,
+      bulstat,
+      is_reg_vat,
+      vat_number,
+      mol,
+      is_person,
+      egn,
+      country,
+      code,
+      office,
+      delivery_address,
+      name_en,
+      town_en,
+      address_en,
+      country_en,
+      custom_properties: [{ key, value, use_in_invoices }],
+    };
+
+    // Log the request details and hide sensitive information in logs
+    await Logger.logRequestDetails(
+      'PATCH',
+      url,
+      { ...this.headers, Authorization: `Bearer ******` },
+      body,
+    );
+
+    // Make the PATCH to update the item details:
+    const response: APIResponse = await this.request.patch(url, {
+      headers: this.headers,
+      data: body,
+    });
+
+    // Log the response details in case of error to facilitate debugging
+    await Logger.logResponseDetails(response);
+
+    return response;
+  }
+
+  /**
+   * Deletes a client
+   * @returns {Promise<APIResponse>}
+   */
+  async deleteClient(id: number): Promise<APIResponse> {
+    // Prepare the data for the request
+    const url: string = this.baseUrl + `/clients/${id}`;
 
     // Log the request details and hide sensitive information in logs
     await Logger.logRequestDetails('DELETE', url, {
