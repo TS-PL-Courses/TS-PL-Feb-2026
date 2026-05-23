@@ -1,7 +1,7 @@
 import { APIResponse, expect } from '@playwright/test';
 import { step } from '@lib/tools/step.decorator';
 import InvBgApi from '@lib/api/Inv.bg.api';
-import jp from 'jsonpath';
+//import jp from 'jsonpath';
 
 export default class ApiSteps {
   protected response: APIResponse;

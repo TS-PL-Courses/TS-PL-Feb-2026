@@ -78,17 +78,19 @@ export default defineConfig({
     // Collect a trace file fore debugging when retrying all failed tests. This artefact may cause issues in parallel execution so if we want to capture trace we can do it on rerun of failed tests while turning parallel execution off See https://playwright.dev/docs/trace-viewer
     trace: 'retain-on-failure',
 
-    /* Activates slow motion exectution in headed mode */
-    // launchOptions: {
-    //   slowMo: 1250,
+    /* Activates slow motion execution in headed mode */
+     launchOptions: {
+       slowMo: 1250,
+       timeout: 120000,
+      },
   },
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: 'chromium',
-    //   use: { ...devices['Desktop Chrome'] },
-    // },
+   {
+      name: 'chromium',
+       use: { ...devices['Desktop Chrome'] },
+   },
 
     // {
     //   name: 'firefox',
@@ -115,17 +117,17 @@ export default defineConfig({
     //   name: 'Microsoft Edge',
     //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
     // },
-    {
-      name: 'generateToken',
-      testDir: './playwright/tests/api',
-      testMatch: /generate\.token\.ts/,
-      use: {},
-    },
-    {
-      name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-      dependencies: ['generateToken'],
-    },
+    // {
+    //   name: 'generateToken',
+    //   testDir: './playwright/tests/api',
+    //   testMatch: /generate\.token\.ts/,
+    //   use: {},
+    // },
+    // {
+    //   name: 'Google Chrome',
+    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    //   dependencies: ['generateToken'],
+    // },
   ],
 
   /* Run your local dev server before starting the tests */

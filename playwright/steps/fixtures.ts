@@ -1,20 +1,25 @@
-import { test as baseTest } from "@playwright/test";
+import { test as baseTest } from '@playwright/test';
 
 /* UI Steps */
 import SharedSteps from "./Shared.steps";
 import LandingSteps from "./Landing.steps";
 import DocumentsSteps from "./Documents.steps";
+import NewInvoiceSteps from "./New.Invoice.steps";
+import PlanSteps from "./Plan.steps";
 
 /* Api Implementation */
-import InvBgApi from "@lib/api/Inv.bg.api";
-import ApiSteps from "./Api.steps";
+// import InvBgApi from "@lib/api/Inv.bg.api";
+// import ApiSteps from "./Api.steps";
+
 
 type MyFixtures = {
   sharedSteps: SharedSteps;
   landintSteps: LandingSteps;
   documentSteps: DocumentsSteps;
-  invBgApi: InvBgApi;
-  apiSteps: ApiSteps;
+  // invBgApi: InvBgApi;
+  // apiSteps: ApiSteps;
+  newInvoiceSteps: NewInvoiceSteps;
+  planSteps: PlanSteps;
 };
 
 export const test = baseTest.extend<MyFixtures>({
@@ -27,10 +32,16 @@ export const test = baseTest.extend<MyFixtures>({
   documentSteps: async ({ page, context }, use) => {
     await use(new DocumentsSteps(page, context));
   },
-  invBgApi: async ({ request }, use) => {
-    await use(new InvBgApi(request));
+  // invBgApi: async ({ request }, use) => {
+  //   await use(new InvBgApi(request));
+  // },
+  // apiSteps: async ({ invBgApi }, use) => {
+  //   await use(new ApiSteps(invBgApi));
+  // },
+  newInvoiceSteps: async ({ page, context }, use) => {
+    await use(new NewInvoiceSteps(page, context));
   },
-  apiSteps: async ({ invBgApi }, use) => {
-    await use(new ApiSteps(invBgApi));
+  planSteps: async ({ page, context }, use) => {
+    await use(new PlanSteps(page, context));
   },
 });
