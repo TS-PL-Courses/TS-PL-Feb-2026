@@ -17,8 +17,8 @@ import { test, expect } from '@playwright/test';
 
 test('example visit and assertion', async({page}) => {
     await page.goto('https://pragmatic.bg/');
-    await page.getByText('Курсове');
-    await page.getByRole('link', {name: 'Автоматизирано Тестване с Playwright и TypeScript'}).click();
-    await expect(page).toHaveTitle(/Автоматизирано Тестване с Playwright и TypeScript/);
-    await expect(page).toHaveURL(/automated-testing-with-typescript-and-playwright-course/);
-})
+    await page.getByRole('link', {name: 'Курсове'}).hover();
+    await page.locator('[id="nav_menu-4"]').getByRole('link', {name: 'Автоматизирано Тестване с Playwright и TypeScript'}).click();
+    await page.getByTitle('Въведение в Playwright').click();
+    await expect(page).toHaveURL('https://pragmatic.bg/lessons/%d0%b2%d1%8a%d0%b2%d0%b5%d0%b4%d0%b5%d0%bd%d0%b8%d0%b5-%d0%b2-playwright/');
+});
